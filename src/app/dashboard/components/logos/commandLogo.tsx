@@ -1,5 +1,9 @@
 import { Command } from "lucide-react";
 
-export default function CommandLogo({ className }) {
+interface CommandLogoProps {
+	className: string;
+}
+
+export default function CommandLogo({ className }: CommandLogoProps) {
 	return <Command className={className} />;
 }
