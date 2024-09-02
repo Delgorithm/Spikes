@@ -32,7 +32,7 @@ export default function Sidebar() {
 	];
 
 	return (
-		<nav className="h-full bg-[#121212]">
+		<nav className="h-full bg-[#121212] flex flex-col justify-between">
 			<ul>
 				<li>
 					<Accordion type="single" collapsible className="p-6 flex flex-col">
@@ -153,6 +153,8 @@ export default function Sidebar() {
 						</AccordionItem>
 					</Accordion>
 				</li>
+			</ul>
+			<ul>
 				<li>
 					<div className="flex justify-center items-center mx-4">
 						<Button className="font-light w-full">
