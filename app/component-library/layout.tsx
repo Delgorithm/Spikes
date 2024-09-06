@@ -9,7 +9,7 @@ export default function ComponentLibraryLayout({
 	return (
 		<section className=" bg-[#121212] h-screen">
 			<Navbar />
-			<section className="grid grid-cols-10 auto-rows-auto text-[#7E7F81] border-t-[0.25px] mt-6 ">
+			<section className="grid grid-cols-10 auto-rows-auto text-[#7E7F81] border-t-[0.25px] border-[#7E7F81]/20 mt-6 ">
 				<div className="col-start-1 col-end-3">
 					<Sidebar />
 				</div>

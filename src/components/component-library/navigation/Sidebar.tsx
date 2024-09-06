@@ -32,7 +32,7 @@ export default function Sidebar() {
 	];
 
 	return (
-		<nav className="h-full bg-[#121212] flex flex-col justify-between">
+		<nav className="h-full bg-[#121212] flex flex-col justify-between border-r-[0.25px] border-[#7E7F81]/20">
 			<ul>
 				<li>
 					<Accordion type="single" collapsible className="p-6 flex flex-col">
@@ -99,6 +99,14 @@ export default function Sidebar() {
 								<Link key={item.href} href={item.href}>
 									<AccordionContent className="pl-6 py-4">
 										<div className="flex items-center gap-2">
+											{pathname === item.href && (
+												<Image
+													src="/images/paste-icon.svg"
+													alt="Navigation's logo"
+													height={5}
+													width={5}
+												/>
+											)}
 											<p
 												className={`text-sm ${
 													pathname === item.href ? "text-white" : ""
@@ -153,8 +161,6 @@ export default function Sidebar() {
 						</AccordionItem>
 					</Accordion>
 				</li>
-			</ul>
-			<ul>
 				<li>
 					<div className="flex justify-center items-center mx-4">
 						<Button className="font-light w-full">

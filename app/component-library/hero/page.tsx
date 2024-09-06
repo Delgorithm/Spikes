@@ -56,6 +56,28 @@ export default function HeroPage() {
 					</h2>
 					<Button className="bg-[#292929] font-thin">Browse all</Button>
 				</section>
+				{/* <section className="grid grid-cols-3 auto-rows-auto gap-4">
+					{heroData.hero.map((hero) => (
+						<article key={hero.id}>
+							<h2>{hero.title}</h2>
+							<p>{hero.paragraphPro}</p>
+							<p>{hero.paragraphDate}</p>
+							<Image
+								src={hero.imageSrc}
+								alt={hero.altText}
+								width={500}
+								height={300}
+								layout="responsive"
+							/>
+							<p className="text-sm text-gray-500">
+								Credit:{" "}
+								<a href={hero.url} target="_blank" rel="noopener noreferrer">
+									{hero.credit}
+								</a>
+							</p>
+						</article>
+					))}
+				</section> */}
 			</section>
 		</section>
 	);

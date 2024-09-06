@@ -25,7 +25,7 @@ export default function Navbar() {
 					</Link>
 				</li>
 			</ul>
-			<ul className="flex gap-10 text-[#7E7F81] font-extralight">
+			<ul className="flex gap-10 text-[#7E7F81] font-extralight px-12 border-x-[0.5px] border-[#292929]">
 				<li
 					className={
 						pathname === `/component-library/library` ? "text-white " : ""
@@ -60,7 +60,7 @@ export default function Navbar() {
 					/>
 				</li>
 			</ul>
-			<ul>
+			<ul className="px-5 border-l-[0.5px] border-[#292929]">
 				<li>
 					<Card className="bg-[#121212] border-[#1D1D1D]">
 						<Avatar className="flex items-center justify-center">
