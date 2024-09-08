@@ -61,3 +61,13 @@ model VerificationToken {
   @@unique([identifier, token])
   @@map("verificationtokens")
 }
+
+model Content {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  image       String
+  date        DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
