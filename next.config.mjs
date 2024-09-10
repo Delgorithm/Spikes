@@ -9,6 +9,9 @@ const nextConfig = {
 			},
 		];
 	},
+	images: {
+		domains: ["cdn.dribbble.com", "dribbble.com"],
+	},
 };
 
 export default nextConfig;

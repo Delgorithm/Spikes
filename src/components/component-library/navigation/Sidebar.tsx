@@ -16,19 +16,19 @@ export default function Sidebar() {
 	const pathname = usePathname();
 
 	const pathPages = [
-		{ href: "/component-library/hero", label: "Hero" },
+		{ href: "/component-library/sections/hero", label: "Hero" },
 		{
-			href: "/component-library/how-it-works",
+			href: "/component-library/sections/how-it-works",
 			label: "How it Works",
 		},
-		{ href: "/component-library/services", label: "Services" },
+		{ href: "/component-library/sections/services", label: "Services" },
 		{
-			href: "/component-library/testimonials",
+			href: "/component-library/sections/testimonials",
 			label: "Testimonials",
 		},
-		{ href: "/component-library/pricing", label: "Pricing" },
-		{ href: "/component-library/faq", label: "FAQ" },
-		{ href: "/component-library/footer", label: "Footer" },
+		{ href: "/component-library/sections/pricing", label: "Pricing" },
+		{ href: "/component-library/sections/faq", label: "FAQ" },
+		{ href: "/component-library/sections/footer", label: "Footer" },
 	];
 
 	return (
@@ -43,7 +43,7 @@ export default function Sidebar() {
 									Platform
 								</p>
 							</AccordionTrigger>
-							<Link href="/component-library/webflow">
+							<Link href="/component-library/plateform/webflow">
 								<AccordionContent className="p-6">
 									<div className="flex items-center gap-2">
 										<Image
@@ -54,7 +54,7 @@ export default function Sidebar() {
 										/>
 										<p
 											className={
-												pathname === `/component-library/webflow`
+												pathname === `/component-library/plateform/webflow`
 													? "text-white"
 													: ""
 											}>
@@ -63,7 +63,7 @@ export default function Sidebar() {
 									</div>
 								</AccordionContent>
 							</Link>
-							<Link href="/component-library/figma">
+							<Link href="/component-library/plateform/figma">
 								<AccordionContent className="p-6">
 									<div className="flex items-center gap-2">
 										<Image
@@ -74,7 +74,7 @@ export default function Sidebar() {
 										/>
 										<p
 											className={
-												pathname === `/component-library/figma`
+												pathname === `/component-library/plateform/figma`
 													? "text-white"
 													: ""
 											}>
