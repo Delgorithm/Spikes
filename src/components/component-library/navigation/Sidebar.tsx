@@ -32,7 +32,7 @@ export default function Sidebar() {
 	];
 
 	return (
-		<nav className="h-full bg-[#121212] flex flex-col justify-between border-r-[0.25px] border-[#7E7F81]/20">
+		<nav className="h-full bg-[#121212] flex flex-col justify-between border-r-[0.25px] border-[#7E7F81]/20 overflow-y-auto max-h-full text-white">
 			<ul>
 				<li>
 					<Accordion type="single" collapsible className="p-6 flex flex-col">
@@ -161,7 +161,7 @@ export default function Sidebar() {
 						</AccordionItem>
 					</Accordion>
 				</li>
-				<li>
+				<li className="pb-10">
 					<Link
 						href="/component-library/upgrade"
 						className="flex justify-center items-center mx-4">

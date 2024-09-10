@@ -4,7 +4,7 @@ import { CircleCheckBig } from "lucide-react";
 
 export default function Pricing() {
 	return (
-		<section className="grid grid-cols-3 p-10 gap-10 text-white">
+		<section className="grid lg:grid-cols-3 p-10 gap-10 text-white">
 			<article className="grid grid-rows-2 p-4 border-[0.25px] border-[#7E7F81]/20 rounded-xl bg-gradient-to-tr from-[#292929] from-90% to-gray-400/50">
 				<div className="grid p-4">
 					<p className="text-xl">Free</p>
@@ -24,24 +24,24 @@ export default function Pricing() {
 				</div>
 				<div className="p-4 grid gap-6">
 					<div className="flex items-center gap-4">
-						<CircleCheckBig />
-						<p>Account Aggregation</p>
+						<CircleCheckBig className="text-[#FF7A00]" />
+						<p className="text-[#FF7A00]">Account Aggregation</p>
 					</div>
 					<div className="flex items-center gap-4">
-						<CircleCheckBig />
-						<p>Expense Tracking</p>
+						<CircleCheckBig className="text-[#FF7A00]" />
+						<p className="text-[#FF7A00]">Expense Tracking</p>
 					</div>
 					<div className="flex items-center gap-4">
-						<CircleCheckBig />
-						<p>Budgeting Tools</p>
+						<CircleCheckBig className="text-[#FF7A00]" />
+						<p className="text-[#FF7A00]">Budgeting Tools</p>
 					</div>
 					<div className="flex items-center gap-4">
-						<CircleCheckBig />
-						<p>Transation Insights</p>
+						<CircleCheckBig className="text-[#FF7A00]" />
+						<p className="text-[#FF7A00]">Transation Insights</p>
 					</div>
 					<div className="flex items-center gap-4">
-						<CircleCheckBig />
-						<p>Basic Security</p>
+						<CircleCheckBig className="text-[#FF7A00]" />
+						<p className="text-[#FF7A00]">Basic Security</p>
 					</div>
 				</div>
 			</article>
@@ -57,7 +57,7 @@ export default function Pricing() {
 						</p>
 					</div>
 					<div className="flex items-end">
-						<h2 className="text-4xl">0.00€</h2>
+						<h2 className="text-4xl">19.99€</h2>
 						<small>/month</small>
 					</div>
 					<p className="text-xs py-2">
@@ -73,32 +73,32 @@ export default function Pricing() {
 				<div className="p-4 grid gap-6">
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Account Aggregation</p>
+						<p>Everything in Free</p>
 					</div>
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Expense Tracking</p>
+						<p>Customizable components</p>
 					</div>
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Budgeting Tools</p>
+						<p>Advanced Budgeting</p>
 					</div>
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Transation Insights</p>
+						<p>Investment Tracking</p>
 					</div>
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Basic Security</p>
+						<p>Enhanced Security</p>
 					</div>
 				</div>
 			</article>
 
 			<article className="grid grid-rows-2 p-4 border-[0.25px] border-[#7E7F81]/20 rounded-xl bg-gradient-to-tl from-[#292929] from-90% to-gray-400/50">
 				<div className="grid p-4">
-					<p className="text-xl">Free</p>
+					<p className="text-xl">Team</p>
 					<div className="flex items-end">
-						<h2 className="text-4xl">0.00€</h2>
+						<h2 className="text-4xl">149.99€</h2>
 						<small>/month</small>
 					</div>
 					<p className="text-xs py-2">
@@ -114,23 +114,23 @@ export default function Pricing() {
 				<div className="p-4 grid gap-6">
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Account Aggregation</p>
+						<p>Financial Planning Tools</p>
 					</div>
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Expense Tracking</p>
+						<p>Priority Support</p>
 					</div>
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Budgeting Tools</p>
+						<p>Premium Widgets</p>
 					</div>
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Transation Insights</p>
+						<p>Advanced Security</p>
 					</div>
 					<div className="flex items-center gap-4">
 						<CircleCheckBig />
-						<p>Basic Security</p>
+						<p>Integration with 3rd-Party Services</p>
 					</div>
 				</div>
 			</article>

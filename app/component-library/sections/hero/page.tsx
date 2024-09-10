@@ -10,8 +10,8 @@ export default async function HeroPage() {
 	const firstHeroData = heroData.slice(0, 1);
 
 	return (
-		<section className="px-6 py-8 grid grid-cols-1 auto-rows-auto gap-10">
-			<section className="grid grid-cols-2 h-96 gap-10">
+		<section className="px-6 py-8 grid md:grid-cols-1 md:auto-rows-auto gap-10">
+			<section className="grid md:grid-cols-2 md:h-96 gap-10">
 				<section className="flex flex-col justify-between">
 					<section>
 						<div className="flex gap-2 mb-5">
