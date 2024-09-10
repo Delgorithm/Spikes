@@ -162,14 +162,16 @@ export default function Sidebar() {
 					</Accordion>
 				</li>
 				<li>
-					<div className="flex justify-center items-center mx-4">
+					<Link
+						href="/component-library/upgrade"
+						className="flex justify-center items-center mx-4">
 						<Button className="font-light w-full">
 							Upgrade to{" "}
 							<span className="inline-block text-transparent bg-clip-text ml-1 bg-gradient-to-t from-[#FF7A00] to-[#FF2900]">
 								Pro
 							</span>
 						</Button>
-					</div>
+					</Link>
 				</li>
 			</ul>
 		</nav>
