@@ -21,7 +21,7 @@ import Link from "next/link";
 
 export default function SidebarDashboard() {
 	return (
-		<section className="flex flex-col justify-between w-72 p-6 bg-neutral-100">
+		<section className="flex flex-col justify-between w-full">
 			<Image
 				src="/dashboard-img/dashboard-logo.svg"
 				width={30}

@@ -7,6 +7,11 @@ const nextConfig = {
 				destination: "/home",
 				permanent: false,
 			},
+			{
+				source: "/dashboard/deals",
+				destination: "/dashboard/deals/alldeals",
+				permanent: false,
+			},
 		];
 	},
 	images: {
