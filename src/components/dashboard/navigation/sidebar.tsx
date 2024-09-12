@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import {
 	Bell,
-	ChartBarIncreasing,
+	ChartColumnIncreasing,
 	CircleArrowLeft,
 	CircleArrowRight,
 	Command,
@@ -48,7 +48,7 @@ export default function SidebarDashboard() {
 						</li>
 						<li>
 							<div className="flex items-center gap-2 text-sm">
-								<ChartBarIncreasing className="size-6" />
+								<ChartColumnIncreasing className="size-6" />
 								<p>Clients</p>
 							</div>
 						</li>

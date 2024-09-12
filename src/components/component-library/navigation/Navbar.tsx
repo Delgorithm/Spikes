@@ -63,7 +63,7 @@ export default function Navbar() {
 					<Search className="absolute bottom-4 left-4 text-[#7E7F81] size-5" />
 					<Input
 						placeholder="Search for specific components, sections, wireframes, and more..."
-						className="pl-12 bg-[#121212] border-black text-[#7E7F81] py-4 md:py-6 md:w-2 lg:w-full"
+						className="pl-12 bg-[#121212] border-black text-[#7E7F81] py-4 md:py-6 md:w-2 lg:w-[35rem]"
 					/>
 				</li>
 			</ul>
@@ -77,9 +77,7 @@ export default function Navbar() {
 				</li>
 			</ul>
 			<ul className="md:hidden">
-				<Button onClick={handleOpenMenu}>
-					<Menu className="text-white" />
-				</Button>
+				<Menu onClick={handleOpenMenu} className="text-white" />
 			</ul>
 			{isOpen ? (
 				<>

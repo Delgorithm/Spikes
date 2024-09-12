@@ -32,7 +32,7 @@ export default function Sidebar() {
 	];
 
 	return (
-		<nav className="h-full bg-[#121212] flex flex-col justify-between border-r-[0.25px] border-[#7E7F81]/20 overflow-y-auto max-h-full text-white">
+		<nav className="h-full bg-[#121212] flex flex-col justify-between border-r-[0.25px] border-[#7E7F81]/20 overflow-y-auto max-h-full watch-sm:text-[#7E7F81]">
 			<ul>
 				<li>
 					<Accordion type="single" collapsible className="p-6 flex flex-col">
