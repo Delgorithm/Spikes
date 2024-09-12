@@ -1,4 +1,5 @@
 import NavbarAllDeals from "@/components/dashboard/navigation/navbarAllDeals";
+import SelectionsAllDeals from "@/components/dashboard/navigation/selectionsAllDeals";
 
 export default function AllDealsPage({
 	children,
@@ -9,6 +10,7 @@ export default function AllDealsPage({
 		<section className="p-8 flex flex-col gap-5">
 			<h1 className="text-4xl">Deals</h1>
 			<NavbarAllDeals />
+			<SelectionsAllDeals />
 			<>{children}</>
 		</section>
 	);
