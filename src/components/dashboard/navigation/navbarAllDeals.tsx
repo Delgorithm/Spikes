@@ -8,7 +8,7 @@ export default function NavbarAllDeals() {
 
 	return (
 		<nav>
-			<ul className="flex items-center gap-4">
+			<ul className="flex items-center gap-8">
 				<li
 					className={
 						pathname === `/dashboard/deals/alldeals`

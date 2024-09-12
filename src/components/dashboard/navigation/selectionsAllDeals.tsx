@@ -45,7 +45,7 @@ export default function SelectionsAllDeals() {
 					</SelectContent>
 				</Select>
 				<Select>
-					<SelectTrigger className="w-[100px]">Company</SelectTrigger>
+					<SelectTrigger className="w-[120px]">Company</SelectTrigger>
 					<SelectContent>
 						<SelectGroup>
 							<SelectItem value="stripe">Stripe Inc.</SelectItem>

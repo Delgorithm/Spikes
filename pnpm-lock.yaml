@@ -65,6 +65,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.53.3
         version: 5.53.3(react@18.3.1)
+      '@tanstack/react-table':
+        specifier: ^8.20.5
+        version: 8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/solid-table':
         specifier: ^8.20.5
         version: 8.20.5(solid-js@1.8.22)
@@ -929,6 +932,13 @@ packages:
     resolution: {integrity: sha512-286mN/91CeM7vC6CZFLKYDHSw+WyMX6ekIvzoTbpM4xyPb99VSyCKPLyPgaOatKqYm6ooMBquSq9NGRdKgsJfg==}
     peerDependencies:
       react: ^18 || ^19
+
+  '@tanstack/react-table@8.20.5':
+    resolution: {integrity: sha512-WEHopKw3znbUZ61s9i0+i9g8drmDo6asTWbrQh8Us63DAk/M0FkmIqERew6P71HI75ksZ2Pxyuf4vvKh9rAkiA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
 
   '@tanstack/solid-table@8.20.5':
     resolution: {integrity: sha512-LsB/g/24CjBpccOcok+u+tfyqtU9SIQg5wf7ne54jRdEsy5YQnrpb5ATWZileHBduIG0p/1oE7UOA+DyjtnbDQ==}
@@ -3652,6 +3662,12 @@ snapshots:
     dependencies:
       '@tanstack/query-core': 5.53.3
       react: 18.3.1
+
+  '@tanstack/react-table@8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/table-core': 8.20.5
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@tanstack/solid-table@8.20.5(solid-js@1.8.22)':
     dependencies:
