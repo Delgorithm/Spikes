@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
+import { AuthButton } from "@/features/auth/AuthButton";
 import {
 	Bell,
 	ChartColumnIncreasing,
@@ -22,12 +23,14 @@ import Link from "next/link";
 export default function SidebarDashboard() {
 	return (
 		<section className="flex flex-col justify-between w-full">
-			<Image
-				src="/dashboard-img/dashboard-logo.svg"
-				width={30}
-				height={30}
-				alt="Logo"
-			/>
+			<Link href="/dashboard">
+				<Image
+					src="/dashboard-img/dashboard-logo.svg"
+					width={30}
+					height={30}
+					alt="Logo"
+				/>
+			</Link>
 			<div className="relative flex items-center">
 				<SearchIcon className="absolute left-2 size-5 text-neutral-400" />
 				<Input
@@ -41,10 +44,12 @@ export default function SidebarDashboard() {
 				<nav className=" text-neutral-600 p-4">
 					<ul className="flex flex-col gap-4">
 						<li>
-							<div className="flex items-center gap-2 text-sm">
+							<Link
+								href="/dashboard"
+								className="flex items-center gap-2 text-sm">
 								<House className="size-6" />
 								<p>Home</p>
-							</div>
+							</Link>
 						</li>
 						<li>
 							<div className="flex items-center gap-2 text-sm">
@@ -130,6 +135,7 @@ export default function SidebarDashboard() {
 					<p className="text-sm text-neutral-400">Arthur@squared.studio</p>
 				</div>
 			</Card>
+			<AuthButton />
 		</section>
 	);
 }
