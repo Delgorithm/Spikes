@@ -8,7 +8,7 @@ async function getData(): Promise<Payment[]> {
 			date: "Jan. 24",
 			object: "Product Design: Payment",
 			company: "Stripe Inc",
-			statue: "Pending",
+			status: "Pending",
 			amount: `7.800 $USD`,
 		},
 		{
@@ -16,7 +16,7 @@ async function getData(): Promise<Payment[]> {
 			date: "Jan. 24",
 			object: "Product Design: Payment",
 			company: "Github Corp.",
-			statue: "Cancelled",
+			status: "Cancelled",
 			amount: `12.800 $USD`,
 		},
 		{
@@ -24,7 +24,7 @@ async function getData(): Promise<Payment[]> {
 			date: "Jan. 24",
 			object: "Product Design: Payment",
 			company: "Amazon",
-			statue: "Ongoing",
+			status: "Ongoing",
 			amount: `14.000 $USD`,
 		},
 		{
@@ -32,7 +32,7 @@ async function getData(): Promise<Payment[]> {
 			date: "Jan. 24",
 			object: "Product Design: Payment",
 			company: "Steam",
-			statue: "Waiting for Confirmation",
+			status: "Waiting for Confirmation",
 			amount: `2.000 $USD`,
 		},
 		{
@@ -40,7 +40,7 @@ async function getData(): Promise<Payment[]> {
 			date: "Jan. 24",
 			object: "Product Design: Payment",
 			company: "Adobe LLC.",
-			statue: "Completed",
+			status: "Completed",
 			amount: `5.500 $USD`,
 		},
 		{
@@ -48,7 +48,7 @@ async function getData(): Promise<Payment[]> {
 			date: "Jan. 24",
 			object: "Product Design: Payment",
 			company: "The Browser Company",
-			statue: "Pending",
+			status: "Pending",
 			amount: `14.500 $USD`,
 		},
 		{
@@ -56,7 +56,7 @@ async function getData(): Promise<Payment[]> {
 			date: "Jan. 24",
 			object: "Product Design: Payment",
 			company: "Figma",
-			statue: "Completed",
+			status: "Completed",
 			amount: `21.500 $USD`,
 		},
 		{
@@ -64,7 +64,7 @@ async function getData(): Promise<Payment[]> {
 			date: "Jan. 24",
 			object: "Product Design: Payment",
 			company: "Slack Inc.",
-			statue: "Ongoing",
+			status: "Ongoing",
 			amount: `1.900 $USD`,
 		},
 		{
@@ -72,7 +72,7 @@ async function getData(): Promise<Payment[]> {
 			date: "Jan. 24",
 			object: "Product Design: Payment",
 			company: "Opensea",
-			statue: "Pending",
+			status: "Pending",
 			amount: `2.300 $USD`,
 		},
 	];

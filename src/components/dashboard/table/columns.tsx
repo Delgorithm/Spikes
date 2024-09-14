@@ -6,22 +6,24 @@ import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import { z } from "zod";
 
-export const paymentSchema = {
+export const paymentSchema = z.object({
 	id: z.string(),
-	amount: z.number(),
+	amount: z.string(),
 	status: z.enum([
-		"completed",
-		"pending",
-		"ongoing",
-		"cancelled",
-		"waiting-for-confirmation",
+		"Completed",
+		"Pending",
+		"Ongoing",
+		"Cancelled",
+		"Waiting for Confirmation",
 	]),
 	date: z.string(),
-};
+	company: z.string(),
+	object: z.string(),
+});
 
 export type Payment = z.infer<typeof paymentSchema>;
 
-const companyImageMap = {
+const companyImageMap: Record<string, string> = {
 	"Stripe Inc": "stripe-logo.svg",
 	Amazon: "amazon-logo.svg",
 	Google: "google-logo.svg",
@@ -34,7 +36,7 @@ const companyImageMap = {
 	Steam: "steam-logo.svg",
 };
 
-const statueImageMap = {
+const statueImageMap: Record<string, string> = {
 	Pending: "pending-logo.svg",
 	Cancelled: "cancelled-logo.svg",
 	Ongoing: "ongoing-logo.svg",
@@ -93,17 +95,17 @@ export const columns: ColumnDef<Payment>[] = [
 		accessorKey: "statue",
 		header: "Statue",
 		cell: ({ row }) => {
-			const imageName = statueImageMap[row.original.statue] || null;
+			const imageName = statueImageMap[row.original.status] || null;
 			return (
 				<div className="flex items-center gap-2 my-2">
 					<Image
 						src={`/dashboard-img/${imageName}`}
-						alt={row.original.statue}
+						alt={row.original.status}
 						width={1}
 						height={1}
 						className="size-[5px]"
 					/>
-					<span>{row.original.statue}</span>
+					<span>{row.original.status}</span>
 				</div>
 			);
 		},

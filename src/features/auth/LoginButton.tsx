@@ -51,24 +51,8 @@ export const LoggedInButton = (props: LoggedInButton) => {
 				</DropdownMenuTrigger>
 				<DropdownMenuContent>
 					<AlertDialogTrigger asChild>
-						<DropdownMenuItem>
-							<LogOut className="mr-2" size={12} />
-							Logout
-						</DropdownMenuItem>
-					</AlertDialogTrigger>
-				</DropdownMenuContent>
-				<AlertDialogContent>
-					<AlertDialogHeader>
-						<AlertDialogTitle>
-							Are you sure you want to logout?
-						</AlertDialogTitle>
-					</AlertDialogHeader>
-					<AlertDialogFooter>
-						<AlertDialogCancel asChild>
-							<Button variant="secondary">Cancel</Button>
-						</AlertDialogCancel>
 						<Button
-							variant="destructive"
+							className="w-full"
 							disabled={mutation.isPending}
 							onClick={() => {
 								mutation.mutate();
@@ -80,8 +64,8 @@ export const LoggedInButton = (props: LoggedInButton) => {
 							)}
 							Logout
 						</Button>
-					</AlertDialogFooter>
-				</AlertDialogContent>
+					</AlertDialogTrigger>
+				</DropdownMenuContent>
 			</AlertDialog>
 		</DropdownMenu>
 	);
