@@ -1,5 +1,15 @@
 import { Button } from "@/components/ui/button";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
 	Select,
 	SelectContent,
@@ -82,10 +92,76 @@ export default function SelectionsAllDeals() {
 					<Download className="size-5" />
 					Export
 				</Button>
-				<Button className="flex items-center gap-2">
-					<FolderPlus className="size-5" />
-					New Deal
-				</Button>
+				<Dialog>
+					<DialogTrigger asChild>
+						<Button className="flex items-center gap-2">
+							<FolderPlus className="size-5" />
+							New Deal
+						</Button>
+					</DialogTrigger>
+					<DialogContent>
+						<DialogHeader>
+							<DialogTitle>New Deal</DialogTitle>
+							<DialogDescription>Add a new deal to your CRM</DialogDescription>
+						</DialogHeader>
+						<div className="grid gap-4 py-4">
+							<div className="grid grid-cols-4 items-center gap-4">
+								<Label htmlFor="object" className="text-right">
+									Object
+								</Label>
+								<Input
+									id="object"
+									placeholder="Mobile App..."
+									className="col-span-3"
+								/>
+							</div>
+							<div className="grid grid-cols-4 items-center gap-4">
+								<Label htmlFor="company" className="text-right">
+									Company
+								</Label>
+								<Input
+									id="company"
+									placeholder="Stripe Inc..."
+									className="col-span-3"
+								/>
+							</div>
+							<div className="grid grid-cols-4 items-center gap-4">
+								<Label htmlFor="statue" className="text-right">
+									Statue
+								</Label>
+								<Select>
+									<SelectTrigger
+										id="statue"
+										className="col-span-3"></SelectTrigger>
+									<SelectContent>
+										<SelectGroup>
+											<SelectItem value="completed">Completed</SelectItem>
+											<SelectItem value="ongoing">Ongoing</SelectItem>
+											<SelectItem value="pending">Pending</SelectItem>
+											<SelectItem value="waiting-for-confirmation">
+												Waiting for Confirmation
+											</SelectItem>
+											<SelectItem value="cancelled">Cancelled</SelectItem>
+										</SelectGroup>
+									</SelectContent>
+								</Select>
+							</div>
+							<div className="grid grid-cols-4 items-center gap-4">
+								<Label htmlFor="amount" className="text-right">
+									Amount
+								</Label>
+								<Input
+									id="amount"
+									placeholder="2.500 $USD..."
+									className="col-span-3"
+								/>
+							</div>
+						</div>
+						<DialogFooter>
+							<Button type="submit">Save changes</Button>
+						</DialogFooter>
+					</DialogContent>
+				</Dialog>
 			</div>
 		</section>
 	);

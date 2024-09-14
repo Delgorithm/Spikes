@@ -3,15 +3,18 @@ import Link from "next/link";
 
 export default function HomePage() {
 	return (
-		<section>
-			<h1>Quel challenge souhaitez-vous découvir ? </h1>
-			<div>
-				<Card>
-					<Link href="/component-library">Librairie de composants</Link>
-				</Card>
-				<Card>
-					<Link href="/dashboard">Dashboard</Link>
-				</Card>
+		<section className="flex flex-col justify-center items-center h-screen">
+			<div className="grid grid-cols-2 gap-4 mt-8 ">
+				<Link href="/component-library">
+					<Card className="py-16 px-8 text-center hover:bg-neutral-100 hover:scale-105 transition-all ease-in-out">
+						Librairie de composants
+					</Card>
+				</Link>
+				<Link href="/dashboard">
+					<Card className="py-16 px-8 text-center hover:bg-neutral-100 hover:scale-105 transition-all ease-in-out">
+						Dashboard
+					</Card>
+				</Link>
 			</div>
 		</section>
 	);

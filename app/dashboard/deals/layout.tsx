@@ -8,12 +8,14 @@ export default function AllDealsPage({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="p-8 flex flex-col gap-5">
-			<h1 className="text-4xl">Deals</h1>
-			<NavbarAllDeals />
-			<SelectionsAllDeals />
+		<>
+			<section className="p-8 flex flex-col gap-5">
+				<h1 className="text-4xl">Deals</h1>
+				<NavbarAllDeals />
+				<SelectionsAllDeals />
+			</section>
 			<DisplayTable />
 			<>{children}</>
-		</section>
+		</>
 	);
 }

@@ -8,7 +8,7 @@ export default function NavbarAllDeals() {
 
 	return (
 		<nav>
-			<ul className="flex items-center gap-8">
+			<ul className="flex items-center gap-6 text-sm ">
 				<li
 					className={
 						pathname === `/dashboard/deals/alldeals`
@@ -23,7 +23,9 @@ export default function NavbarAllDeals() {
 							? "border-b-[0.5px] border-neutral-700 text-neutral-700"
 							: "text-neutral-300 border-b-[0.5px]"
 					}>
-					<Link href="/dashboard/deals/completed">Completed</Link>
+					<Link href="/dashboard/deals/completed">
+						Completed <span>(3)</span>
+					</Link>
 				</li>
 				<li
 					className={
@@ -31,7 +33,9 @@ export default function NavbarAllDeals() {
 							? "border-b-[0.5px] border-neutral-700 text-neutral-700"
 							: "text-neutral-300 border-b-[0.5px]"
 					}>
-					<Link href="/dashboard/deals/pending">Pending</Link>
+					<Link href="/dashboard/deals/pending">
+						Pending <span>(10)</span>
+					</Link>
 				</li>
 				<li
 					className={
@@ -39,7 +43,9 @@ export default function NavbarAllDeals() {
 							? "border-b-[0.5px] border-neutral-700 text-neutral-700"
 							: "text-neutral-300 border-b-[0.5px]"
 					}>
-					<Link href="/dashboard/deals/ongoing">Ongoing</Link>
+					<Link href="/dashboard/deals/ongoing">
+						Ongoing <span>(4)</span>
+					</Link>
 				</li>
 				<li
 					className={
@@ -47,7 +53,9 @@ export default function NavbarAllDeals() {
 							? "border-b-[0.5px] border-neutral-700 text-neutral-700"
 							: "text-neutral-300 border-b-[0.5px]"
 					}>
-					<Link href="/dashboard/deals/waiting">Waiting for Confirmation</Link>
+					<Link href="/dashboard/deals/waiting">
+						Waiting for Confirmation <span>(1)</span>
+					</Link>
 				</li>
 			</ul>
 		</nav>
