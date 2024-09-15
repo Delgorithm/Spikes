@@ -16,6 +16,13 @@ const nextConfig = {
 	},
 	images: {
 		domains: ["cdn.dribbble.com", "dribbble.com"],
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "cdn.dribbble.com",
+				pathname: "/**",
+			},
+		],
 	},
 };
 
