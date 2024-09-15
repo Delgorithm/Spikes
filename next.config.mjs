@@ -15,11 +15,20 @@ const nextConfig = {
 		];
 	},
 	images: {
-		domains: ["cdn.dribbble.com", "dribbble.com"],
+		domains: [
+			"cdn.dribbble.com",
+			"dribbble.com",
+			"avatars.githubusercontent.com",
+		],
 		remotePatterns: [
 			{
 				protocol: "https",
 				hostname: "cdn.dribbble.com",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "avatars.githubusercontent.com",
 				pathname: "/**",
 			},
 		],

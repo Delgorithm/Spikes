@@ -17,9 +17,13 @@ import {
 	SelectItem,
 	SelectTrigger,
 } from "@/components/ui/select";
+import { AuthButton } from "@/features/auth/AuthButton";
+import { getAuthSession } from "@/lib/auth";
 import { Download, FolderPlus, SearchIcon } from "lucide-react";
 
-export default function SelectionsAllDeals() {
+export default async function SelectionsAllDeals() {
+	const session = await getAuthSession();
+
 	return (
 		<section className="flex items-center justify-between">
 			<div className="flex items-center gap-4">
@@ -100,66 +104,81 @@ export default function SelectionsAllDeals() {
 						</Button>
 					</DialogTrigger>
 					<DialogContent>
-						<DialogHeader>
-							<DialogTitle>New Deal</DialogTitle>
-							<DialogDescription>Add a new deal to your CRM</DialogDescription>
-						</DialogHeader>
-						<div className="grid gap-4 py-4">
-							<div className="grid grid-cols-4 items-center gap-4">
-								<Label htmlFor="object" className="text-right">
-									Object
-								</Label>
-								<Input
-									id="object"
-									placeholder="Mobile App..."
-									className="col-span-3"
-								/>
-							</div>
-							<div className="grid grid-cols-4 items-center gap-4">
-								<Label htmlFor="company" className="text-right">
-									Company
-								</Label>
-								<Input
-									id="company"
-									placeholder="Stripe Inc..."
-									className="col-span-3"
-								/>
-							</div>
-							<div className="grid grid-cols-4 items-center gap-4">
-								<Label htmlFor="statue" className="text-right">
-									Statue
-								</Label>
-								<Select>
-									<SelectTrigger
-										id="statue"
-										className="col-span-3"></SelectTrigger>
-									<SelectContent>
-										<SelectGroup>
-											<SelectItem value="completed">Completed</SelectItem>
-											<SelectItem value="ongoing">Ongoing</SelectItem>
-											<SelectItem value="pending">Pending</SelectItem>
-											<SelectItem value="waiting-for-confirmation">
-												Waiting for Confirmation
-											</SelectItem>
-											<SelectItem value="cancelled">Cancelled</SelectItem>
-										</SelectGroup>
-									</SelectContent>
-								</Select>
-							</div>
-							<div className="grid grid-cols-4 items-center gap-4">
-								<Label htmlFor="amount" className="text-right">
-									Amount
-								</Label>
-								<Input
-									id="amount"
-									placeholder="2.500 $USD..."
-									className="col-span-3"
-								/>
-							</div>
-						</div>
-						<DialogFooter>
-							<Button type="submit">Save changes</Button>
-						</DialogFooter>
+						{!session ? (
+							<>
+								<DialogHeader>You have to be connected</DialogHeader>
+								<DialogDescription>
+									In order to add a new deal you must be connected to your
+									account
+								</DialogDescription>
+								<AuthButton />
+							</>
+						) : (
+							<>
+								<DialogHeader>
+									<DialogTitle>New Deal</DialogTitle>
+									<DialogDescription>
+										Add a new deal to your CRM
+									</DialogDescription>
+								</DialogHeader>
+								<div className="grid gap-4 py-4">
+									<div className="grid grid-cols-4 items-center gap-4">
+										<Label htmlFor="object" className="text-right">
+											Object
+										</Label>
+										<Input
+											id="object"
+											placeholder="Mobile App..."
+											className="col-span-3"
+										/>
+									</div>
+									<div className="grid grid-cols-4 items-center gap-4">
+										<Label htmlFor="company" className="text-right">
+											Company
+										</Label>
+										<Input
+											id="company"
+											placeholder="Stripe Inc..."
+											className="col-span-3"
+										/>
+									</div>
+									<div className="grid grid-cols-4 items-center gap-4">
+										<Label htmlFor="statue" className="text-right">
+											Statue
+										</Label>
+										<Select>
+											<SelectTrigger
+												id="statue"
+												className="col-span-3"></SelectTrigger>
+											<SelectContent>
+												<SelectGroup>
+													<SelectItem value="completed">Completed</SelectItem>
+													<SelectItem value="ongoing">Ongoing</SelectItem>
+													<SelectItem value="pending">Pending</SelectItem>
+													<SelectItem value="waiting-for-confirmation">
+														Waiting for Confirmation
+													</SelectItem>
+													<SelectItem value="cancelled">Cancelled</SelectItem>
+												</SelectGroup>
+											</SelectContent>
+										</Select>
+									</div>
+									<div className="grid grid-cols-4 items-center gap-4">
+										<Label htmlFor="amount" className="text-right">
+											Amount
+										</Label>
+										<Input
+											id="amount"
+											placeholder="2.500 $USD..."
+											className="col-span-3"
+										/>
+									</div>
+								</div>
+								<DialogFooter>
+									<Button type="submit">Save changes</Button>
+								</DialogFooter>
+							</>
+						)}
 					</DialogContent>
 				</Dialog>
 			</div>

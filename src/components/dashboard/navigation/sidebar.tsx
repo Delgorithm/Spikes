@@ -1,9 +1,15 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
-import { AuthButton } from "@/features/auth/AuthButton";
+import { SignOutOnlyButton } from "@/features/auth/SignOutOnlyButton";
+import { getAuthSession } from "@/lib/auth";
 import {
 	Bell,
 	ChartColumnIncreasing,
@@ -20,7 +26,9 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-export default function SidebarDashboard() {
+export default async function SidebarDashboard() {
+	const session = await getAuthSession();
+
 	return (
 		<section className="flex flex-col justify-between w-full">
 			<Link href="/dashboard">
@@ -129,13 +137,39 @@ export default function SidebarDashboard() {
 				</Button>
 			</Card>
 			<Card className="flex items-center gap-2 py-2 px-1">
-				<Image src="/dashboard-img/pp.png" width={40} height={40} alt="ok" />
-				<div>
-					<p className="text-sm">Arthur Bossuyt</p>
-					<p className="text-sm text-neutral-400">Arthur@squared.studio</p>
-				</div>
+				{session ? (
+					<DropdownMenu>
+						<DropdownMenuTrigger className="flex items-center gap-2">
+							<Image
+								src={session.user.image || "/dashboard-img/pp.png"}
+								alt={session.user.name || "user"}
+								width={40}
+								height={40}
+							/>
+							<div className="text-left">
+								<p className="text-sm">{session.user.name}</p>
+								<p className="text-sm text-neutral-400">{session.user.email}</p>
+							</div>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent>
+							<SignOutOnlyButton />
+						</DropdownMenuContent>
+					</DropdownMenu>
+				) : (
+					<>
+						<Image
+							src="/dashboard-img/pp.png"
+							width={40}
+							height={40}
+							alt="user"
+						/>
+						<div>
+							<p className="text-sm">Arthur Bossuyt</p>
+							<p className="text-sm text-neutral-400">Arthur@squared.studio</p>
+						</div>
+					</>
+				)}
 			</Card>
-			<AuthButton />
 		</section>
 	);
 }
