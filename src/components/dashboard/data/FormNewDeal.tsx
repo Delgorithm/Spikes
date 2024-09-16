@@ -35,8 +35,6 @@ export default async function FormNewDeal() {
 			action={async (formData) => {
 				"use server";
 
-				const userSession = await getRequiredAuthSession();
-
 				const object = formData.get("object");
 				const company = formData.get("company");
 				const statue = formData.get("statue");
@@ -92,11 +90,13 @@ export default async function FormNewDeal() {
 					<Label htmlFor="statue" className="text-right">
 						Statue
 					</Label>
-					<Select name="statue">
-						<SelectTrigger id="statue" className="col-span-3"></SelectTrigger>
+					<Select>
+						<SelectTrigger id="statue" className="col-span-3">
+							Pending
+						</SelectTrigger>
 						<SelectContent>
 							<SelectGroup>
-								<SelectItem value="completed" id="completed">
+								<SelectItem value="completed" id="completed" name="completed">
 									Completed
 								</SelectItem>
 								<SelectItem value="ongoing" id="ongoing">
