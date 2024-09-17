@@ -9,12 +9,12 @@ export const authenticatedAction = createSafeActionClient({
 	handleServerError: (error) => {
 		if (error instanceof ServerError) {
 			return {
-				ServerError: error.message,
+				serverError: error.message,
 			};
 		}
 
 		return {
-			ServerError: "An unexpected error occured",
+			serverError: "An unexpected error occurred",
 		};
 	},
 }).use(async ({ next }) => {

@@ -3,13 +3,10 @@ import {
 	Dialog,
 	DialogContent,
 	DialogDescription,
-	DialogFooter,
 	DialogHeader,
-	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
 	Select,
 	SelectContent,
@@ -20,7 +17,7 @@ import {
 import { AuthButton } from "@/features/auth/AuthButton";
 import { getAuthSession } from "@/lib/auth";
 import { Download, FolderPlus, SearchIcon } from "lucide-react";
-import FormNewDeal from "../data/FormNewDeal";
+import DealForm from "../Forms/DealForm";
 
 export default async function SelectionsAllDeals() {
 	const session = await getAuthSession();
@@ -115,7 +112,7 @@ export default async function SelectionsAllDeals() {
 								<AuthButton />
 							</>
 						) : (
-							<FormNewDeal />
+							<DealForm />
 						)}
 					</DialogContent>
 				</Dialog>
