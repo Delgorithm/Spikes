@@ -50,7 +50,10 @@ export default function DealForm({ defaultValue }: DealsFormProps) {
 
 				if (data) {
 					toast.success(data.message);
+					console.log("yes");
+					router.push("/dashboard/deals/alldeals");
 					router.refresh();
+
 					return;
 				}
 
