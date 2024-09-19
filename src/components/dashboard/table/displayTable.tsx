@@ -13,8 +13,21 @@ async function getData(): Promise<Payment[]> {
 		}),
 		object: myDeal.object,
 		company: myDeal.company,
-		companyimg: myDeal.companyimg,
-		status: myDeal.statue.charAt(0).toUpperCase() + myDeal.statue.slice(1),
+		companyimg: myDeal.companyimg ?? "",
+		status: [
+			"Completed",
+			"Pending",
+			"Ongoing",
+			"Cancelled",
+			"Waiting for Confirmation",
+		].includes(myDeal.statue.charAt(0).toUpperCase() + myDeal.statue.slice(1))
+			? ((myDeal.statue.charAt(0).toUpperCase() + myDeal.statue.slice(1)) as
+					| "Completed"
+					| "Pending"
+					| "Ongoing"
+					| "Cancelled"
+					| "Waiting for Confirmation")
+			: "Pending",
 		amount: `${myDeal.amount} $USD`,
 	}));
 
