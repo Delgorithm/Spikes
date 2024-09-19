@@ -19,6 +19,8 @@ const nextConfig = {
 			"cdn.dribbble.com",
 			"dribbble.com",
 			"avatars.githubusercontent.com",
+			"www.google.com",
+			"svgrepo.com",
 		],
 		remotePatterns: [
 			{
@@ -29,6 +31,16 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "avatars.githubusercontent.com",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "**.google.com",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "**google.com",
 				pathname: "/**",
 			},
 		],

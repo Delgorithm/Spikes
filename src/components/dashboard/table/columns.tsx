@@ -18,6 +18,7 @@ export const paymentSchema = z.object({
 	]),
 	date: z.string(),
 	company: z.string(),
+	companyimg: z.string(),
 	object: z.string(),
 });
 
@@ -76,16 +77,30 @@ export const columns: ColumnDef<Payment>[] = [
 		accessorKey: "company",
 		header: "Company",
 		cell: ({ row }) => {
+			const companyName = row.original.company;
+			const companyImg = row.original.companyimg;
 			const imageName = companyImageMap[row.original.company] || null;
 			return (
 				<div className="flex items-center gap-2">
-					<Image
-						src={`/dashboard-img/${imageName}`}
-						alt={row.original.company}
-						width={24}
-						height={24}
-						className="size-5"
-					/>
+					{imageName ? (
+						<Image
+							src={`/dashboard-img/${imageName}`}
+							alt={row.original.company}
+							width={24}
+							height={24}
+							className="size-5"
+						/>
+					) : (
+						companyImg && (
+							<Image
+								src={companyImg}
+								alt={companyName}
+								width={24}
+								height={24}
+								className="size-5"
+							/>
+						)
+					)}
 					<span>{row.original.company}</span>
 				</div>
 			);

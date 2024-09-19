@@ -92,6 +92,20 @@ export default function DealForm({ defaultValue }: DealsFormProps) {
 
 			<FormField
 				control={form.control}
+				name="companyimg"
+				render={({ field }) => (
+					<FormItem>
+						<FormLabel>Company's logo (svg)</FormLabel>
+						<FormControl>
+							<Input placeholder="https://img..." {...field} />
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+
+			<FormField
+				control={form.control}
 				name="amount"
 				render={({ field }) => (
 					<FormItem>
