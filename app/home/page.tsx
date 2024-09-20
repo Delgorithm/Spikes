@@ -15,6 +15,11 @@ export default function HomePage() {
 						Dashboard
 					</Card>
 				</Link>
+				<Link href="/grid-bento">
+					<Card className="py-16 px-8 text-center hover:bg-neutral-100 hover:scale-105 transition-all ease-in-out">
+						Grid Bento
+					</Card>
+				</Link>
 			</div>
 		</section>
 	);

@@ -12,6 +12,11 @@ const nextConfig = {
 				destination: "/dashboard/deals/alldeals",
 				permanent: false,
 			},
+			{
+				source: "/grid-bento",
+				destination: "/grid-bento/home",
+				permanent: false,
+			},
 		];
 	},
 	images: {
