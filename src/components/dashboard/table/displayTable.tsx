@@ -1,8 +1,11 @@
+import { getAuthSession } from "@/lib/auth";
 import { Payment, columns } from "./columns";
 import { DataTable } from "./data-table";
 import { getDeals } from "./deal.query";
 
 async function getData(): Promise<Payment[]> {
+	const session = await getAuthSession();
+
 	const myDeals = await getDeals();
 
 	const dynamicData: Payment[] = myDeals.map((myDeal) => ({
@@ -69,7 +72,7 @@ async function getData(): Promise<Payment[]> {
 			amount: `2.000 $USD`,
 		},
 		{
-			id: "",
+			id: "05",
 			date: "Oct. 23",
 			object: "Splash Screen Illustrator",
 			company: "Adobe LLC.",
@@ -87,7 +90,7 @@ async function getData(): Promise<Payment[]> {
 			amount: `14.500 $USD`,
 		},
 		{
-			id: "728ed52f",
+			id: "06",
 			date: "Sept. 23",
 			object: "Brand Guidelines",
 			company: "Figma",
@@ -96,7 +99,7 @@ async function getData(): Promise<Payment[]> {
 			amount: `21.500 $USD`,
 		},
 		{
-			id: "728ed52f",
+			id: "07",
 			date: "Sept. 23",
 			object: "New messages UX",
 			company: "Slack Inc.",
@@ -105,7 +108,7 @@ async function getData(): Promise<Payment[]> {
 			amount: `1.900 $USD`,
 		},
 		{
-			id: "728ed52f",
+			id: "08",
 			date: "Sept. 23",
 			object: "Landing page",
 			company: "Opensea",
@@ -114,6 +117,10 @@ async function getData(): Promise<Payment[]> {
 			amount: `2.300 $USD`,
 		},
 	];
+
+	if (!session) {
+		return staticData;
+	}
 
 	return [...staticData, ...dynamicData];
 }
