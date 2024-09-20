@@ -63,13 +63,15 @@ export default function HomePage() {
 						</div>
 						<ArrowUpRight className="text-[#B3B3B3]/50" />
 					</div>
-					<Image
-						src="/bento-img/adventure-lasting.svg"
-						width={500}
-						height={500}
-						alt="Apps"
-						className="w-full border-t-[0.5px] border-l-[0.5px] border-b-[0.5px] border-[#B3B3B3]/30 px-4 py-2 bg-[#1D1D1D] rounded-l-xl"
-					/>
+					<div className=" bg-[#1D1D1D]">
+						<Image
+							src="/bento-img/adventure-lasting.svg"
+							width={500}
+							height={500}
+							alt="Apps"
+							className="w-full border-t-[0.5px] border-l-[0.5px] border-b-[0.5px] border-[#B3B3B3]/30 px-4 py-2 rounded-l-xl"
+						/>
+					</div>
 				</div>
 			</div>
 
@@ -152,7 +154,7 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 5 */}
-			<div className="col-start-4 row-start-2  bg-[#1D1D1D]  rounded-[2rem]">
+			<div className="col-start-4 row-start-2 bg-[#1D1D1D] rounded-[2rem]">
 				<div className="mx-8 my-4">
 					<div className="flex items-start justify-between">
 						<div className="flex items-center gap-2">
@@ -190,72 +192,107 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 6 */}
-			<div className="col-start-4 row-start-3 bg-slate-100 rounded-[2rem]">
+			<div className="col-start-4 row-start-3 bg-gradient-to-tr from-purple-700 via-red-600 to-sky-500 rounded-[2rem] flex justify-center items-center relative">
 				<Image
 					src="/bento-img/twitter-img.png"
-					height={200}
-					width={200}
+					height={250}
+					width={250}
 					alt="dashboard"
+				/>
+				<Image
+					src="/bento-img/basketball.svg"
+					height={50}
+					width={50}
+					alt="basketball"
+					className="absolute top-2 right-10"
 				/>
 			</div>
 
 			{/* Grid 7 */}
-			<div className="col-span-2 row-span-2 row-start-4 bg-amber-500 rounded-[2rem]">
-				<div>
+			<div className="col-span-2 row-span-2 row-start-4 rounded-[2rem] bg-[#1D1D1D]">
+				<div className="flex items-start justify-between mx-10 mt-4">
 					<div>
-						<p>45+ Downloads in Figma</p>
-						<p>Freebie design systems & libraries for design community</p>
+						<p>45k+ Downloads in Figma</p>
+						<p className="text-xs text-[#B3B3B3]/50 font-light">
+							Freebie design systems & libraries for design community 🗂️
+						</p>
 					</div>
 					<Image
-						src="/bento-img/download-figma.svg"
+						src="/bento-img/figma-logo.svg"
+						height={50}
+						width={50}
+						alt="Figma"
+					/>
+				</div>
+				<Image
+					src="/bento-img/download-figma.svg"
+					height={100}
+					width={100}
+					alt="Figma"
+					className="w-full"
+				/>
+			</div>
+
+			{/* Grid 8 */}
+			<div className="col-span-2 col-start-3 row-start-4 bg-gradient-to-tr from-purple-700/30 via-indigo-800/30 to-violet-900/10 rounded-[2rem] overflow-hidden">
+				<div className="flex items-start justify-between mx-10 translate-y-4">
+					<div>
+						<p>Application Name</p>
+						<p className="text-xs text-[#B3B3B3]/50 font-light">Subtitle</p>
+					</div>
+					<ArrowUpRight className="text-[#B3B3B3]/50" />
+				</div>
+				<div className="flex justify-end translate-y-16">
+					<Image
+						src="/bento-img/dashboard-twitter.png"
 						height={300}
 						width={300}
-						alt="figma"
+						alt="twitter"
+						className="w-[25rem] rounded-2xl"
 					/>
 				</div>
 			</div>
 
-			{/* Grid 8 */}
-			<div className="col-span-2 col-start-3 row-start-4 bg-teal-500 rounded-[2rem]">
-				<div>
-					<p>Application Name</p>
-					<p>Subtitle</p>
-				</div>
-				<Image
-					src="/bento-img/dashboard-twitter.png"
-					height={300}
-					width={300}
-					alt="twitter"
-				/>
-			</div>
-
 			{/* Grid 9 */}
-			<div className="col-start-3 row-start-5 bg-pink-500 rounded-[2rem]">
-				<div>
-					<p>Application Name</p>
-					<p>Subtitle</p>
+			<div className="col-start-3 row-start-5 bg-[#1D1D1D] rounded-[2rem]">
+				<div className="flex items-start justify-between mx-10 translate-y-4">
+					<div>
+						<p>Application Name</p>
+						<p className="text-xs text-[#B3B3B3]/50 font-light">Subtitle</p>
+					</div>
+					<ArrowUpRight className="text-[#B3B3B3]/50" />
 				</div>
-				<Image
-					src="/bento-img/smile-blue-red.svg"
-					height={100}
-					width={100}
-					alt="figma"
-				/>
+				<div className="flex justify-center items-center">
+					<Image
+						src="/bento-img/smile-blue-red.svg"
+						height={20}
+						width={20}
+						alt="smile"
+						className="w-32 mt-6 z-20"
+					/>
+					<div className="absolute w-20 h-20 translate-y-3 shadow-[0_0_5px_#fff,0_0_10px_#4553EB,0_0_20px_#4553EB,0_0_40px_#4553EB,0_0_60px_#FF8D8D] z-10"></div>
+				</div>
 			</div>
 
 			{/* Grid 10 */}
-			<div className="col-start-4 row-start-5 bg-amber-100 rounded-[2rem]">
-				<p>Say, Hello 👋</p>
-				<div>
-					<Input placeholder="Click to message" />
-					<Button>
+			<div className="col-start-4 row-start-5 bg-[#1D1D1D]  rounded-[2rem]">
+				<div className="mx-4 flex flex-col justify-between h-full">
+					<p className="text-[3rem] tracking-tight leading-[3rem] font-bold mt-4">
+						Say <br />
+						Hello 👋
+					</p>
+					<div className="relative flex items-center justify-center gap-4 mb-4">
+						<Input
+							placeholder="Click to message"
+							className="border-none bg-[#141414] text-xs"
+						/>
 						<Image
 							src="/bento-img/message-send-blue.svg"
-							height={20}
-							width={20}
+							height={35}
+							width={35}
 							alt="figma"
 						/>
-					</Button>
+					</div>
 				</div>
 			</div>
 		</section>
