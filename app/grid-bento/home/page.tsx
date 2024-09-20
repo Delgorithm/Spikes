@@ -9,9 +9,9 @@ import Link from "next/link";
 
 export default function HomePage() {
 	return (
-		<section className="w-full min-h-full mx-48 my-10 grid grid-cols-4 grid-row-5 gap-3 text-white">
+		<section className="w-full min-h-full xxs:mx-4 md:mx-[5%] my-10 grid xxs:grid-cols-1 xxs:grid-rows-13 md:grid-cols-4 md:grid-row-5 gap-3 text-white">
 			{/* Grid 1 */}
-			<div className="col-span-2 row-span-2 bg-gradient-to-tr from-cyan-900/50 via-orange-900/50 to-cyan-900/50 rounded-[2rem]">
+			<div className="md:col-span-2 md:row-span-2 bg-gradient-to-tr from-cyan-900/50 via-orange-900/50 to-cyan-900/50 rounded-[2rem]">
 				<div className="m-10 flex flex-col gap-4">
 					<h2>
 						DesignLuch -{" "}
@@ -49,7 +49,7 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 2 */}
-			<div className="col-span-2 col-start-3  bg-[#1D1D1D] rounded-[2rem]">
+			<div className="md:col-span-2 md:col-start-3  bg-[#1D1D1D] rounded-[2rem]">
 				<div className="mx-10 py-6 flex flex-col justify-center h-full gap-10 ">
 					<div className="flex items-start justify-between">
 						<div>
@@ -76,7 +76,7 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 3 */}
-			<div className="col-span-2 col-start-1 flex flex-col bg-[#1D1D1D] rounded-[2rem]">
+			<div className="md:col-span-2 md:col-start-1 flex flex-col bg-[#1D1D1D] rounded-[2rem]">
 				<div className="mx-10 py-6 flex flex-col justify-center h-full gap-10 ">
 					<div className="flex items-start justify-between">
 						<div>
@@ -90,7 +90,7 @@ export default function HomePage() {
 						</div>
 						<ArrowUpRight className="text-[#B3B3B3]/50" />
 					</div>
-					<div className="flex items-center gap-10">
+					<div className="flex items-center justify-center gap-10">
 						<div className="flex flex-col items-center gap-2">
 							<Image
 								src="/bento-img/orangesoft-1.svg"
@@ -132,7 +132,7 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 4 */}
-			<div className="row-span-2 col-start-3 row-start-2 bg-gradient-to-tr from-teal-400/30 via-purple-900/40 to-neutral-900 rounded-[2rem]  overflow-hidden">
+			<div className="md:row-span-2 md:col-start-3 md:row-start-2 bg-gradient-to-tr from-teal-400/30 via-purple-900/40 to-neutral-900 rounded-[2rem]  overflow-hidden">
 				<div className="flex items-start justify-between mx-5 my-4">
 					<div>
 						<p>Application Name</p>
@@ -154,7 +154,7 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 5 */}
-			<div className="col-start-4 row-start-2 bg-[#1D1D1D] rounded-[2rem]">
+			<div className="md:col-start-4 md:row-start-2 bg-[#1D1D1D] rounded-[2rem]">
 				<div className="mx-8 my-4">
 					<div className="flex items-start justify-between">
 						<div className="flex items-center gap-2">
@@ -192,7 +192,7 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 6 */}
-			<div className="col-start-4 row-start-3 bg-gradient-to-tr from-purple-700 via-red-600 to-sky-500 rounded-[2rem] flex justify-center items-center relative">
+			<div className="md:col-start-4 md:row-start-3 bg-gradient-to-tr from-purple-700 via-red-600 to-sky-500 rounded-[2rem] flex justify-center items-center relative">
 				<Image
 					src="/bento-img/twitter-img.png"
 					height={250}
@@ -209,7 +209,7 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 7 */}
-			<div className="col-span-2 row-span-2 row-start-4 rounded-[2rem] bg-[#1D1D1D]">
+			<div className="md:col-span-2 md:row-span-2 md:row-start-4 rounded-[2rem] bg-[#1D1D1D]">
 				<div className="flex items-start justify-between mx-10 mt-4">
 					<div>
 						<p>45k+ Downloads in Figma</p>
@@ -234,7 +234,7 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 8 */}
-			<div className="col-span-2 col-start-3 row-start-4 bg-gradient-to-tr from-purple-700/30 via-indigo-800/30 to-violet-900/10 rounded-[2rem] overflow-hidden">
+			<div className="md:col-span-2 md:col-start-3 md:row-start-4 bg-gradient-to-tr from-purple-700/30 via-indigo-800/30 to-violet-900/10 rounded-[2rem] overflow-hidden">
 				<div className="flex items-start justify-between mx-10 translate-y-4">
 					<div>
 						<p>Application Name</p>
@@ -254,7 +254,7 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 9 */}
-			<div className="col-start-3 row-start-5 bg-[#1D1D1D] rounded-[2rem]">
+			<div className="md:col-start-3 md:row-start-5 bg-[#1D1D1D] rounded-[2rem]">
 				<div className="flex items-start justify-between mx-10 translate-y-4">
 					<div>
 						<p>Application Name</p>
@@ -275,13 +275,13 @@ export default function HomePage() {
 			</div>
 
 			{/* Grid 10 */}
-			<div className="col-start-4 row-start-5 bg-[#1D1D1D]  rounded-[2rem]">
+			<div className="md:col-start-4 md:row-start-5 bg-[#1D1D1D] rounded-[2rem]">
 				<div className="mx-4 flex flex-col justify-between h-full">
 					<p className="text-[3rem] tracking-tight leading-[3rem] font-bold mt-4">
 						Say <br />
 						Hello 👋
 					</p>
-					<div className="relative flex items-center justify-center gap-4 mb-4">
+					<div className="relative flex items-center justify-center gap-4 mb-4 xxs:py-5 md:py-0">
 						<Input
 							placeholder="Click to message"
 							className="border-none bg-[#141414] text-xs"
