@@ -17,6 +17,21 @@ const nextConfig = {
 				destination: "/grid-bento/home",
 				permanent: false,
 			},
+			{
+				source: "/ecommerce",
+				destination: "/ecommerce/shop/chair/meryl-lounge-chair",
+				permanent: false,
+			},
+			{
+				source: "/ecommerce/shop",
+				destination: "/ecommerce/shop/chair/meryl-lounge-chair",
+				permanent: false,
+			},
+			{
+				source: "/ecommerce/shop/chair",
+				destination: "/ecommerce/shop/chair/meryl-lounge-chair",
+				permanent: false,
+			},
 		];
 	},
 	images: {
