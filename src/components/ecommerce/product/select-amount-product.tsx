@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { Facebook, Minus, Plus } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import { CheckboxHeart } from "./button-heart-wishlist";
 import Image from "next/image";
 
