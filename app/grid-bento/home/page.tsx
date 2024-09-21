@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function HomePage() {
 	return (
-		<section className="w-full min-h-full xxs:mx-4 md:mx-[5%] my-10 grid xxs:grid-cols-1 xxs:grid-rows-13 md:grid-cols-4 md:grid-row-5 gap-3 text-white">
+		<section className="w-full min-h-full xxs:mx-4 md:mx-[5%] xl:mx-60 my-10 grid xxs:grid-cols-1 xxs:grid-rows-13 md:grid-cols-4 md:grid-row-5 gap-3 text-white">
 			{/* Grid 1 */}
 			<div className="md:col-span-2 md:row-span-2 bg-gradient-to-tr from-cyan-900/50 via-orange-900/50 to-cyan-900/50 rounded-[2rem]">
 				<div className="m-10 flex flex-col gap-4">
