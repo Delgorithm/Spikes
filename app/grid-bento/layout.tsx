@@ -1,4 +1,6 @@
 import NavbarGrid from "@/components/bento/navigation/navbar";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export default function GridBentoLayout({
 	children,
@@ -8,7 +10,9 @@ export default function GridBentoLayout({
 	return (
 		<section className="bg-[#141414] min-h-screen">
 			<NavbarGrid />
-			<div className="flex justify-center items-center">{children}</div>
+			<Suspense fallback={<Loading />}>
+				<div className="flex justify-center items-center">{children}</div>
+			</Suspense>
 		</section>
 	);
 }
