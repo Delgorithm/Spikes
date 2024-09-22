@@ -31,6 +31,12 @@ export default function Sidebar() {
 		{ href: "/component-library/sections/footer", label: "Footer" },
 	];
 
+	const isPlatformActive = pathname?.startsWith("/component-library/plateform");
+	const isSectionActive = pathname?.startsWith("/component-library/section");
+	const isStyleActive = pathname?.startsWith("/component-library/style");
+	const isSavedActive = pathname?.startsWith("/component-library/saved");
+	const isPlanActive = pathname?.startsWith("/component-library/plan");
+
 	return (
 		<nav className="h-full bg-[#121212] flex flex-col justify-between border-r-[0.25px] border-[#7E7F81]/20 overflow-y-auto max-h-full watch-sm:text-[#7E7F81]">
 			<ul>
@@ -38,7 +44,12 @@ export default function Sidebar() {
 					<Accordion type="single" collapsible className="p-6 flex flex-col">
 						<AccordionItem value="item-1">
 							<AccordionTrigger>
-								<p className="flex items-center gap-2 uppercase font-normal">
+								<p
+									className={
+										isPlatformActive
+											? "flex items-center gap-2 uppercase font-normal text-white"
+											: "flex items-center gap-2 uppercase font-normal"
+									}>
 									<ZapIcon />
 									Platform
 								</p>
@@ -86,11 +97,17 @@ export default function Sidebar() {
 						</AccordionItem>
 					</Accordion>
 				</li>
+
 				<li>
 					<Accordion type="single" collapsible className="p-6">
 						<AccordionItem value="item-1">
 							<AccordionTrigger>
-								<p className="flex items-center gap-2 uppercase font-normal">
+								<p
+									className={
+										isSectionActive
+											? "flex items-center gap-2 uppercase font-normal text-white"
+											: "flex items-center gap-2 uppercase font-normal"
+									}>
 									<LayoutGrid />
 									Sections
 								</p>
@@ -127,11 +144,17 @@ export default function Sidebar() {
 						</AccordionItem>
 					</Accordion>
 				</li>
+
 				<li>
 					<Accordion type="single" collapsible className="p-6">
 						<AccordionItem value="item-1">
 							<AccordionTrigger>
-								<p className="flex items-center gap-2 uppercase font-normal">
+								<p
+									className={
+										isStyleActive
+											? "flex items-center gap-2 uppercase font-normal text-white"
+											: "flex items-center gap-2 uppercase font-normal"
+									}>
 									<Sparkles />
 									Style
 								</p>
@@ -153,7 +176,12 @@ export default function Sidebar() {
 					<Accordion type="single" collapsible className="p-6">
 						<AccordionItem value="item-1">
 							<AccordionTrigger>
-								<p className="flex items-center gap-2 uppercase font-normal">
+								<p
+									className={
+										isPlanActive
+											? "flex items-center gap-2 uppercase font-normal text-white"
+											: "flex items-center gap-2 uppercase font-normal"
+									}>
 									<Star />
 									Plan
 								</p>
@@ -161,6 +189,7 @@ export default function Sidebar() {
 						</AccordionItem>
 					</Accordion>
 				</li>
+
 				<li className="pb-10">
 					<Link
 						href="/component-library/upgrade"
