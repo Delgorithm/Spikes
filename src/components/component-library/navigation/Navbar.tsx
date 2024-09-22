@@ -10,6 +10,14 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -69,11 +77,18 @@ export default function Navbar() {
 			</ul>
 			<ul className="watch-sm:hidden md:block px-5 border-l-[0.5px] border-[#292929]">
 				<li>
-					<Card className="bg-[#121212] border-[#1D1D1D]">
-						<Avatar className="flex items-center justify-center">
-							<User className="text-white" />
-						</Avatar>
-					</Card>
+					<DropdownMenu>
+						<DropdownMenuTrigger>
+							<Avatar className="flex items-center justify-center">
+								<User className="text-white " />
+							</Avatar>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent className="bg-black text-white">
+							<DropdownMenuLabel>My Account</DropdownMenuLabel>
+							<DropdownMenuSeparator />
+							<DropdownMenuItem>Profile</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
 				</li>
 			</ul>
 			<ul className="md:hidden">
@@ -124,7 +139,7 @@ export default function Navbar() {
 										<Link href="/component-library/membership">Membership</Link>
 									</li>
 									<Link href="/component-library/profile">
-										<Card className="bg-[#121212] border-[#1D1D1D] flex justify-center">
+										<Card className="flex items-center justify-center bg-black">
 											<Avatar className="flex items-center justify-center">
 												<User className="text-white " />
 											</Avatar>

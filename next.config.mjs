@@ -41,6 +41,12 @@ const nextConfig = {
 			"avatars.githubusercontent.com",
 			"www.google.com",
 			"svgrepo.com",
+			"cdn.psdrepo.com",
+			"onepagelove.imgix.net",
+			"cdn.prod.website-files.com",
+			"saaslandingpage.com",
+			"items.templately.com",
+			"i.pinimg.com",
 		],
 		remotePatterns: [
 			{
@@ -61,6 +67,36 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "**google.com",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "cdn.psdrepo.com",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "onepagelove.imgix.net",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "cdn.prod.website-files.com",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "saaslandingpage.com",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "items.templately.com",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "i.pinimg.com",
 				pathname: "/**",
 			},
 		],

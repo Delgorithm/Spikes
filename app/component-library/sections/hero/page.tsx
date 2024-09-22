@@ -6,8 +6,8 @@ import { getHeroSections } from "./hero.query";
 
 export default async function HeroPage() {
 	const heroData = await getHeroSections();
-	const newHeroData = heroData.slice(0, 11);
-	const firstHeroData = heroData.slice(0, 1);
+	const newHeroData = heroData.slice(0, 9);
+	const firstHeroData = heroData.slice(3, 4);
 
 	return (
 		<section className="px-6 py-8 grid md:grid-cols-1 md:auto-rows-auto gap-10">
@@ -21,8 +21,8 @@ export default async function HeroPage() {
 							</span>
 						</div>
 						<small>
-							Detailed header section with heading and graphig/image centred and
-							feature <br /> cards on either side.
+							Detailed header section with heading and graphique/image centred
+							and feature <br /> cards on either side.
 						</small>
 					</section>
 
