@@ -15,7 +15,7 @@ export default function Pricing() {
 					<p className="text-xs py-2">
 						Great for trying out and for tiny teams
 					</p>
-					<Button className="text-xl bg-[#FF7A00]">En cours</Button>
+					<Button className="text-xl bg-[#FF7A00]">Current</Button>
 					<div className="flex justify-center items-center gap-4">
 						<Separator className="w-1/3 bg-white" />
 						<small>Features</small>
