@@ -21,8 +21,8 @@ export default async function HeroPage() {
 							</span>
 						</div>
 						<small>
-							Detailed informative section with heading and graphique/image
-							centred and feature <br /> cards on either side.
+							Detailed services section with heading and graphique/image centred
+							and feature <br /> cards on either side.
 						</small>
 					</section>
 
