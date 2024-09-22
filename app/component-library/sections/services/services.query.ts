@@ -1,6 +1,6 @@
 import prisma from "@/lib/prisma";
 
-export const getHeroSections = async () => {
+export const getServiceSection = async () => {
 	try {
 		const data = await prisma.content.findMany({
 			select: {

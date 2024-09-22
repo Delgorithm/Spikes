@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Eye } from "lucide-react";
 import Image from "next/image";
-import { getHeroHowItWorks } from "./how-it-works.query";
+import { getHiwSection } from "./how-it-works.query";
 
 export default async function HeroPage() {
-	const howitworksData = await getHeroHowItWorks();
-	const newHowItWorksData = howitworksData.slice(9, 16);
-	const firstHowItWorksData = howitworksData.slice(15, 16);
+	const howitworksData = await getHiwSection();
+	const newHowItWorksData = howitworksData.slice(0, 9);
+	const firstHowItWorksData = howitworksData.slice(3, 4);
 
 	return (
 		<section className="px-6 py-8 grid md:grid-cols-1 md:auto-rows-auto gap-10">
