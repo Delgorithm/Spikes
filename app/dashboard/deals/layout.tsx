@@ -1,6 +1,5 @@
 import NavbarAllDeals from "@/components/dashboard/navigation/navbarAllDeals";
 import SelectionsAllDeals from "@/components/dashboard/navigation/selectionsAllDeals";
-import DisplayTable from "@/components/dashboard/table/displayTable";
 
 export default function AllDealsPage({
 	children,
@@ -14,7 +13,6 @@ export default function AllDealsPage({
 				<NavbarAllDeals />
 				<SelectionsAllDeals />
 			</section>
-			<DisplayTable />
 			<>{children}</>
 		</>
 	);
