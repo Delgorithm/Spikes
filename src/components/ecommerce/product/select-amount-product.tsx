@@ -77,10 +77,10 @@ export default function SelectAmountProduct() {
 				</div>
 				<Button className="bg-[#3AA39F] w-40 py-6">Add to Cart</Button>
 			</div>
-			<div className="w-[23rem]">
+			<div className="lg:w-[23rem]">
 				<p>Free 3-5 day shipping - Tool-free assembly - 30 - day trial</p>
 			</div>
-			<div className="flex items-center justify-between w-[23rem]">
+			<div className="flex watch-sm:flex-col lg:flex-row items-center justify-between watch-sm:gap-10 lg:gap-0 lg:w-[23rem]">
 				<div className="flex items-center gap-2 relative text-sm">
 					<CheckboxHeart />
 					<p className="font-semibold text-[#3AA39F]">Add to Wishlit</p>

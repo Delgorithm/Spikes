@@ -9,7 +9,7 @@ import {
 
 export default function BreadcrumEcommerce() {
 	return (
-		<Breadcrumb className="mt-6">
+		<Breadcrumb className="">
 			<BreadcrumbList>
 				<BreadcrumbItem>
 					<BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -22,7 +22,7 @@ export default function BreadcrumEcommerce() {
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
-					<BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+					<BreadcrumbPage>Meryl Lounge Chair</BreadcrumbPage>
 				</BreadcrumbItem>
 			</BreadcrumbList>
 		</Breadcrumb>

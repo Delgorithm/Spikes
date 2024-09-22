@@ -7,7 +7,7 @@ export default function NavbarEcommerce() {
 			<Link href="/ecommerce/shop">
 				<h2 className="text-2xl">Cozy</h2>
 			</Link>
-			<ul className="flex items-center justify-center gap-10">
+			<ul className="watch-sm:hidden lg:flex items-center justify-center gap-10">
 				<li>
 					<Link
 						href="/ecommerce/shop"
@@ -15,37 +15,13 @@ export default function NavbarEcommerce() {
 						Shop
 					</Link>
 				</li>
-				<li>
-					<Link
-						href="/ecommerce/collective"
-						className="text-sm uppercase font-semibold">
-						Collective
-					</Link>
-				</li>
-				<li>
-					<Link
-						href="/ecommerce/designers"
-						className="text-sm uppercase font-semibold">
-						Designers
-					</Link>
-				</li>
-				<li>
-					<Link
-						href="/ecommerce/about-us"
-						className="text-sm uppercase font-semibold">
-						About us
-					</Link>
-				</li>
-				<li>
-					<Link
-						href="/ecommerce/contact"
-						className="text-sm uppercase font-semibold">
-						Contact
-					</Link>
-				</li>
+				<li className="text-sm uppercase font-semibold">Collective</li>
+				<li className="text-sm uppercase font-semibold">Designers</li>
+				<li className="text-sm uppercase font-semibold">About us</li>
+				<li className="text-sm uppercase font-semibold">Contact</li>
 			</ul>
 			<ul className="flex items-center gap-10">
-				<li>
+				<li className="watch-sm:flex lg:hidden">
 					<AlignCenter />
 				</li>
 				<li>

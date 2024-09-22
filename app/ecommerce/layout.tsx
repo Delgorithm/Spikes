@@ -6,9 +6,9 @@ export default function EcommerceLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="min-h-screen">
+		<section className="min-h-screen flex flex-col">
 			<NavbarEcommerce />
-			<>{children}</>
+			<main className="flex-grow h-full lg:overflow-hidden">{children}</main>
 		</section>
 	);
 }

@@ -32,9 +32,9 @@ export default function ImageProduct() {
 	};
 
 	return (
-		<section className="flex flex-col justify-between h-full">
+		<section className="flex flex-col watch-sm:gap-12 lg:gap-24">
 			<div className="flex justify-end">
-				<div className="flex flex-col gap-6">
+				<div className="flex flex-col">
 					<p className="text-3xl">
 						0{selectedImage.id}{" "}
 						<span className="text-xl text-slate-400">/ 05</span>
@@ -50,16 +50,22 @@ export default function ImageProduct() {
 				</div>
 			</div>
 			<div className="relative">
-				<Image src={selectedImage.src} width={400} height={400} alt="Chair" />
+				<Image
+					src={selectedImage.src}
+					width={400}
+					height={400}
+					alt="Chair"
+					className="lg:w-[80%]"
+				/>
 				<Image
 					src="/ecommerce/rectangle.svg"
 					width={500}
 					height={500}
 					alt="rectangle"
-					className="absolute -right-16 top-8"
+					className="absolute watch-sm:top-24 lg:-right-16 lg:top-8"
 				/>
 			</div>
-			<div className="flex items-center gap-10">
+			<div className="flex items-center gap-6 watch-sm:mx-4">
 				{images.map((image) => (
 					<div
 						key={image.id}
