@@ -32,7 +32,7 @@ export default function ImageProduct() {
 	};
 
 	return (
-		<section className="flex flex-col watch-sm:gap-12 lg:gap-24">
+		<section className="flex flex-col watch-sm:gap-12 lg:gap-0">
 			<div className="flex justify-end">
 				<div className="flex flex-col">
 					<p className="text-3xl">
