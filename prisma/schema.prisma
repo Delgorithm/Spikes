@@ -51,7 +51,6 @@ model User {
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
   sessions      Session[]
-  deals         Deals[]
 }
 
 model VerificationToken {
@@ -61,30 +60,4 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map("verificationtokens")
-}
-
-model Content {
-  id          String   @id @default(cuid())
-  title       String
-  description String
-  image       String
-  date        DateTime @default(now())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model Deals {
-  id         String   @id @default(cuid())
-  object     String
-  companyimg String?
-  company    String
-  statue     String
-  amount     String
-  date       DateTime @default(now())
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-  creatorId  String
-
-  userId String
-  user   User   @relation(fields: [userId], references: [id])
 }

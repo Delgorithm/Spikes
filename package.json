@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "prisma generate && <actual-build-command>",
+		"build": "prisma generate && next build",
 		"start": "next start",
 		"lint": "next lint"
 	},
@@ -37,7 +37,9 @@
 		"add": "^2.0.6",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
+		"cobe": "^0.6.3",
 		"date-fns": "^3.6.0",
+		"framer-motion": "^11.11.11",
 		"lucide-react": "^0.437.0",
 		"next": "14.2.7",
 		"next-auth": "^4.24.7",
@@ -47,6 +49,7 @@
 		"react-day-picker": "8.10.1",
 		"react-dom": "^18",
 		"react-hook-form": "^7.53.0",
+		"react-spring": "^9.7.4",
 		"select": "^1.1.2",
 		"shadcn": "^2.0.5",
 		"sonner": "^1.5.0",
