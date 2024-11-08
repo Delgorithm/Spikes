@@ -72,6 +72,32 @@ const config = {
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
+			gridTemplateColumns: {
+				customCols: "324px 30px 324px",
+				"custom-xl-1": "800px 281px",
+				"custom-xl-2": "457px 621px",
+				"custom-3": "324px 50px 324px",
+				"custom-price-cols": "350px 350px 350px",
+				"custom-functionalities-cols": "334px 334px 334px",
+			},
+			gridTemplateRows: {
+				customRows: "125px 751px 125px",
+				"custom-xl": "344px",
+				"custom-price-rows": "575px ",
+				"custom-functionalities-rows": "334px",
+			},
+			dropShadow: {
+				"custom-orange": "1px 1px 10px rgba(255, 122, 0)",
+				"custom-dashboard": "0 10px 100px -40px rgba(255, 122, 0, 0.6)",
+				"custom-white-pricing": "0 0 50px rgba(255, 255, 255, 0.1)",
+				"custom-btn-pricing": "0 0 100px rgba(126, 127, 129, 0.2",
+				"custom-main-pricing": "0 4 250px -60px rgba(255, 133, 23, 0.2)",
+				"custom-main-pricing-2": "0 0 250px  rgba(255, 255, 255, 0.1)",
+			},
+			boxShadow: {
+				"inner-custom-pricing": "inset 0 4px 20px 1px rgba(0, 0, 0, 0.4)",
+				"inner-main-pricing": "inset 0 2px 200px 10px rgba(0, 0, 0, 0.5)",
+			},
 			keyframes: {
 				"accordion-down": {
 					from: {
