@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function GridBentoLanding() {
 	return (
-		<section className="flex flex-col gap-[30px]">
-			<div className="grid xl:grid-cols-[800px_281px] xl:grid-rows-[344px] gap-[30px]">
+		<section className="flex flex-col gap-[30px] justify-center items-center">
+			<div className="grid xl:grid-cols-custom-xl-1 xl:grid-rows-custom-xl gap-[30px]">
 				<div className="bg-gradient-to-b from-[#131313] to-[#1D1D1D] rounded-[20px]">
 					<h3 className="text-[23px] translate-y-6 ml-8 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 						Rapidité d'intégration
@@ -15,11 +15,12 @@ export default function GridBentoLanding() {
 							height={1000}
 							width={1000}
 							alt="Paste's icon"
+							className="pointer-events-none"
 						/>
 					</div>
 				</div>
 
-				<div className=" bg-gradient-to-b from-[#131313] to-[#1D1D1D] rounded-[20px]">
+				<div className="bg-gradient-to-b from-[#131313] to-[#1D1D1D] rounded-[20px]">
 					<h3 className="p-6 text-[23px] bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 						Personnalisation avancée
 					</h3>
@@ -29,21 +30,21 @@ export default function GridBentoLanding() {
 							height={200}
 							width={200}
 							alt="Paste's icon"
-							className="w-80 object-contain"
+							className="w-80 object-contain pointer-events-none"
 						/>
 						<Image
 							src="/images/component-library/grid-2-logo-main.svg"
 							height={80}
 							width={80}
 							alt="Paste's icon"
-							className="absolute object-contain w-[25%]"
+							className="absolute object-contain w-[25%] pointer-events-none"
 						/>
 					</div>
 				</div>
 			</div>
 
-			<div className="grid xl:grid-cols-[457px_621px] xl:grid-rows-[344px] gap-[30px]">
-				<div className=" bg-gradient-to-b from-[#131313] to-[#1D1D1D] rounded-[20px] relative">
+			<div className="grid xl:grid-cols-custom-xl-2 xl:grid-rows-custom-xl gap-[30px]">
+				<div className="bg-gradient-to-b from-[#131313] to-[#1D1D1D] rounded-[20px] relative">
 					<h3 className="p-6 text-[23px] bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent relative z-20">
 						Support et évolutivité
 					</h3>
@@ -52,14 +53,14 @@ export default function GridBentoLanding() {
 							src="/images/component-library/grid-points.svg"
 							width={100}
 							height={100}
-							className="absolute object-contain top-0 w-[98.5%] "
+							className="absolute object-contain top-0 w-[98.5%] pointer-events-none"
 							alt="Decoration for the grid"
 						/>
 						<Image
 							src="/images/component-library/grid-points-logo.svg"
 							width={100}
 							height={100}
-							className="absolute object-contain xl:top-[60px] xl:left-[112px] xl:size-[230px]"
+							className="absolute object-contain xl:top-[60px] xl:left-[112px] xl:size-[230px] pointer-events-none"
 							alt="Decoration for the grid"
 						/>
 					</div>
