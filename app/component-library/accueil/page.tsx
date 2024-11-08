@@ -7,35 +7,46 @@ import Navbar from "@/components/component-library/ui/navbar";
 import Pricing from "@/components/component-library/ui/pricing";
 import RoadLightBeam from "@/components/component-library/ui/road-light-beam";
 import SocialProof from "@/components/component-library/ui/social-proof";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function LandingPage() {
 	return (
-		<div className="flex flex-col bg-black gap-24 relative">
+		<div
+			className={cn(
+				"flex flex-col bg-black relative",
+				"watch-sm:gap-12 xl:gap-24"
+			)}>
 			<Image
 				src="/images/component-library/lux-before.svg"
 				height={1000}
 				width={1000}
 				alt="Light"
-				className="absolute pointer-events-none"
+				className={cn(
+					"absolute pointer-events-none",
+					"watch-sm:hidden xl:flex"
+				)}
 			/>
 			<Image
 				src="/images/component-library/lux-after.svg"
 				height={1000}
 				width={1000}
 				alt="Light"
-				className="absolute pointer-events-none"
+				className={cn(
+					"absolute pointer-events-none",
+					"watch-sm:hidden xl:flex"
+				)}
 			/>
-			<div className="flex flex-col gap-24 z-10">
+			<div className={cn("flex flex-col z-10", "watch-sm:gap-16 xl:gap-24")}>
 				<Navbar />
 				<Hero />
 				<SocialProof />
 				<Functionalities />
-				<GridBentoLanding />
-				<RoadLightBeam />
-				<Pricing />
-				<Faq />
-				<ContactUs />
+				{/* <GridBentoLanding /> */}
+				{/* <RoadLightBeam /> */}
+				{/* <Pricing /> */}
+				{/* <Faq /> */}
+				{/* <ContactUs /> */}
 			</div>
 		</div>
 	);
