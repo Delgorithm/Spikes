@@ -1,23 +1,55 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function Functionalities() {
 	return (
-		<section className="flex flex-col justify-center items-center text-white">
-			<div className="w-[1108px]">
-				<h2 className="text-[30px] font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
+		<section
+			id=""
+			className="flex flex-col justify-center items-center text-white">
+			<div className={cn("watch-sm:w-full xl:w-[1108px]")}>
+				<h2
+					className={cn(
+						"font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent",
+						"watch-sm:text-[20px] xl:text-[30px]",
+						"watch-sm:text-center xl:text-left"
+					)}>
 					Fais pour répondre à des <br /> besoins préçis
 				</h2>
-				<div className="grid grid-rows-custom-functionalities-rows grid-cols-custom-functionalities-cols gap-[54px] mt-[45px]">
-					<article className="bg-[#1D1D1D] rounded-[20px] flex flex-col items-end ">
+				<div
+					className={cn(
+						"mt-[45px]",
+						"xl:grid-rows-custom-functionalities-rows xl:grid-cols-custom-functionalities-cols",
+						"watch-sm:gap-[20px] xl:gap-[54px]",
+						"watch-sm:flex watch-sm:flex-col watch-sm:justify-center watch-sm:items-center xl:grid "
+					)}>
+					<article
+						className={cn(
+							"bg-[#1D1D1D] rounded-[20px] flex flex-col items-end",
+							"watch-sm:w-72 watch-sm:h-72 xl:w-auto xl:h-80"
+						)}>
 						<Image
 							src="/images/component-library/brackets.svg"
 							width={100}
 							height={100}
 							alt="Bracket's logo"
-							className="m-[30px] size-[60px] pointer-events-none"
+							className={cn(
+								"pointer-events-none",
+								"watch-sm:m-[12px] xl:m-[30px]",
+								"watch-sm:w-16 xl:size-[60px]"
+							)}
 						/>
-						<div className="flex flex-col items-center gap-[20px] mt-[40px]">
-							<p className="text-[20px] medium bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
+						<div
+							className={cn(
+								"flex flex-col items-center gap-[20px]",
+								"xl:pb-[40px]"
+							)}>
+							<p
+								className={cn(
+									"medium bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent",
+									"watch-sm:text-[18px] xl:text-[20px]",
+									"watch-sm:w-5/6 xl:w-full",
+									"xl:ml-[3.5rem]"
+								)}>
 								Un seul objectif, un design uni
 							</p>
 							<p className="text-[12px] w-5/6 font-medium bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
@@ -29,16 +61,34 @@ export default function Functionalities() {
 						</div>
 					</article>
 
-					<article className="bg-[#1D1D1D] rounded-[20px] flex flex-col items-end ">
+					<article
+						className={cn(
+							"bg-[#1D1D1D] rounded-[20px] flex flex-col items-end",
+							"watch-sm:w-72 watch-sm:h-72 xl:w-auto xl:h-80"
+						)}>
 						<Image
 							src="/images/component-library/hexagon.svg"
 							width={100}
 							height={100}
 							alt="Bracket's logo"
-							className="m-[30px] size-[60px] pointer-events-none"
+							className={cn(
+								"pointer-events-none",
+								"watch-sm:m-[12px] xl:m-[30px]",
+								"watch-sm:w-16 xl:size-[60px]"
+							)}
 						/>
-						<div className="flex flex-col items-center gap-[20px] mt-[40px]">
-							<p className="text-[20px] w-5/6  medium bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
+						<div
+							className={cn(
+								"flex flex-col items-center gap-[20px]",
+								"xl:pb-[40px]"
+							)}>
+							<p
+								className={cn(
+									"medium bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent",
+									"watch-sm:text-[18px] xl:text-[20px]",
+									"watch-sm:w-5/6 xl:w-full",
+									"xl:ml-[3.5rem]"
+								)}>
 								Des design minimalistes
 							</p>
 							<p className="text-[12px] w-5/6 font-medium bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
@@ -50,16 +100,34 @@ export default function Functionalities() {
 						</div>
 					</article>
 
-					<article className="bg-[#1D1D1D] rounded-[20px] flex flex-col items-end ">
+					<article
+						className={cn(
+							"bg-[#1D1D1D] rounded-[20px] flex flex-col items-end",
+							"watch-sm:w-72 watch-sm:h-72 xl:w-auto xl:h-80"
+						)}>
 						<Image
 							src="/images/component-library/wand-sparkles.svg"
 							width={100}
 							height={100}
 							alt="Bracket's logo"
-							className="m-[30px] size-[60px] pointer-events-none"
+							className={cn(
+								"pointer-events-none",
+								"watch-sm:m-[12px] xl:m-[30px]",
+								"watch-sm:w-16 xl:size-[60px]"
+							)}
 						/>
-						<div className="flex flex-col items-center gap-[20px] mt-[40px]">
-							<p className="text-[20px] w-5/6  medium bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
+						<div
+							className={cn(
+								"flex flex-col items-center gap-[20px]",
+								"xl:pb-[40px]"
+							)}>
+							<p
+								className={cn(
+									"medium bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent",
+									"watch-sm:text-[18px] xl:text-[20px]",
+									"watch-sm:w-5/6 xl:w-full",
+									"xl:ml-[3.5rem]"
+								)}>
 								Chaque pixels comptent
 							</p>
 							<p className="text-[12px] w-5/6 font-medium bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
