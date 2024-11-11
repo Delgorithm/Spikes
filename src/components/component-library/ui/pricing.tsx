@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -5,18 +7,26 @@ import { Switch } from "@/components/ui/switch";
 import { Check } from "lucide-react";
 import ButtonCTA from "./button-cta";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+
+const variants = {
+	hidden: { opacity: 0, y: 20 },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
 
 export default function Pricing() {
 	return (
 		<section
+			id="pricing"
 			className={cn(
 				"flex flex-col justify-center items-center",
-				"watch-sm:gap-[20px] xl:gap-[90px]"
+				"watch-sm:gap-[20px] xl:gap-[90px] xl:h-[50rem]"
 			)}>
 			<article
 				className={cn(
 					"flex items-center text-center gap-4",
-					"watch-sm:flex-col xl:flex-row"
+					"watch-sm:flex-col xl:flex-row",
+					"xl:ml-32"
 				)}>
 				<p className="font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 					Mensuel
@@ -30,7 +40,12 @@ export default function Pricing() {
 					Remise de -20%
 				</Badge>
 			</article>
-			<section
+
+			<motion.section
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.8 }}
+				variants={variants}
 				className={cn(
 					"grid",
 					"watch-sm:grid-cols-1 watch-sm:grid-rows-3 ",
@@ -40,7 +55,7 @@ export default function Pricing() {
 				<article
 					className={cn(
 						"flex flex-col justify-between gap-2 bg-gradient-to-b from-[#0C0C0C] to-[#292929] rounded-[20px] shadow-inner-custom-pricing drop-shadow-custom-white-pricing",
-						"watch-sm:translate-y-0 xl:translate-y-[45px]"
+						"xl:translate-y-10"
 					)}>
 					<div className="p-[30px]">
 						<p className="text-[24px] font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
@@ -133,7 +148,7 @@ export default function Pricing() {
 				<article
 					className={cn(
 						"flex flex-col justify-between gap-2 bg-gradient-to-b from-[#0C0C0C] to-[#292929] rounded-[20px] shadow-inner-custom-pricing drop-shadow-custom-white-pricing",
-						"watch-sm:translate-y-0 xl:translate-y-[45px]"
+						"xl:translate-y-10"
 					)}>
 					<div className="p-[30px]">
 						<p className="text-[24px] font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
@@ -185,7 +200,7 @@ export default function Pricing() {
 						</Button>
 					</div>
 				</article>
-			</section>
+			</motion.section>
 		</section>
 	);
 }

@@ -5,6 +5,7 @@ import ButtonCTA from "./button-cta";
 import { cn } from "@/lib/utils";
 import { AlignJustify } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -19,18 +20,40 @@ export default function Navbar() {
 				"flex items-center justify-between pt-[25px]",
 				"watch-sm:mx-4 xl:mx-24"
 			)}>
-			<Image
-				src="/images/component-library/paste-logo.svg"
-				height={100}
-				width={100}
-				alt="Logo"
-				className="watch-sm:w-20 xl:w-28"
-			/>
-			<ul className="text-white watch-sm:hidden xl:flex items-center gap-10">
-				<li>Fonctionnalités</li>
-				<li>Comment ça marche</li>
-				<li>Prix</li>
-				<li>FAQ</li>
+			<Link href="/component-library/accueil">
+				<Image
+					src="/images/component-library/paste-logo.svg"
+					height={100}
+					width={100}
+					alt="Logo"
+					className="watch-sm:w-20 xl:w-28"
+				/>
+			</Link>
+			<ul className="watch-sm:hidden xl:flex items-center gap-10">
+				<li className="relative group bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent text-center">
+					<Link href="#fonctionnalites">
+						Fonctionnalités
+						<span className="absolute bottom-0 left-0 h-[1.5px] w-full scale-x-0 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] transition-transform duration-200 origin-left group-hover:scale-x-100"></span>
+					</Link>
+				</li>
+				<li className="relative group bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent text-center">
+					<Link href="#howitworks">
+						Comment ça marche
+						<span className="absolute bottom-0 left-0 h-[1.5px] w-full scale-x-0 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] transition-transform duration-200 origin-left group-hover:scale-x-100"></span>
+					</Link>
+				</li>
+				<li className="relative group bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent text-center">
+					<Link href="#pricing">
+						Prix
+						<span className="absolute bottom-0 left-0 h-[1.5px] w-full scale-x-0 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] transition-transform duration-200 origin-left group-hover:scale-x-100"></span>
+					</Link>
+				</li>
+				<li className="relative group bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent text-center">
+					<Link href="#faq">
+						FAQ
+						<span className="absolute bottom-0 left-0 h-[1.5px] w-full scale-x-0 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] transition-transform duration-200 origin-left group-hover:scale-x-100"></span>
+					</Link>
+				</li>
 			</ul>
 			<ButtonCTA text="Se connecter" className="watch-sm:hidden xl:flex" />
 			<AlignJustify

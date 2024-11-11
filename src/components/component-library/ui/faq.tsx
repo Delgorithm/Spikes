@@ -8,14 +8,18 @@ import { cn } from "@/lib/utils";
 
 export default function Faq() {
 	return (
-		<section className="flex flex-col justify-center items-center text-white">
+		<section
+			id="faq"
+			className={cn(
+				"flex flex-col justify-center items-center text-white w-full"
+			)}>
 			<Accordion
 				type="single"
 				collapsible
 				className={cn(
 					"flex flex-col gap-5",
 					"watch-sm:w-full watch-sm:px-4",
-					"xl:w-2/3 xl:px-0"
+					"xl:px-0 max-w-[1104px]"
 				)}>
 				<AccordionItem value="item-1">
 					<AccordionTrigger className="text-lg bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">

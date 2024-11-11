@@ -1,7 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import ButtonCTA from "./button-cta";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+
+const variants = {
+	hidden: { opacity: 0, y: 0 },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.05 } },
+};
 
 export default function Hero() {
 	return (
@@ -25,7 +33,10 @@ export default function Hero() {
 				</p>
 				<ButtonCTA text="Essayer gratuitement" className={cn("watch-sm:")} />
 			</article>
-			<div
+			<motion.div
+				initial="hidden"
+				animate="visible"
+				variants={variants}
 				className={cn(
 					"relative my-[75px]",
 					"watch-sm:w-72 xl:w-[1110px] xl:h-[774px]",
@@ -45,7 +56,7 @@ export default function Hero() {
 						"watch-sm:rounded-[10px] xl:rounded-[20px]"
 					)}
 				/>
-			</div>
+			</motion.div>
 		</section>
 	);
 }

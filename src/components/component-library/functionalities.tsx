@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Functionalities() {
 	return (
 		<section
-			id=""
+			id="fonctionnalites"
 			className="flex flex-col justify-center items-center text-white">
 			<div className={cn("watch-sm:w-full xl:w-[1108px]")}>
 				<h2
@@ -13,7 +13,7 @@ export default function Functionalities() {
 						"watch-sm:text-[20px] xl:text-[30px]",
 						"watch-sm:text-center xl:text-left"
 					)}>
-					Fais pour répondre à des <br /> besoins préçis
+					Fait pour répondre à des <br /> besoins préçis
 				</h2>
 				<div
 					className={cn(
