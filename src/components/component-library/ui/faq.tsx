@@ -4,6 +4,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 
 export default function Faq() {
 	return (
@@ -11,7 +12,11 @@ export default function Faq() {
 			<Accordion
 				type="single"
 				collapsible
-				className="w-2/3 flex flex-col gap-5">
+				className={cn(
+					"flex flex-col gap-5",
+					"watch-sm:w-full watch-sm:px-4",
+					"xl:w-2/3 xl:px-0"
+				)}>
 				<AccordionItem value="item-1">
 					<AccordionTrigger className="text-lg bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 						Quels types de composants sont inclus dans la librairie ?
