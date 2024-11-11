@@ -126,7 +126,7 @@ export default function GridBentoLanding() {
 					</h3>
 					<Globe
 						className={cn(
-							"watch-sm:hidden xl:flex",
+							"watch-sm:hidden xl:block",
 							"xl:w-3/4",
 							"xl:translate-x-52 xl:translate-y-0"
 						)}
