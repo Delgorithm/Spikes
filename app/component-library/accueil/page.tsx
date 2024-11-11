@@ -42,11 +42,11 @@ export default function LandingPage() {
 				<Hero />
 				<SocialProof />
 				<Functionalities />
-				{/* <GridBentoLanding /> */}
-				{/* <RoadLightBeam /> */}
-				{/* <Pricing /> */}
-				{/* <Faq /> */}
-				{/* <ContactUs /> */}
+				<GridBentoLanding />
+				<RoadLightBeam />
+				<Pricing />
+				<Faq />
+				<ContactUs />
 			</div>
 		</div>
 	);
