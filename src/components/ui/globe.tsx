@@ -6,15 +6,15 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const GLOBE_CONFIG: COBEOptions = {
-	width: 800,
-	height: 800,
+	width: 400,
+	height: 400,
 	onRender: () => {},
-	devicePixelRatio: 2,
+	devicePixelRatio: 1.5,
 	phi: 0,
 	theta: 0.3,
 	dark: 1,
 	diffuse: 1,
-	mapSamples: 16000,
+	mapSamples: 4000,
 	mapBrightness: 1.5,
 	baseColor: [0.949, 0.651, 0.502],
 	markerColor: [0.98, 0.4, 0.08],
@@ -65,7 +65,7 @@ export default function Globe({
 
 	const onRender = useCallback(
 		(state: Record<string, any>) => {
-			if (!pointerInteracting.current) phi += 0.002;
+			if (!pointerInteracting.current) phi += 0.001;
 			state.phi = phi + r;
 			state.width = width * 2;
 			state.height = width * 2;
