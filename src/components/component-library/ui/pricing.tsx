@@ -4,11 +4,20 @@ import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Check } from "lucide-react";
 import ButtonCTA from "./button-cta";
+import { cn } from "@/lib/utils";
 
 export default function Pricing() {
 	return (
-		<section className="flex flex-col justify-center items-center gap-[90px] h-screen ">
-			<article className="flex items-center text-center gap-4">
+		<section
+			className={cn(
+				"flex flex-col justify-center items-center",
+				"watch-sm:gap-[20px] xl:gap-[90px]"
+			)}>
+			<article
+				className={cn(
+					"flex items-center text-center gap-4",
+					"watch-sm:flex-col xl:flex-row"
+				)}>
 				<p className="font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 					Mensuel
 				</p>
@@ -21,8 +30,18 @@ export default function Pricing() {
 					Remise de -20%
 				</Badge>
 			</article>
-			<section className="grid grid-cols-custom-price-cols grid-rows-custom-price-rows gap-[30px]">
-				<article className="flex flex-col justify-between gap-2 translate-y-[45px] bg-gradient-to-b from-[#0C0C0C] to-[#292929] rounded-[20px] shadow-inner-custom-pricing drop-shadow-custom-white-pricing">
+			<section
+				className={cn(
+					"grid",
+					"watch-sm:grid-cols-1 watch-sm:grid-rows-3 ",
+					"xl:grid-cols-custom-price-cols xl:grid-rows-custom-price-rows",
+					"watch-sm:gap-[80px] xl:gap-[30px]"
+				)}>
+				<article
+					className={cn(
+						"flex flex-col justify-between gap-2 bg-gradient-to-b from-[#0C0C0C] to-[#292929] rounded-[20px] shadow-inner-custom-pricing drop-shadow-custom-white-pricing",
+						"watch-sm:translate-y-0 xl:translate-y-[45px]"
+					)}>
 					<div className="p-[30px]">
 						<p className="text-[24px] font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 							Free
@@ -111,7 +130,11 @@ export default function Pricing() {
 					</div>
 				</article>
 
-				<article className="flex flex-col justify-between gap-2 translate-y-[45px] bg-gradient-to-b from-[#0C0C0C] to-[#292929] rounded-[20px] shadow-inner-custom-pricing drop-shadow-custom-white-pricing">
+				<article
+					className={cn(
+						"flex flex-col justify-between gap-2 bg-gradient-to-b from-[#0C0C0C] to-[#292929] rounded-[20px] shadow-inner-custom-pricing drop-shadow-custom-white-pricing",
+						"watch-sm:translate-y-0 xl:translate-y-[45px]"
+					)}>
 					<div className="p-[30px]">
 						<p className="text-[24px] font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 							Entreprise
