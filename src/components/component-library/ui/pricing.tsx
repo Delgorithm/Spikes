@@ -26,7 +26,7 @@ export default function Pricing() {
 				className={cn(
 					"flex items-center text-center gap-4",
 					"watch-sm:flex-col xl:flex-row",
-					"xl:ml-32"
+					"xl:ml-[134px]"
 				)}>
 				<p className="font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 					Mensuel
