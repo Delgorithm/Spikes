@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
 interface BorderBeamProps {
+	children?: ReactNode;
 	className?: string;
 	size?: number;
 	duration?: number;

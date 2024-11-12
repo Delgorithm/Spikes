@@ -89,7 +89,7 @@ const config = {
 				"custom-functionalities-rows": "334px",
 			},
 			dropShadow: {
-				"custom-orange": "1px 1px 10px rgba(255, 122, 0)",
+				"custom-orange": "1px 1px 10px rgba(255, 122, 0, 0.4)",
 				"custom-dashboard": "0 10px 100px -40px rgba(255, 122, 0, 0.6)",
 				"custom-white-pricing": "0 0 50px rgba(255, 255, 255, 0.1)",
 				"custom-btn-pricing": "0 0 100px rgba(126, 127, 129, 0.2",
