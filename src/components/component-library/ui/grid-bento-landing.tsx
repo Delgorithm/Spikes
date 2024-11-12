@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import GridFirst from "./grid-first";
 
 const Globe = dynamic(() => import("@/components/ui/globe"), {
 	ssr: false,
@@ -37,22 +38,7 @@ export default function GridBentoLanding() {
 					<h3 className="text-[23px] translate-y-6 ml-8 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 						Rapidité d'intégration
 					</h3>
-					<div
-						className={cn(
-							"flex flex-col items-center justify-center w-full relative",
-							"watch-sm:h-24 xl:h-72"
-						)}>
-						<Image
-							src="/images/component-library/grid-1-a.svg"
-							width={100}
-							height={100}
-							alt="Paste's icon"
-							className={(cn("pointer-events-none"), "watch-sm:w-full")}
-							loading="lazy"
-							priority={false}
-							quality={70}
-						/>
-					</div>
+					<GridFirst />
 				</motion.div>
 
 				<motion.div
