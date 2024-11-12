@@ -8,13 +8,15 @@ import { Check } from "lucide-react";
 import ButtonCTA from "./button-cta";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-
-const variants = {
-	hidden: { opacity: 0, y: 20 },
-	visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-};
+import { useState } from "react";
 
 export default function Pricing() {
+	const [isPrice, setIsPrice] = useState(false);
+
+	const handlePricing = () => {
+		setIsPrice(!isPrice);
+	};
+
 	return (
 		<section
 			id="pricing"
@@ -31,7 +33,7 @@ export default function Pricing() {
 				<p className="font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 					Mensuel
 				</p>
-				<Switch className="bg-[#FF7A00]" />
+				<Switch onClick={handlePricing} className="bg-[#FF7A00]" />
 				<p className="font-semibold bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
 					Annuelle
 				</p>
@@ -41,11 +43,7 @@ export default function Pricing() {
 				</Badge>
 			</article>
 
-			<motion.section
-				initial="hidden"
-				whileInView="visible"
-				viewport={{ once: true, amount: 0.8 }}
-				variants={variants}
+			<section
 				className={cn(
 					"grid",
 					"watch-sm:grid-cols-1 watch-sm:grid-rows-3 ",
@@ -99,7 +97,15 @@ export default function Pricing() {
 						</p>
 						<Separator className="bg-white/20 mb-[20px]" />
 						<p className="mb-[30px] text-[20px] flex items-center gap-2 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent font-medium">
-							8€ / <span className="text-sm">mois</span>
+							{isPrice ? (
+								<>
+									86€ / <span className="text-sm">an</span>
+								</>
+							) : (
+								<>
+									8€ / <span className="text-sm">mois</span>
+								</>
+							)}
 						</p>
 						<div className="flex flex-col gap-[15px] bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent font-medium">
 							<div className="flex items-center gap-2">
@@ -200,7 +206,7 @@ export default function Pricing() {
 						</Button>
 					</div>
 				</article>
-			</motion.section>
+			</section>
 		</section>
 	);
 }

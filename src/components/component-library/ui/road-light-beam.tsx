@@ -1,9 +1,10 @@
 "use client";
 
+import ScrollProgressBar from "@/hooks/scroll-progress-bar";
 import { cn } from "@/lib/utils";
-import { motion, useAnimation } from "framer-motion";
-import useScrollProgress from "../../../hooks/use-scroll-progress";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useRef } from "react";
 
 const variants = {
 	hidden: { opacity: 0, y: 20 },
@@ -11,19 +12,20 @@ const variants = {
 };
 
 export default function RoadLightBeam() {
-	const scrollProgress = useScrollProgress();
-	const controls = useAnimation();
-
-	useEffect(() => {
-		controls.start({
-			backgroundColor: `rgba(255, 122, 0, ${scrollProgress / 100})`,
-		});
-	}, [scrollProgress, controls]);
+	const sectionRef = useRef<HTMLElement | null>(null);
 
 	return (
 		<section
 			id="howitworks"
-			className="flex flex-col justify-center items-center gap-20 text-white">
+			ref={sectionRef}
+			className="flex flex-col justify-center items-center gap-20 text-white relative">
+			<Image
+				src="/images/component-library/lux-light-beam.svg"
+				height={10000}
+				width={10000}
+				alt="Light beam"
+				className={cn("absolute -z-10", "watch-sm:-top-32 xl:-top-72")}
+			/>
 			<motion.h2
 				initial="hidden"
 				whileInView="visible"
@@ -45,47 +47,7 @@ export default function RoadLightBeam() {
 				{/* 1 */}
 				<div
 					className={cn("watch-sm:row-span-4", "xl:row-span-4 xl:col-start-2")}>
-					<div className="flex flex-col items-center">
-						<motion.div
-							initial={{ backgroundColor: "rgba(0, 0, 0, 1)" }}
-							animate={controls}
-							className={cn(
-								"size-2 rounded-full bg-gradient-to-b from-[#FF7A00] to-[#994900] drop-shadow-custom-orange",
-								"transition-all duration-500"
-							)}
-						/>
-						<motion.div
-							initial={{ backgroundColor: "rgba(0, 0, 0, 1)" }}
-							animate={controls}
-							className={cn(
-								"w-[2px] bg-red-200",
-								"watch-sm:h-[230px] xl:h-[185px]",
-								"transition-all duration-500"
-							)}
-						/>
-						<div className="size-2 rounded-full bg-gradient-to-b from-[#FF7A00] to-[#994900] drop-shadow-custom-orange" />
-						<div
-							className={cn(
-								"w-[2px] bg-red-200",
-								"watch-sm:h-[230px] xl:h-[185px]"
-							)}
-						/>
-						<div className="size-2 rounded-full bg-gradient-to-b from-[#FF7A00] to-[#994900] drop-shadow-custom-orange" />
-						<div
-							className={cn(
-								"w-[2px] bg-red-200",
-								"watch-sm:h-[230px] xl:h-[185px]"
-							)}
-						/>
-						<div className="size-2 rounded-full bg-gradient-to-b from-[#FF7A00] to-[#994900] drop-shadow-custom-orange" />
-						<div
-							className={cn(
-								"w-[2px] bg-red-200",
-								"watch-sm:h-[230px] xl:h-[185px]"
-							)}
-						/>
-						<div className="size-2 rounded-full bg-gradient-to-b from-[#FF7A00] to-[#994900] drop-shadow-custom-orange" />
-					</div>
+					<ScrollProgressBar target={sectionRef} />
 				</div>
 
 				{/* 2 */}
