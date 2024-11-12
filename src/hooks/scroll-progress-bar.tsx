@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 type ProgressbarProps = {
-	segments: number;
+	segments?: number;
 };
 
 export default function ScrollProgressBar({ segments = 5 }: ProgressbarProps) {
@@ -17,7 +17,6 @@ export default function ScrollProgressBar({ segments = 5 }: ProgressbarProps) {
 				entries.forEach((entry) => {
 					const index = Number(entry.target.getAttribute("data-index"));
 					if (entry.isIntersecting) {
-						// Marque le segment précédent comme visible lorsque le suivant est visible
 						setVisibleSegments((prev) => {
 							if (!prev.includes(index - 1) && index > 0) {
 								return [...prev, index - 1].sort((a, b) => a - b);
@@ -28,7 +27,7 @@ export default function ScrollProgressBar({ segments = 5 }: ProgressbarProps) {
 				});
 			},
 			{
-				threshold: 0.5, // Remplit lorsque 50% du `div` suivant est visible
+				threshold: 0.5,
 			}
 		);
 
@@ -52,7 +51,9 @@ export default function ScrollProgressBar({ segments = 5 }: ProgressbarProps) {
 			{Array.from({ length: segments }, (_, index) => (
 				<div key={index} className="flex flex-col items-center">
 					<div
-						ref={(el) => (segmentRefs.current[index] = el)}
+						ref={(el) => {
+							segmentRefs.current[index] = el;
+						}}
 						data-index={index}
 						className={cn(
 							"size-2 rounded-full transition-all duration-300",

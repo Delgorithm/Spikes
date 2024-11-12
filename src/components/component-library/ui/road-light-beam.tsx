@@ -4,7 +4,6 @@ import ScrollProgressBar from "@/hooks/scroll-progress-bar";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
 
 const variants = {
 	hidden: { opacity: 0, y: 20 },
@@ -12,12 +11,9 @@ const variants = {
 };
 
 export default function RoadLightBeam() {
-	const sectionRef = useRef<HTMLElement | null>(null);
-
 	return (
 		<section
 			id="howitworks"
-			ref={sectionRef}
 			className="flex flex-col justify-center items-center gap-20 text-white relative">
 			<Image
 				src="/images/component-library/lux-light-beam.svg"
@@ -47,7 +43,7 @@ export default function RoadLightBeam() {
 				{/* 1 */}
 				<div
 					className={cn("watch-sm:row-span-4", "xl:row-span-4 xl:col-start-2")}>
-					<ScrollProgressBar target={sectionRef} />
+					<ScrollProgressBar />
 				</div>
 
 				{/* 2 */}
