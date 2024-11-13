@@ -1,14 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import ButtonCTA from "./button-cta";
 import { cn } from "@/lib/utils";
 import { AlignJustify } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import ButtonCTA from "./button-cta";
+import { useSession } from "next-auth/react";
+import BtnLogout from "./btn-logout";
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
+	const { data: session, status } = useSession();
 
 	const handleOpen = () => {
 		setIsOpen(!isOpen);
@@ -30,6 +33,7 @@ export default function Navbar() {
 				/>
 			</Link>
 			<ul className="watch-sm:hidden xl:flex items-center gap-10">
+				{/* Liens de navigation */}
 				<li className="relative group bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent text-center">
 					<Link href="#fonctionnalites">
 						Fonctionnalités
@@ -55,10 +59,21 @@ export default function Navbar() {
 					</Link>
 				</li>
 			</ul>
-			<ButtonCTA text="Se connecter" className="watch-sm:hidden xl:flex" />
+			<div>
+				{status === "loading" ? (
+					<p className="text-white">Chargement...</p>
+				) : session ? (
+					<div className="flex items-center gap-4">
+						<p className="text-white">{session.user?.name || "Utilisateur"}</p>
+						<BtnLogout />
+					</div>
+				) : (
+					<ButtonCTA text="Se connecter" />
+				)}
+			</div>
 			<AlignJustify
 				onClick={handleOpen}
-				className="watch-sm:flex xl:hidden stroke-neutral-100	"
+				className="watch-sm:flex xl:hidden stroke-neutral-100"
 			/>
 		</nav>
 	);
