@@ -80,6 +80,7 @@ const config = {
 				"custom-4": "25px 1fr",
 				"custom-price-cols": "350px 350px 350px",
 				"custom-functionalities-cols": "334px 334px 334px",
+				"custom-dashboard-paste-columns": "20% 80%",
 			},
 			gridTemplateRows: {
 				customRows: "125px 751px 125px",
@@ -87,6 +88,7 @@ const config = {
 				"custom-xl-desktop": "repeat(4, 1fr)",
 				"custom-price-rows": "575px ",
 				"custom-functionalities-rows": "334px",
+				"custom-dashboard-paste-rows": "10% 90%",
 			},
 			dropShadow: {
 				"custom-orange": "1px 1px 10px rgba(255, 122, 0, 0.4)",
