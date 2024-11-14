@@ -48,8 +48,7 @@ export default function Hero() {
 					width={5000}
 					height={5000}
 					alt="Dashboard"
-					loading="lazy"
-					priority={false}
+					priority={true}
 					quality={100}
 					className={cn(
 						"w-full h-full border-[0.25px] border-[#FF7A00]/60 drop-shadow-custom-dashboard pointer-events-none",

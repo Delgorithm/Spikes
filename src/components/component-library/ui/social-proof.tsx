@@ -20,30 +20,35 @@ export default function SocialProof() {
 					width={100}
 					height={100}
 					alt="Social Proof"
+					style={{ width: "auto", height: "100%" }}
 				/>
 				<Image
 					src="/images/component-library/socialproof-4.svg"
 					width={100}
 					height={100}
 					alt="Social Proof"
+					style={{ width: "auto", height: "100%" }}
 				/>
 				<Image
 					src="/images/component-library/socialproof-3.svg"
 					width={100}
 					height={100}
 					alt="Social Proof"
+					style={{ width: "auto", height: "100%" }}
 				/>
 				<Image
 					src="/images/component-library/socialproof-2.svg"
 					width={100}
 					height={100}
 					alt="Social Proof"
+					style={{ width: "auto", height: "100%" }}
 				/>
 				<Image
 					src="/images/component-library/socialproof-1.svg"
 					width={100}
 					height={100}
 					alt="Social Proof"
+					style={{ width: "auto", height: "100%" }}
 				/>
 			</div>
 		</section>
