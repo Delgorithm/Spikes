@@ -7,9 +7,21 @@ const nextConfig = {
 				destination: "/home",
 				permanent: false,
 			},
+			{
+				source: "/component-library",
+				destination: "/component-library/accueil",
+				permanent: false,
+			},
 		];
 	},
-	images: {},
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "lh3.googleusercontent.com",
+			},
+		],
+	},
 };
 
 export default nextConfig;
