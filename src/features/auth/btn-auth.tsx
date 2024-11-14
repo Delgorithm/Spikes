@@ -24,7 +24,7 @@ export default function BtnAuth({ source, alt, name, provider }: BtnAuthProps) {
 			await signIn(provider);
 		},
 		onSuccess: () => {
-			queryClient.invalidateQueries(["session"]);
+			queryClient.invalidateQueries({ queryKey: ["session"] });
 		},
 	});
 
