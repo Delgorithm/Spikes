@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 
 type BtnAuthProps = {
@@ -13,10 +13,13 @@ type BtnAuthProps = {
 };
 
 export default function BtnAuth({ source, alt, name, provider }: BtnAuthProps) {
+	const { data: session } = useSession();
 	const signInMutation = useMutation({
 		mutationFn: async () => {
 			await signIn(provider, {
-				callbackUrl: "http://localhost:3000/component-library/accueil",
+				callbackUrl: session
+					? `http://localhost:3000/component-library/dashboard/${session.user.id}`
+					: "http://localhost:3000//component-library/auth/connexion",
 			});
 		},
 	});
