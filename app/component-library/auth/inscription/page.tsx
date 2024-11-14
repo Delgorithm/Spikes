@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
-import BtnAuth from "@/components/component-library/ui/btn-auth";
 import Link from "next/link";
-import FormRegister from "../form-register";
+import FormRegister from "../../../../src/features/auth/form-register";
+import BtnAuth from "@/features/auth/btn-auth";
 
 export default function AuthPage() {
 	return (
@@ -51,12 +51,12 @@ export default function AuthPage() {
 						name="Google"
 						provider="google"
 					/>
-					<BtnAuth
+					{/* <BtnAuth
 						source="github.svg"
 						alt="Github's auth"
 						name="Github"
 						provider="github"
-					/>
+					/> */}
 				</div>
 
 				<div className="flex items-center gap-2">

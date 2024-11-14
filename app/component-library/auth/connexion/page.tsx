@@ -1,10 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import FormConnection from "../form-connection";
+import FormConnection from "../../../../src/features/auth/form-connection";
 import { Separator } from "@/components/ui/separator";
-import BtnAuth from "@/components/component-library/ui/btn-auth";
 import Link from "next/link";
+import BtnAuth from "@/features/auth/btn-auth";
 
 export default function AuthPage() {
 	return (
@@ -31,7 +31,10 @@ export default function AuthPage() {
 						Entrer vos détails pour vous connecter
 					</p>
 				</div>
+
+				{/* Formulaire de connexion */}
 				<FormConnection />
+
 				<div className="flex w-full justify-center items-center gap-4">
 					<Separator
 						orientation="horizontal"
@@ -46,6 +49,7 @@ export default function AuthPage() {
 					/>
 				</div>
 
+				{/* Boutons d'auth providers */}
 				<div className="flex justify-center items-center gap-2">
 					<BtnAuth
 						source="google.svg"
@@ -53,12 +57,13 @@ export default function AuthPage() {
 						name="Google"
 						provider="google"
 					/>
-					<BtnAuth
+
+					{/* <BtnAuth
 						source="github.svg"
 						alt="Github's auth"
 						name="Github"
 						provider="github"
-					/>
+					/> */}
 				</div>
 
 				<div className="flex items-center gap-2">
