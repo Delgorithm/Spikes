@@ -1,81 +1,195 @@
 "use client";
 
+import {
+	Accordion,
+	AccordionItem,
+	AccordionTrigger,
+	AccordionContent,
+} from "@/components/ui/accordion";
 import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { Bookmark, LayoutGrid, Sparkles, Star, Zap } from "lucide-react";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 export default function SidebarDashboard() {
+	const [openSection, setOpenSection] = useState<string | null>(null);
 	const pathname = usePathname();
 	const { data: session } = useSession();
 	const userId = session?.user?.id;
 
-	const navTitle = [
+	const handleOpen = (sectionTitle: string) => {
+		setOpenSection(openSection === sectionTitle ? null : sectionTitle);
+	};
+
+	const navSections = [
 		{
 			title: "Platform",
-			icon: "icon-1.svg",
+			icon: (isOpen: boolean) => (
+				<Zap
+					className={cn(
+						"stroke-[1.5px]",
+						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+					)}
+				/>
+			),
+			items: [
+				{
+					title: "Webflow",
+					link: `/dashboard/${userId}/webflow`,
+					icon: "webflow-logo.svg",
+				},
+				{
+					title: "Figma",
+					link: `/dashboard/${userId}/figma`,
+					icon: "figma-logo.svg",
+				},
+			],
 		},
 		{
 			title: "Sections",
-			icon: "icon-2.svg",
+			icon: (isOpen: boolean) => (
+				<LayoutGrid
+					className={cn(
+						"stroke-[1.5px]",
+						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+					)}
+				/>
+			),
+			items: [
+				{
+					title: "Hero",
+					link: `/dashboard/${userId}/hero`,
+				},
+				{
+					title: "How it works",
+					link: `/dashboard/${userId}/how-it-works`,
+				},
+				{
+					title: "Services",
+					link: `/dashboard/${userId}/services`,
+				},
+				{
+					title: "Testimonials",
+					link: `/dashboard/${userId}/testimonials`,
+				},
+				{
+					title: "Pricing",
+					link: `/dashboard/${userId}/pricing`,
+				},
+				{
+					title: "FAQ",
+					link: `/dashboard/${userId}/faq`,
+				},
+				{
+					title: "Footer",
+					link: `/dashboard/${userId}/footer`,
+				},
+			],
 		},
 		{
 			title: "Style",
-			icon: "star.svg",
+			icon: (isOpen: boolean) => (
+				<Sparkles
+					className={cn(
+						"stroke-[1.5px]",
+						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+					)}
+				/>
+			),
+			items: [
+				{
+					title: "",
+					link: ``,
+					icon: "",
+				},
+			],
 		},
 		{
 			title: "Saved",
-			icon: "bookmark.svg",
+			icon: (isOpen: boolean) => (
+				<Bookmark
+					className={cn(
+						"stroke-[1.5px]",
+						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+					)}
+				/>
+			),
+			items: [
+				{
+					title: "",
+					link: ``,
+					icon: "",
+				},
+			],
 		},
 		{
 			title: "Plan",
-			icon: "star.svg",
+			icon: (isOpen: boolean) => (
+				<Star
+					className={cn(
+						"stroke-[1.5px]",
+						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+					)}
+				/>
+			),
+			items: [
+				{
+					title: "",
+					link: ``,
+					icon: "",
+				},
+			],
 		},
 	];
 
-	const navItems = [
-		{
-			title: "Webflow",
-			link: `/dashboard/${userId}/webflow`,
-			icon: "webflow-logo.svg",
-		},
-		{
-			title: "Figma",
-			link: `/dashboard/${userId}/figma`,
-			icon: "figma-logo.svg",
-		},
-		{
-			title: "Hero",
-			link: `/dashboard/${userId}/hero`,
-		},
-		{
-			title: "How it works",
-			link: `/dashboard/${userId}/how-it-works`,
-		},
-		{
-			title: "Services",
-			link: `/dashboard/${userId}/services`,
-		},
-		{
-			title: "Testimonials",
-			link: `/dashboard/${userId}/testimonials`,
-		},
-		{
-			title: "Pricing",
-			link: `/dashboard/${userId}/pricing`,
-		},
-		{
-			title: "FAQ",
-			link: `/dashboard/${userId}/faq`,
-		},
-		{
-			title: "Footer",
-			link: `/dashboard/${userId}/footer`,
-		},
-	];
 	return (
-		<nav>
-			<ul>
-				<li>Plateform</li>
-			</ul>
+		<nav className="w-full pt-8">
+			<Accordion type="single" collapsible className="w-full px-8">
+				{navSections.map((section) => (
+					<AccordionItem
+						key={section.title}
+						value={section.title.toLowerCase()}>
+						<AccordionTrigger
+							className="py-6"
+							onClick={() => handleOpen(section.title)}>
+							<div className="flex items-center gap-2">
+								{section.icon(openSection === section.title)}
+								<span
+									className={cn(
+										"uppercase font-medium",
+										openSection === section.title
+											? "text-white"
+											: "text-[#7E7F81]"
+									)}>
+									{section.title}
+								</span>
+							</div>
+						</AccordionTrigger>
+						<AccordionContent>
+							<ul className="pl-2 text-[#7E7F81] flex flex-col gap-6">
+								{section.items.map((item) => (
+									<li key={item.title}>
+										<Link href={item.link} className="flex items-center gap-2">
+											{item.icon && (
+												<Image
+													src={`/images/${item.icon}`}
+													alt={`${item.title} icon`}
+													width={20}
+													height={20}
+												/>
+											)}
+											<span>{item.title}</span>
+										</Link>
+									</li>
+								))}
+							</ul>
+						</AccordionContent>
+					</AccordionItem>
+				))}
+			</Accordion>
 		</nav>
 	);
 }

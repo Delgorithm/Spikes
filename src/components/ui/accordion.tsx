@@ -5,6 +5,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
+import { Minus } from "lucide-react";
 
 const Accordion = AccordionPrimitive.Root;
 
@@ -14,7 +15,10 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<AccordionPrimitive.Item
 		ref={ref}
-		className={cn("border-b-2 border-[#1B1B1B]", className)}
+		className={cn(
+			"border-b-2 border-dashed border- border-[#1B1B1B]",
+			className
+		)}
 		{...props}
 	/>
 ));
@@ -28,12 +32,14 @@ const AccordionTrigger = React.forwardRef<
 		<AccordionPrimitive.Trigger
 			ref={ref}
 			className={cn(
-				"flex flex-1 items-center justify-between py-2 text-sm font-medium transition-all [&[data-state=open]>svg]:rotate-180 open:text-white",
+				"flex flex-1 items-center justify-between py-2 text-sm font-medium transition-all",
+				"text-[#7E7F81] stroke-[#7E7F81]",
+				"data-[state=open]:text-[#FFFFFF] data-[state=open]:stroke-[#FFFFFF]",
 				className
 			)}
 			{...props}>
 			{children}
-			<ChevronDownIcon className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+			<ChevronDownIcon className="h-6 w-6 shrink-0 text-muted-foreground transition-transform duration-200" />
 		</AccordionPrimitive.Trigger>
 	</AccordionPrimitive.Header>
 ));
@@ -45,9 +51,15 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<AccordionPrimitive.Content
 		ref={ref}
-		className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+		className={cn(
+			"overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+		)}
 		{...props}>
-		<div className={cn("pb-4 pt-0", className)}>{children}</div>
+		<div className={cn("pb-4 pt-0 flex h-full", className)}>
+			<div className="border-l-2 border-accent-foreground border-gradient-to-r from-[#1D1D1D] to-[#838383] h-full ">
+				<div className="pl-4 w-full">{children}</div>
+			</div>
+		</div>
 	</AccordionPrimitive.Content>
 ));
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
