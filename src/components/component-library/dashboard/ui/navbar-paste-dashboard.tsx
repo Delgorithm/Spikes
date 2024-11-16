@@ -2,9 +2,15 @@
 
 import {
 	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuGroup,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import BtnLogout from "@/features/auth/btn-logout";
 import { cn } from "@/lib/utils";
 import { Minus, Search, User } from "lucide-react";
 import { useSession } from "next-auth/react";
@@ -86,6 +92,16 @@ export default function NavbarPasteDashboard() {
 						<User />
 					</div>
 				</DropdownMenuTrigger>
+				<DropdownMenuContent className="text-center">
+					<DropdownMenuLabel>{session?.user.name}</DropdownMenuLabel>
+					<DropdownMenuSeparator />
+					<DropdownMenuGroup>
+						<DropdownMenuItem>Profile</DropdownMenuItem>
+						<DropdownMenuItem>
+							<BtnLogout />
+						</DropdownMenuItem>
+					</DropdownMenuGroup>
+				</DropdownMenuContent>
 			</DropdownMenu>
 		</nav>
 	);
