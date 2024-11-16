@@ -48,7 +48,7 @@ export default function NavbarPasteDashboard() {
 		<nav
 			className={cn(
 				"text-white flex items-center justify-between w-full font-light",
-				"lg:p-8"
+				"lg:px-8 py-6"
 			)}>
 			<ul>
 				{iconItem.map((item) => (

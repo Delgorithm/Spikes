@@ -38,12 +38,12 @@ export default function SidebarDashboard() {
 			items: [
 				{
 					title: "Webflow",
-					link: `/dashboard/${userId}/webflow`,
+					link: `/component-library/dashboard/${userId}/plateform/webflow`,
 					icon: "webflow-logo.svg",
 				},
 				{
 					title: "Figma",
-					link: `/dashboard/${userId}/figma`,
+					link: `/component-library/dashboard/${userId}/plateform/figma`,
 					icon: "figma-logo.svg",
 				},
 			],
@@ -61,31 +61,31 @@ export default function SidebarDashboard() {
 			items: [
 				{
 					title: "Hero",
-					link: `/dashboard/${userId}/hero`,
+					link: `/component-library/dashboard/${userId}/sections/hero`,
 				},
 				{
 					title: "How it works",
-					link: `/dashboard/${userId}/how-it-works`,
+					link: `/component-library/dashboard/${userId}/sections/how-it-works`,
 				},
 				{
 					title: "Services",
-					link: `/dashboard/${userId}/services`,
+					link: `/component-library/dashboard/${userId}/sections/services`,
 				},
 				{
 					title: "Testimonials",
-					link: `/dashboard/${userId}/testimonials`,
+					link: `/component-library/dashboard/${userId}/sections/testimonials`,
 				},
 				{
 					title: "Pricing",
-					link: `/dashboard/${userId}/pricing`,
+					link: `/component-library/dashboard/${userId}/sections/pricing`,
 				},
 				{
 					title: "FAQ",
-					link: `/dashboard/${userId}/faq`,
+					link: `/component-library/dashboard/${userId}/sections/faq`,
 				},
 				{
 					title: "Footer",
-					link: `/dashboard/${userId}/footer`,
+					link: `/component-library/dashboard/${userId}/sections/footer`,
 				},
 			],
 		},
@@ -101,9 +101,8 @@ export default function SidebarDashboard() {
 			),
 			items: [
 				{
-					title: "",
-					link: ``,
-					icon: "",
+					title: "Custom",
+					link: `/component-library/dashboard/${userId}/style/custom`,
 				},
 			],
 		},
@@ -119,9 +118,8 @@ export default function SidebarDashboard() {
 			),
 			items: [
 				{
-					title: "",
-					link: ``,
-					icon: "",
+					title: "Bookmarks",
+					link: `/component-library/dashboard/${userId}/saved/bookmarks`,
 				},
 			],
 		},
@@ -137,9 +135,8 @@ export default function SidebarDashboard() {
 			),
 			items: [
 				{
-					title: "",
-					link: ``,
-					icon: "",
+					title: "Subscription",
+					link: `/component-library/dashboard/${userId}/plan/subscription`,
 				},
 			],
 		},
@@ -171,8 +168,13 @@ export default function SidebarDashboard() {
 						<AccordionContent>
 							<ul className="pl-2 text-[#7E7F81] flex flex-col gap-6">
 								{section.items.map((item) => (
-									<li key={item.title}>
-										<Link href={item.link} className="flex items-center gap-2">
+									<li key={item.title} className="relative">
+										<Link
+											href={item.link}
+											className={cn(
+												"flex items-center gap-2",
+												pathname === item.link ? "text-white" : "text-[#7E7F81]"
+											)}>
 											{item.icon && (
 												<Image
 													src={`/images/${item.icon}`}
@@ -183,6 +185,9 @@ export default function SidebarDashboard() {
 											)}
 											<span>{item.title}</span>
 										</Link>
+										{pathname === item.link && section.title !== "Platform" && (
+											<div className="size-1.5 rounded-full bg-gradient-to-t from-[#FF2900] to-[#FF7A00] absolute left-[-20px] top-1/2 transform -translate-y-1/2"></div>
+										)}
 									</li>
 								))}
 							</ul>
