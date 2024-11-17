@@ -14,6 +14,13 @@ import { Bookmark, LayoutGrid, Sparkles, Star, Zap } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
+// Définition du type pour les items de navigation
+type NavItem = {
+	title: string;
+	link: string;
+	icon?: string; // Propriété optionnelle
+};
+
 export default function SidebarDashboard() {
 	const [openSection, setOpenSection] = useState<string | null>(null);
 	const pathname = usePathname();
@@ -24,7 +31,11 @@ export default function SidebarDashboard() {
 		setOpenSection(openSection === sectionTitle ? null : sectionTitle);
 	};
 
-	const navSections = [
+	const navSections: {
+		title: string;
+		icon: (isOpen: boolean) => JSX.Element;
+		items: NavItem[];
+	}[] = [
 		{
 			title: "Platform",
 			icon: (isOpen: boolean) => (
@@ -175,7 +186,7 @@ export default function SidebarDashboard() {
 												"flex items-center gap-2",
 												pathname === item.link ? "text-white" : "text-[#7E7F81]"
 											)}>
-											{item.icon && (
+											{"icon" in item && item.icon && (
 												<Image
 													src={`/images/${item.icon}`}
 													alt={`${item.title} icon`}
