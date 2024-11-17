@@ -3,52 +3,52 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Bookmark } from "lucide-react";
 
-export default function SubscriptionPage() {
+export default function BookmarksPage() {
 	const gridItems = [
 		{
-			title: "Subscription section",
+			title: "Bookmarks section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Subscription section",
+			title: "Bookmarks section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Subscription section",
+			title: "Bookmarks section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Subscription section",
+			title: "Bookmarks section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Subscription section",
+			title: "Bookmarks section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Subscription section",
+			title: "Bookmarks section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Subscription section",
+			title: "Bookmarks section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Subscription section",
+			title: "Bookmarks section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
@@ -62,7 +62,7 @@ export default function SubscriptionPage() {
 				<article className="flex flex-col justify-between">
 					<div className="flex flex-col gap-6">
 						<div className="flex items-center gap-4">
-							<h1 className="text-[26px] text-white">Subscription Section</h1>
+							<h1 className="text-[26px] text-white">Bookmarks Section</h1>
 							<span className="bg-gradient-to-t from-[#FF2900] to-[#FF7A00] bg-clip-text text-transparent text-center">
 								Pro
 							</span>
@@ -87,8 +87,8 @@ export default function SubscriptionPage() {
 						</div>
 						<BtnCopyPreview
 							source="eye.svg"
-							alt="Previe's logo"
-							name="Live Previw"
+							alt="Preview's logo"
+							name="Live Preview"
 						/>
 					</div>
 				</article>

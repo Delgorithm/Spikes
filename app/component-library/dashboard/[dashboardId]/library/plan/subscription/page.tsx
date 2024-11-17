@@ -3,52 +3,52 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Bookmark } from "lucide-react";
 
-export default function StylePage() {
+export default function SubscriptionPage() {
 	const gridItems = [
 		{
-			title: "Style section",
+			title: "Subscription section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Style section",
+			title: "Subscription section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Style section",
+			title: "Subscription section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Style section",
+			title: "Subscription section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Style section",
+			title: "Subscription section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Style section",
+			title: "Subscription section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Style section",
+			title: "Subscription section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
 		},
 		{
-			title: "Style section",
+			title: "Subscription section",
 			subtitle: "Pro",
 			date: "- Added 28th of Feb 2024",
 			icon: <Bookmark />,
@@ -62,7 +62,7 @@ export default function StylePage() {
 				<article className="flex flex-col justify-between">
 					<div className="flex flex-col gap-6">
 						<div className="flex items-center gap-4">
-							<h1 className="text-[26px] text-white">Style Section</h1>
+							<h1 className="text-[26px] text-white">Subscription Section</h1>
 							<span className="bg-gradient-to-t from-[#FF2900] to-[#FF7A00] bg-clip-text text-transparent text-center">
 								Pro
 							</span>
