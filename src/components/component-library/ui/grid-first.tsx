@@ -27,10 +27,10 @@ export default function GridFirst() {
 				height={100}
 				alt="Paste's icon"
 				className={cn(
-					"pointer-events-none",
-					"absolute w-24",
-					"top-0 right-24",
-					"drop-shadow-custom-orange"
+					"absolute pointer-events-none",
+					"watch-sm:top-0 right-10 xl:top-0 xl:right-24",
+					"drop-shadow-custom-orange",
+					"watch-sm:w-8 xl:w-24"
 				)}
 				loading="lazy"
 				priority={false}
@@ -44,10 +44,10 @@ export default function GridFirst() {
 				height={100}
 				alt="Paste's icon"
 				className={cn(
-					"pointer-events-none",
-					"absolute w-24",
-					"right-12",
-					"drop-shadow-custom-orange"
+					"absolute pointer-events-none",
+					"watch-sm:right-7 xl:right-12",
+					"drop-shadow-custom-orange",
+					"watch-sm:w-8 xl:w-24"
 				)}
 				loading="lazy"
 				priority={false}
@@ -62,10 +62,10 @@ export default function GridFirst() {
 				height={100}
 				alt="Paste's icon"
 				className={cn(
-					"pointer-events-none",
-					"absolute w-24",
-					"bottom-10 right-32",
-					"drop-shadow-custom-orange"
+					"absolute pointer-events-none",
+					"watch-sm:bottom-0 watch-sm:right-10 xl:bottom-10 xl:right-32",
+					"drop-shadow-custom-orange",
+					"watch-sm:w-8 xl:w-24"
 				)}
 				loading="lazy"
 				priority={false}

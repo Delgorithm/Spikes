@@ -33,7 +33,7 @@ export default function BtnAuth({ source, alt, name, provider }: BtnAuthProps) {
 	};
 
 	if (status === "authenticated" && session?.user.id) {
-		router.push(`/component-library/dashboard/${session.user.id}`);
+		router.push(`/component-library/dashboard/${session.user.id}/library`);
 	}
 
 	return (

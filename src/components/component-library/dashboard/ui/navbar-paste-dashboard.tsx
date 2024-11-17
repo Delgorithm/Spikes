@@ -58,7 +58,7 @@ export default function NavbarPasteDashboard() {
 			)}>
 			<ul>
 				{iconItem.map((item) => (
-					<Link href={item.link}>
+					<Link href={item.link} key={item.alt}>
 						<Image
 							src={`/images/${item.url}`}
 							width={100}
@@ -71,7 +71,15 @@ export default function NavbarPasteDashboard() {
 			<Minus className="rotate-90 h-[0.5px] bg-[#1D1D1D]" />
 			<ul className="flex items-center gap-8">
 				{navigationItems.map((item) => (
-					<li key={item.title}>{item.title}</li>
+					<li key={item.title}>
+						<Link
+							href={item.link}
+							className={cn(
+								pathname?.includes(item.link) ? "text-white" : "text-[#7E7F81]"
+							)}>
+							{item.title}
+						</Link>
+					</li>
 				))}
 			</ul>
 			<Minus className="rotate-90 h-[0.5px] bg-[#1D1D1D]" />
