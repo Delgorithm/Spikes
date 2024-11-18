@@ -58,7 +58,12 @@ export default function FigmaPage() {
 	return (
 		<section className="p-8 flex flex-col gap-10">
 			<section
-				className={cn("grid grid-cols-2 gap-8", "xl:h-[388px] xl:w-[1096]")}>
+				className={cn(
+					"grid gap-8",
+					"watch-sm:grid-cols-1 lg:grid-cols-2",
+					"watch-sm:grid-rows-2 lg:grid-rows-1",
+					"xl:h-[388px] xl:w-[1096]"
+				)}>
 				<article className="flex flex-col justify-between">
 					<div className="flex flex-col gap-6">
 						<div className="flex items-center gap-4">
@@ -72,8 +77,8 @@ export default function FigmaPage() {
 							feature cards on either side.
 						</p>
 					</div>
-					<div className="flex flex-col gap-4">
-						<div className="flex gap-4">
+					<div className={cn("flex flex-col gap-4", "watch-sm:mt-10 lg:mt-0")}>
+						<div className={cn("flex gap-4", "watch-sm:flex-col md:flex-row")}>
 							<BtnCopyPreview
 								source="webflow-logo.svg"
 								alt="Webflow's logo"
@@ -87,7 +92,7 @@ export default function FigmaPage() {
 						</div>
 						<BtnCopyPreview
 							source="eye.svg"
-							alt="Figma's logo"
+							alt="Webflow's logo"
 							name="Live Preview"
 						/>
 					</div>
@@ -99,7 +104,8 @@ export default function FigmaPage() {
 				<h2 className="text-white text-[26px]">
 					Other sections you might like
 				</h2>
-				<section className="grid grid-cols-3 gap-6">
+				<section
+					className={cn("grid gap-6", "watch-sm:grid-cols-1 lg:grid-cols-3")}>
 					{gridItems.map((item, index) => (
 						<article key={index} className="flex flex-col gap-2">
 							<div className="bg-[#1B1B1B] border-[0.5px] border-[#292929] rounded-xl h-[217px]"></div>

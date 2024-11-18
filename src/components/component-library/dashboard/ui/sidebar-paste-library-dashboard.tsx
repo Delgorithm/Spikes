@@ -154,7 +154,10 @@ export default function SidebarDashboard() {
 
 	return (
 		<nav className="w-full pt-8">
-			<Accordion type="single" collapsible className="w-full px-8">
+			<Accordion
+				type="single"
+				collapsible
+				className="w-full watch-sm:px-2 md:px-8">
 				{navSections.map((section) => (
 					<AccordionItem
 						key={section.title}

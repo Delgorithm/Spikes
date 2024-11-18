@@ -2,17 +2,50 @@
 
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { Minus, Search } from "lucide-react";
+import { AlignJustify, Minus, Search, X } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import DropdownProfil from "./dropdown-profil";
+import { useState } from "react";
+import SidebarDashboard from "./sidebar-paste-library-dashboard";
+import { motion } from "framer-motion";
 
 export default function NavbarPasteDashboard() {
 	const pathname = usePathname();
 	const { data: session } = useSession();
 	const userId = session?.user?.id;
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleOpen = () => {
+		setIsOpen(!isOpen);
+	};
+
+	// Variants pour l'animation Framer Motion
+	const sidebarVariants = {
+		hidden: { x: "100%" },
+		visible: {
+			x: 0,
+			transition: { type: "spring", stiffness: 300, damping: 30 },
+		},
+		exit: {
+			x: "100%",
+			transition: { type: "spring", stiffness: 300, damping: 30 },
+		},
+	};
+
+	const blurbarVariants = {
+		hidden: { x: "500%" },
+		visible: {
+			x: 0,
+			transition: { type: "spring", stiffness: 300, damping: 30 },
+		},
+		exit: {
+			x: "100%",
+			transition: { type: "spring", stiffness: 300, damping: 30 },
+		},
+	};
 
 	const navItems = [
 		{
@@ -88,6 +121,48 @@ export default function NavbarPasteDashboard() {
 			<Minus className="rotate-90 h-[0.5px] bg-[#1D1D1D]" />
 			<div className="watch-sm:hidden lg:flex">
 				<DropdownProfil />
+			</div>
+			<div className="watch-sm:flex xl:hidden">
+				{isOpen ? (
+					<>
+						<X onClick={handleOpen} className="stroke-neutral-100 z-40" />
+						<motion.div
+							className="absolute w-4/5 top-0 right-0 bg-black min-h-full z-30"
+							initial="hidden"
+							animate="visible"
+							exit="exit"
+							variants={sidebarVariants}>
+							<article className="flex flex-col text-center gap-10 mt-10 px-4">
+								<ul className="flex flex-col items-center gap-10 mt-12">
+									{navigationItems.map((item) => (
+										<li key={item.title}>
+											<Link
+												href={item.link}
+												className={cn(
+													pathname?.includes(item.link)
+														? "text-white"
+														: "text-[#7E7F81]"
+												)}>
+												{item.title}
+											</Link>
+										</li>
+									))}
+								</ul>
+								<SidebarDashboard />
+								<DropdownProfil />
+							</article>
+						</motion.div>
+						<motion.div
+							className="absolute w-1/5 top-0 left-0 backdrop-blur-sm bg-neutral-500/50 min-h-full z-30"
+							initial="hidden"
+							animate="visible"
+							exit="exit"
+							onClick={handleOpen}
+							variants={blurbarVariants}></motion.div>
+					</>
+				) : (
+					<AlignJustify onClick={handleOpen} className="stroke-neutral-100" />
+				)}
 			</div>
 		</nav>
 	);

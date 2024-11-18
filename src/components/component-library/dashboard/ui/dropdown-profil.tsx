@@ -10,6 +10,7 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import BtnLogout from "@/features/auth/btn-logout";
+import { cn } from "@/lib/utils";
 import { User } from "lucide-react";
 import { useSession } from "next-auth/react";
 
@@ -18,7 +19,11 @@ export default function DropdownProfil() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<div className="size-9 flex items-center justify-center rounded-[6px] border-[0.5px] border-[#1D1D1D] bg-[#121212]">
+				<div
+					className={cn(
+						"size-9 flex items-center justify-center rounded-[6px] border-[0.5px] border-[#1D1D1D] bg-[#121212]",
+						"watch-sm:w-full"
+					)}>
 					<User />
 				</div>
 			</DropdownMenuTrigger>
