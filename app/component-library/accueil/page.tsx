@@ -14,7 +14,7 @@ export default function LandingPage() {
 	return (
 		<div
 			className={cn(
-				"flex flex-col bg-black relative",
+				"flex flex-col bg-neutral-950 relative noise",
 				"watch-sm:gap-12 xl:gap-24"
 			)}>
 			<Image
