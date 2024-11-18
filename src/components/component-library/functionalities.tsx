@@ -18,9 +18,10 @@ export default function Functionalities() {
 				<div
 					className={cn(
 						"mt-[45px]",
-						"xl:grid-rows-custom-functionalities-rows xl:grid-cols-custom-functionalities-cols",
-						"watch-sm:gap-[20px] xl:gap-[54px]",
-						"watch-sm:flex watch-sm:flex-col watch-sm:justify-center watch-sm:items-center xl:grid "
+						"watch-sm:flex watch-sm:flex-col watch-sm:justify-center watch-sm:items-center",
+						"watch-sm:gap-[20px] lg:gap-0 xl:gap-[54px]",
+						"lg:grid lg:grid-cols-3 lg:mx-10 lg:pl-4",
+						"xl:grid-rows-custom-functionalities-rows xl:grid-cols-custom-functionalities-cols"
 					)}>
 					<article
 						className={cn(
