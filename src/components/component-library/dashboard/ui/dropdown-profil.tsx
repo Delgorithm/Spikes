@@ -1,0 +1,39 @@
+"use client";
+
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuGroup,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import BtnLogout from "@/features/auth/btn-logout";
+import { User } from "lucide-react";
+import { useSession } from "next-auth/react";
+
+export default function DropdownProfil() {
+	const { data: session } = useSession();
+	return (
+		<DropdownMenu>
+			<DropdownMenuTrigger asChild>
+				<div className="size-9 flex items-center justify-center rounded-[6px] border-[0.5px] border-[#1D1D1D] bg-[#121212]">
+					<User />
+				</div>
+			</DropdownMenuTrigger>
+			<DropdownMenuContent className="text-center">
+				<DropdownMenuLabel>{session?.user.name}</DropdownMenuLabel>
+				<DropdownMenuSeparator />
+				<DropdownMenuGroup className="flex flex-col items-center gap-2 mx-3">
+					<DropdownMenuItem className="w-full flex justify-center">
+						Profile
+					</DropdownMenuItem>
+					<DropdownMenuItem>
+						<BtnLogout />
+					</DropdownMenuItem>
+				</DropdownMenuGroup>
+			</DropdownMenuContent>
+		</DropdownMenu>
+	);
+}
