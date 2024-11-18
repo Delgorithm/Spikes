@@ -22,7 +22,8 @@ export default function Pricing() {
 			id="pricing"
 			className={cn(
 				"flex flex-col justify-center items-center",
-				"watch-sm:gap-[20px] xl:gap-[90px] xl:h-[50rem]"
+				"watch-sm:gap-[20px] md:gap-10 xl:gap-[90px] ",
+				"xl:h-[50rem]"
 			)}>
 			<article
 				className={cn(
@@ -47,8 +48,9 @@ export default function Pricing() {
 				className={cn(
 					"grid",
 					"watch-sm:grid-cols-1 watch-sm:grid-rows-3 ",
-					"xl:grid-cols-custom-price-cols xl:grid-rows-custom-price-rows",
-					"watch-sm:gap-[80px] xl:gap-[30px]"
+					"md:grid-cols-3 md:grid-rows-1 md:mx-4 md:pb-10",
+					"xl:grid-cols-custom-price-cols xl:grid-rows-custom-price-rows xl:mx-0",
+					"watch-sm:gap-[80px] md:gap-4 xl:gap-[30px]"
 				)}>
 				<article
 					className={cn(

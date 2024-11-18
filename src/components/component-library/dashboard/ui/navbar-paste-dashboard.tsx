@@ -1,22 +1,13 @@
 "use client";
 
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuGroup,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
-import BtnLogout from "@/features/auth/btn-logout";
 import { cn } from "@/lib/utils";
-import { Minus, Search, User } from "lucide-react";
+import { Minus, Search } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import DropdownProfil from "./dropdown-profil";
 
 export default function NavbarPasteDashboard() {
 	const pathname = usePathname();
@@ -53,8 +44,8 @@ export default function NavbarPasteDashboard() {
 	return (
 		<nav
 			className={cn(
-				"text-white flex items-center justify-between w-full font-light",
-				"lg:px-8 py-6"
+				"text-white flex items-center justify-between w-full font-light py-6",
+				"watch-sm:px-4 lg:px-8"
 			)}>
 			<ul>
 				{iconItem.map((item) => (
@@ -64,12 +55,13 @@ export default function NavbarPasteDashboard() {
 							width={100}
 							height={100}
 							alt="Logo"
+							className=""
 						/>
 					</Link>
 				))}
 			</ul>
 			<Minus className="rotate-90 h-[0.5px] bg-[#1D1D1D]" />
-			<ul className="flex items-center gap-8">
+			<ul className={cn("flex items-center gap-8", "watch-sm:hidden xl:flex")}>
 				{navigationItems.map((item) => (
 					<li key={item.title}>
 						<Link
@@ -83,7 +75,7 @@ export default function NavbarPasteDashboard() {
 				))}
 			</ul>
 			<Minus className="rotate-90 h-[0.5px] bg-[#1D1D1D]" />
-			<div className="relative">
+			<div className={cn("relative", "watch-sm:hidden xl:flex")}>
 				<Search className="stroke-[#7E7F81] stroke-[0.5px] absolute top-2.5 left-4 size-4" />
 				<Input
 					className={cn(
@@ -94,23 +86,9 @@ export default function NavbarPasteDashboard() {
 				/>
 			</div>
 			<Minus className="rotate-90 h-[0.5px] bg-[#1D1D1D]" />
-			<DropdownMenu>
-				<DropdownMenuTrigger asChild>
-					<div className="size-9 flex items-center justify-center rounded-[6px] border-[0.5px] border-[#1D1D1D] bg-[#121212]">
-						<User />
-					</div>
-				</DropdownMenuTrigger>
-				<DropdownMenuContent className="text-center">
-					<DropdownMenuLabel>{session?.user.name}</DropdownMenuLabel>
-					<DropdownMenuSeparator />
-					<DropdownMenuGroup>
-						<DropdownMenuItem>Profile</DropdownMenuItem>
-						<DropdownMenuItem>
-							<BtnLogout />
-						</DropdownMenuItem>
-					</DropdownMenuGroup>
-				</DropdownMenuContent>
-			</DropdownMenu>
+			<div className="watch-sm:hidden lg:flex">
+				<DropdownProfil />
+			</div>
 		</nav>
 	);
 }

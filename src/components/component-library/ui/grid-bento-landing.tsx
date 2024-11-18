@@ -21,9 +21,9 @@ export default function GridBentoLanding() {
 		<section className="flex flex-col gap-[30px] justify-center items-center">
 			<div
 				className={cn(
-					"xl:grid gap-[30px]",
-					"xl:grid-cols-custom-xl-1 xl:grid-rows-custom-xl",
-					"watch-sm:flex watch-sm:flex-col watch-sm:justify-center watch-sm:items-center "
+					"watch-sm:flex watch-sm:flex-col watch-sm:justify-center watch-sm:items-center",
+					"md:grid md:grid-cols-2",
+					"xl:grid-cols-custom-xl-1 xl:grid-rows-custom-xl xl:grid gap-[30px]"
 				)}>
 				<motion.div
 					initial="hidden"
@@ -33,6 +33,7 @@ export default function GridBentoLanding() {
 					className={cn(
 						"bg-gradient-to-b from-[#131313] to-[#1D1D1D] rounded-[20px]",
 						"watch-sm:h-36 watch-sm:w-72",
+						"md:h-full md:w-80",
 						"xl:h-80 xl:w-auto"
 					)}>
 					<h3 className="text-[23px] translate-y-6 ml-8 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
@@ -83,10 +84,15 @@ export default function GridBentoLanding() {
 				whileInView="visible"
 				viewport={{ once: true, amount: 0.6 }}
 				variants={variants}
-				className="grid xl:grid-cols-custom-xl-2 xl:grid-rows-custom-xl gap-[30px]">
+				className={cn(
+					"grid gap-[30px]",
+					"md:grid-cols-2",
+					"xl:grid-cols-custom-xl-2 xl:grid-rows-custom-xl"
+				)}>
 				<div
 					className={cn(
 						"bg-gradient-to-b from-[#131313] to-[#1D1D1D] rounded-[20px] relative",
+						"md:h-full md:w-80 xl:w-full",
 						"watch-sm:h-56 xl:h-auto"
 					)}>
 					<h3 className="p-6 text-[23px] bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent relative z-20">
@@ -99,7 +105,8 @@ export default function GridBentoLanding() {
 							height={100}
 							className={cn(
 								"absolute object-contain pointer-events-none top-0",
-								"watch-sm:w-full xl:w-[98.5%]"
+								"watch-sm:w-full xl:w-[98.5%]",
+								"md:w-full md:top-16 xl:top-0"
 							)}
 							alt="Decoration for the grid"
 							loading="lazy"
@@ -125,6 +132,7 @@ export default function GridBentoLanding() {
 						className={cn(
 							"w-full",
 							"watch-sm:translate-x-0 watch-sm:translate-y-[50px]",
+							"md:translate-y-10",
 							"xl:translate-x-52 xl:-translate-y-0"
 						)}
 					/>

@@ -22,20 +22,14 @@ export default function LandingPage() {
 				height={1000}
 				width={1000}
 				alt="Light"
-				className={cn(
-					"absolute pointer-events-none",
-					"watch-sm:hidden xl:flex"
-				)}
+				className={cn("absolute pointer-events-none", "flex")}
 			/>
 			<Image
 				src="/images/component-library/lux-after.svg"
 				height={1000}
 				width={1000}
 				alt="Light"
-				className={cn(
-					"absolute pointer-events-none",
-					"watch-sm:hidden xl:flex"
-				)}
+				className={cn("absolute pointer-events-none", "flex")}
 			/>
 			<div className={cn("flex flex-col z-10", "watch-sm:gap-16 xl:gap-24")}>
 				<Navbar />

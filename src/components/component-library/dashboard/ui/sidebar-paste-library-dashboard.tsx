@@ -14,11 +14,10 @@ import { Bookmark, LayoutGrid, Sparkles, Star, Zap } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-// Définition du type pour les items de navigation
 type NavItem = {
 	title: string;
 	link: string;
-	icon?: string; // Propriété optionnelle
+	icon?: string;
 };
 
 export default function SidebarDashboard() {

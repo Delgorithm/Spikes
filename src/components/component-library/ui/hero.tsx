@@ -39,7 +39,10 @@ export default function Hero() {
 				variants={variants}
 				className={cn(
 					"relative my-[75px]",
-					"watch-sm:w-72 xl:w-[1110px] xl:h-[774px]",
+					"watch-sm:w-72",
+					"md:w-[700px]",
+					"lg:w-[900px]",
+					"xl:w-[1110px] xl:h-[774px]",
 					"watch-sm:rounded-[10px] xl:rounded-[20px]"
 				)}>
 				<BorderBeam />
