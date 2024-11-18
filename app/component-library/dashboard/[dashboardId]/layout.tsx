@@ -7,7 +7,7 @@ export default function DashboardIdLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="min-h-full grid grid-cols-custom-dashboard-paste-columns grid-rows-custom-dashboard-paste-rows">
+		<section className="min-h-screen grid grid-cols-custom-dashboard-paste-columns grid-rows-custom-dashboard-paste-rows">
 			<div className="col-span-2 row-start-1 bg-[#121212] border-b-[1px] border-[#1D1D1D]">
 				<NavbarPasteDashboard />
 			</div>
