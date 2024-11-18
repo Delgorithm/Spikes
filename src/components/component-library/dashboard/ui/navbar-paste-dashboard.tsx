@@ -17,7 +17,7 @@ export default function NavbarPasteDashboard() {
 	const navItems = [
 		{
 			url: "logo.svg",
-			link: `/component-library/dashboard/${userId}/`,
+			link: `/component-library/dashboard/${userId}/library`,
 			alt: "Icon de Paste",
 		},
 		{
