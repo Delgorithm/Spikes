@@ -1,74 +1,121 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import {
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useMutation } from "@tanstack/react-query";
-import { signIn, useSession } from "next-auth/react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
 
-export default function FormRegister() {
-	const { data: session } = useSession();
-	const mutation = useMutation({
-		mutationFn: async () => signIn(),
+// Définition du schéma de validation
+const formSchema = z
+	.object({
+		email: z.string().email("L'adresse mail doit être valide."),
+		password: z
+			.string()
+			.min(8, "Le mot de passe doit contenir au moins 8 caractères"),
+		confirmPassword: z
+			.string()
+			.min(8, "Le mot de passe doit contenir au moins 8 caractères"),
+	})
+	.refine((data) => data.password === data.confirmPassword, {
+		message: "Les mots de passe doivent correspondre.",
+		path: ["confirmPassword"],
+	});
+export default function FormConnection() {
+	const form = useForm<z.infer<typeof formSchema>>({
+		resolver: zodResolver(formSchema),
+		defaultValues: {
+			email: "",
+			password: "",
+			confirmPassword: "",
+		},
 	});
 
-	const handleEmailRegister = async (e: React.FormEvent) => {
-		e.preventDefault();
-		const email = (e.target as HTMLFormElement).email.value;
-		await signIn("email", {
-			email,
-			callbackUrl: session
-				? `/dashboard/${session.user.id}`
-				: "/component-library/auth/connexion",
-		});
-	};
+	function onSubmit(values: z.infer<typeof formSchema>) {
+		console.log(values);
+	}
 
 	return (
-		<section className="w-3/4">
-			<form
-				onSubmit={handleEmailRegister}
-				className="flex flex-col items-center justify-center gap-4">
-				<div className="w-full flex flex-col gap-2">
-					<label
-						htmlFor="email"
-						className="bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
-						Email
-					</label>
-					<Input type="email" name="email" className="bg-white" required />
-				</div>
-				<div className="w-full flex flex-col gap-2">
-					<label
-						htmlFor="password"
-						className="bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
-						Mot de passe
-					</label>
-					<Input
-						type="password"
-						name="password"
-						className="bg-white"
-						required
-					/>
-				</div>
-				<div className="w-full flex flex-col gap-2">
-					<label
-						htmlFor="confirmpassword"
-						className="bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
-						Entrer à nouveau le mot de passe
-					</label>
-					<Input
-						type="password"
-						name="confirmpassword"
-						className="bg-white"
-						required
-					/>
-				</div>
-				<div className="w-full mt-4">
-					<Button
-						type="submit"
-						className="w-full rounded-lg bg-gradient-to-b from-[#292929] to-[#0C0C0C] font-medium drop-shadow-custom-btn-pricing">
-						S'inscrire
-					</Button>
-				</div>
-			</form>
-		</section>
+		<Form
+			form={form}
+			onSubmit={onSubmit}
+			className="flex flex-col items-center justify-center gap-6 w-3/4 ">
+			<FormField
+				control={form.control}
+				name="email"
+				render={({ field }) => (
+					<FormItem className="w-full">
+						<FormLabel className="bg-gradient-to-bl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
+							Email
+						</FormLabel>
+						<FormControl>
+							<Input
+								placeholder="abc@mail.com"
+								type="email"
+								{...field}
+								className="bg-white"
+								required
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+
+			<FormField
+				control={form.control}
+				name="password"
+				render={({ field }) => (
+					<FormItem className="w-full">
+						<FormLabel className="bg-gradient-to-bl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
+							Mot de passe
+						</FormLabel>
+						<FormControl>
+							<Input
+								placeholder="********"
+								type="password"
+								{...field}
+								className="bg-white"
+								required
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+
+			<FormField
+				control={form.control}
+				name="confirmPassword"
+				render={({ field }) => (
+					<FormItem className="w-full">
+						<FormLabel className="bg-gradient-to-bl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
+							Confirmation du mot de passe
+						</FormLabel>
+						<FormControl>
+							<Input
+								placeholder="********"
+								type="password"
+								{...field}
+								className="bg-white"
+								required
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+			<Button type="submit" className="w-full">
+				S'enregistrer
+			</Button>
+		</Form>
 	);
 }
