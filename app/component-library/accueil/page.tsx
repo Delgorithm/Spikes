@@ -10,6 +10,9 @@ import SocialProof from "@/components/component-library/ui/social-proof";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
+const luxBefore = "/images/component-library/lux-before.svg";
+const luxAfter = "/images/component-library/lux-after.svg";
+
 export default function LandingPage() {
 	return (
 		<div
@@ -18,14 +21,14 @@ export default function LandingPage() {
 				"watch-sm:gap-12 xl:gap-24"
 			)}>
 			<Image
-				src="/images/component-library/lux-before.svg"
+				src={luxBefore}
 				height={1000}
 				width={1000}
 				alt="Light"
 				className={cn("absolute pointer-events-none", "flex")}
 			/>
 			<Image
-				src="/images/component-library/lux-after.svg"
+				src={luxAfter}
 				height={1000}
 				width={1000}
 				alt="Light"

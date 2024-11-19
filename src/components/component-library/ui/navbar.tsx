@@ -103,16 +103,13 @@ export default function Navbar() {
 							variants={sidebarVariants}>
 							<article className="flex flex-col text-center gap-10 mt-24 px-4">
 								{navLinks.map((item, index) => (
-									<Card
+									<Link
 										key={index}
-										className="py-3 bg-[#1B1B1B] border-[0.5px] border-[#7E7F81]">
-										<Link
-											href={item.href}
-											onClick={handleOpen}
-											className="text-white">
-											{item.label}
-										</Link>
-									</Card>
+										href={item.href}
+										onClick={handleOpen}
+										className="text-white w-full py-3 bg-[#1B1B1B] border-[0.5px] border-[#7E7F81] rounded-lg">
+										{item.label}
+									</Link>
 								))}
 							</article>
 						</motion.div>

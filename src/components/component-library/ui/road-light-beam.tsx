@@ -10,13 +10,15 @@ const variants = {
 	visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
+const lightBeam = "/images/component-library/lux-light-beam.svg";
+
 export default function RoadLightBeam() {
 	return (
 		<section
 			id="howitworks"
 			className="flex flex-col justify-center items-center gap-20 text-white relative">
 			<Image
-				src="/images/component-library/lux-light-beam.svg"
+				src={lightBeam}
 				height={10000}
 				width={10000}
 				alt="Light beam"
