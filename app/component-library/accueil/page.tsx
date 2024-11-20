@@ -10,10 +10,9 @@ import SocialProof from "@/components/component-library/ui/social-proof";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-const luxBefore = "/images/component-library/lux-before.svg";
-const luxAfter = "/images/component-library/lux-after.svg";
-
 export default function LandingPage() {
+	const luxBefore = "/images/component-library/lux-before.svg";
+	const luxAfter = "/images/component-library/lux-after.svg";
 	return (
 		<div
 			className={cn(
