@@ -13,6 +13,7 @@ import BtnLogout from "@/features/auth/btn-logout";
 import { cn } from "@/lib/utils";
 import { User } from "lucide-react";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 export default function DropdownProfil() {
 	const { data: session } = useSession();
@@ -33,6 +34,9 @@ export default function DropdownProfil() {
 				<DropdownMenuGroup className="flex flex-col items-center gap-2 mx-3">
 					<DropdownMenuItem className="w-full flex justify-center">
 						Profile
+					</DropdownMenuItem>
+					<DropdownMenuItem className="w-full flex justify-center">
+						<Link href="/component-library">Accueil</Link>
 					</DropdownMenuItem>
 					<DropdownMenuItem>
 						<BtnLogout />

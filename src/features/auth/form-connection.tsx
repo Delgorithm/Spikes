@@ -15,6 +15,9 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import FormError from "@/components/component-library/form/form-error";
+import FormSuccess from "@/components/component-library/form/form-success";
 
 const formSchema = z.object({
 	email: z.string().email("L'adresse mail doit être valide."),
@@ -25,6 +28,9 @@ const formSchema = z.object({
 
 export default function FormConnection() {
 	const router = useRouter();
+	const [error, setError] = useState<string | null>(null);
+	const [success, setSuccess] = useState<string | null>(null);
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -49,13 +55,13 @@ export default function FormConnection() {
 			return response.json();
 		},
 		onSuccess: (data) => {
-			console.log("Connexion réussie", data);
-			alert("Connexion réussie !");
+			setError(null);
+			setSuccess("Connexion réussie!");
 			router.push("/component-library/dashboard/${data.user.id}/library");
 		},
 		onError: (error: Error) => {
-			console.error("Erreur:", error.message);
-			alert(error.message);
+			setSuccess(null);
+			setError(error.message);
 		},
 	});
 
@@ -78,6 +84,7 @@ export default function FormConnection() {
 							<Input
 								type="email"
 								placeholder="abc@mail.com"
+								className="bg-white focus:bg-white"
 								{...field}
 								required
 							/>
@@ -96,6 +103,7 @@ export default function FormConnection() {
 							<Input
 								type="password"
 								placeholder="********"
+								className="bg-white focus:bg-white"
 								{...field}
 								required
 							/>
@@ -104,6 +112,8 @@ export default function FormConnection() {
 					</FormItem>
 				)}
 			/>
+			<FormError message={error} />
+			<FormSuccess message={success} />
 			<Button type="submit" className="w-full">
 				Se connecter
 			</Button>

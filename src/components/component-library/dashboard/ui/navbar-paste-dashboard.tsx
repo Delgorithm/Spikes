@@ -22,7 +22,6 @@ export default function NavbarPasteDashboard() {
 		setIsOpen(!isOpen);
 	};
 
-	// Variants pour l'animation Framer Motion
 	const sidebarVariants = {
 		hidden: { x: "100%" },
 		visible: {

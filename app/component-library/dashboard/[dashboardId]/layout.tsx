@@ -25,7 +25,7 @@ export default function DashboardIdLayout({
 				<SidebarDashboard />
 			</div>
 
-			<div className="row-start-2 col-start-2 bg-[#1D1D1D] relative noise ">
+			<div className="row-start-2 col-start-2 bg-[#1D1D1D] relative noise min-h-full">
 				{children}
 			</div>
 		</section>
