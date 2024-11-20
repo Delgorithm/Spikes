@@ -7,7 +7,7 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	if (req.method !== "POST") {
-		return res.status(405).json({ message: "Method not allowed" });
+		return res.status(405).json({ message: "Méthode non autorisée" });
 	}
 
 	const { email, password } = req.body;
@@ -15,7 +15,7 @@ export default async function handler(
 	try {
 		const existingUser = await prisma.user.findUnique({ where: { email } });
 		if (existingUser) {
-			return res.status(400).json({ message: "User already exists" });
+			return res.status(400).json({ message: "L'utilisateur existe déjà" });
 		}
 
 		const hashedPassword = await hashPassword(password);
@@ -29,9 +29,9 @@ export default async function handler(
 
 		return res
 			.status(201)
-			.json({ message: "User created successfully", user: newUser });
+			.json({ message: "Utilisateur créer avec succès", user: newUser });
 	} catch (error) {
-		console.error("Error creating user: ", error);
-		return res.status(500).json({ message: "Internal server error " });
+		console.error("Erreur lors de la création de l'utilisatuer: ", error);
+		return res.status(500).json({ message: "Erruer interne du serveur" });
 	}
 }

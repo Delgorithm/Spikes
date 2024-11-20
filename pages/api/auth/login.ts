@@ -8,7 +8,7 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	if (req.method !== "POST") {
-		return res.status(405).json({ message: "Method not allowed" });
+		return res.status(405).json({ message: "Méthode non autorisée" });
 	}
 
 	const { email, password } = req.body;
@@ -17,7 +17,9 @@ export default async function handler(
 		const user = await prisma.user.findUnique({ where: { email } });
 
 		if (!user || !user.hashedPassword) {
-			return res.status(401).json({ message: "Invalid email or password" });
+			return res
+				.status(401)
+				.json({ message: "Email ou mot de passe invalide" });
 		}
 
 		const isPasswordValid = await comparePasswords(
@@ -26,13 +28,15 @@ export default async function handler(
 		);
 
 		if (!isPasswordValid) {
-			return res.status(401).json({ message: "Invalid email or password" });
+			return res
+				.status(401)
+				.json({ message: "Email ou mot de passe invalide" });
 		}
 
 		const token = signJwt({ userId: user.id, email: user.email });
 
 		return res.status(200).json({
-			message: "Login successful",
+			message: "Connexion réussie",
 			token,
 			user: {
 				id: user.id,
@@ -40,7 +44,7 @@ export default async function handler(
 			},
 		});
 	} catch (error) {
-		console.error("Error during login: ", error);
-		return res.status(500).json({ message: "Internal server error " });
+		console.error("Erreur durant l'authentification: ", error);
+		return res.status(500).json({ message: "Erreur interne du serveur " });
 	}
 }
