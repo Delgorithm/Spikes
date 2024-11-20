@@ -147,8 +147,8 @@ export default function FormConnection() {
 					</FormItem>
 				)}
 			/>
-			<FormError message={error} />
-			<FormSuccess message={success} />
+			<FormError message={error ?? undefined} />
+			<FormSuccess message={success ?? undefined} />
 			<Button type="submit" className="w-full">
 				S'enregistrer
 			</Button>
