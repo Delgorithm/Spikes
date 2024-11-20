@@ -45,6 +45,6 @@ export default async function handler(
 		});
 	} catch (error) {
 		console.error("Erreur durant l'authentification: ", error);
-		return res.status(500).json({ message: "Erreur interne du serveur " });
+		return res.status(500).json({ message: "Erreur interne du serveur" });
 	}
 }

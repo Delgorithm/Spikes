@@ -20,6 +20,16 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "lh3.googleusercontent.com",
 			},
+			{
+				protocol: "https",
+				hostname: "assets.vercel.com",
+				port: "",
+				pathname: "/image/upload/**",
+			},
+			{
+				protocol: "https",
+				hostname: "avatars.githubusercontent.com",
+			},
 		],
 	},
 };

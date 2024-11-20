@@ -1,18 +1,19 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import FormConnection from "../../../../src/features/auth/form-connection";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import BtnAuth from "@/features/auth/btn-auth";
+import Image from "next/image";
+
+const dashboardImg = "/images/component-library/dashboard.webp";
 
 export default function AuthPage() {
 	return (
 		<section
 			className={cn(
-				"grid items-center center w-full h-screen",
+				"grid items-center center w-full h-screen z-50",
 				"md:grid-cols-2 md:grid-rows-1",
-				"bg-black/80"
+				"bg-black/90"
 			)}>
 			<article className="flex flex-col items-center gap-6">
 				<div>
@@ -58,12 +59,12 @@ export default function AuthPage() {
 						provider="google"
 					/>
 
-					{/* <BtnAuth
+					<BtnAuth
 						source="github.svg"
 						alt="Github's auth"
 						name="Github"
 						provider="github"
-					/> */}
+					/>
 				</div>
 
 				<div className="flex items-center gap-2">
@@ -77,6 +78,19 @@ export default function AuthPage() {
 					</Link>
 				</div>
 			</article>
+			<Image
+				src={dashboardImg}
+				width={5000}
+				height={5000}
+				alt="Dashboard"
+				priority={true}
+				quality={100}
+				className={cn(
+					"w-5/6 border-[0.25px] border-[#FF7A00]/60 drop-shadow-custom-dashboard pointer-events-none",
+					"rounded-[20px]",
+					"watch-sm:hidden md:block"
+				)}
+			/>
 		</section>
 	);
 }

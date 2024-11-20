@@ -149,7 +149,9 @@ export default function FormConnection() {
 			/>
 			<FormError message={error ?? undefined} />
 			<FormSuccess message={success ?? undefined} />
-			<Button type="submit" className="w-full">
+			<Button
+				type="submit"
+				className="w-full border-[0.5px] border-neutral-600 bg-neutral-950/40 shadow-xl">
 				S'enregistrer
 			</Button>
 		</Form>

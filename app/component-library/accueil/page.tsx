@@ -10,9 +10,10 @@ import SocialProof from "@/components/component-library/ui/social-proof";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
+const luxBefore = "/images/component-library/lux-before.svg";
+const luxAfter = "/images/component-library/lux-after.svg";
+
 export default function LandingPage() {
-	const luxBefore = "/images/component-library/lux-before.svg";
-	const luxAfter = "/images/component-library/lux-after.svg";
 	return (
 		<div
 			className={cn(
@@ -21,18 +22,19 @@ export default function LandingPage() {
 			)}>
 			<Image
 				src={luxBefore}
-				height={1000}
 				width={1000}
+				height={1000}
 				alt="Light"
-				className={cn("absolute pointer-events-none", "flex")}
+				className={cn("absolute pointer-events-none z-[2]", "block")}
 			/>
 			<Image
 				src={luxAfter}
-				height={1000}
 				width={1000}
+				height={1000}
 				alt="Light"
-				className={cn("absolute pointer-events-none", "flex")}
+				className={cn("absolute pointer-events-none z-[3]", "block")}
 			/>
+
 			<div className={cn("flex flex-col z-10", "watch-sm:gap-16 xl:gap-24")}>
 				<Navbar />
 				<Hero />

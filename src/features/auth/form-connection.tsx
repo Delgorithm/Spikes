@@ -79,7 +79,9 @@ export default function FormConnection() {
 				name="email"
 				render={({ field }) => (
 					<FormItem className="w-full">
-						<FormLabel>Email</FormLabel>
+						<FormLabel className="bg-gradient-to-bl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
+							Email
+						</FormLabel>
 						<FormControl>
 							<Input
 								type="email"
@@ -98,7 +100,9 @@ export default function FormConnection() {
 				name="password"
 				render={({ field }) => (
 					<FormItem className="w-full">
-						<FormLabel>Mot de passe</FormLabel>
+						<FormLabel className="bg-gradient-to-bl from-[#7E7F81] to-[#FFFFFF] bg-clip-text text-transparent">
+							Mot de passe
+						</FormLabel>
 						<FormControl>
 							<Input
 								type="password"
@@ -114,7 +118,9 @@ export default function FormConnection() {
 			/>
 			<FormError message={error ?? undefined} />
 			<FormSuccess message={success ?? undefined} />
-			<Button type="submit" className="w-full">
+			<Button
+				type="submit"
+				className="w-full border-[0.5px] border-neutral-600 bg-neutral-950/40 shadow-xl">
 				Se connecter
 			</Button>
 		</Form>

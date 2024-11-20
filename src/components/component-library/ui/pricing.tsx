@@ -9,9 +9,12 @@ import ButtonCTA from "./button-cta";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 export default function Pricing() {
 	const [isPrice, setIsPrice] = useState(false);
+	const { data: session, status } = useSession();
 
 	const handlePricing = () => {
 		setIsPrice(!isPrice);
@@ -86,9 +89,22 @@ export default function Pricing() {
 					</div>
 					<div className="flex flex-col items-center justify-center mb-[20px] mx-[25px]">
 						<Separator className="bg-white/20 mb-[15px]" />
-						<Button className="w-full rounded-lg bg-gradient-to-b from-[#292929] to-[#0C0C0C] font-medium drop-shadow-custom-btn-pricing">
-							Essayer gratuitement
-						</Button>
+						{session ? (
+							<Link
+								className={cn(
+									"text-white w-full",
+									"h-9 px-4 py-2",
+									"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+									"w-full rounded-lg bg-gradient-to-b from-[#292929] to-[#0C0C0C] font-medium drop-shadow-custom-btn-pricing"
+								)}
+								href={`/component-library/dashboard/${session?.user.id}/library`}>
+								Dashboard
+							</Link>
+						) : (
+							<Button className="w-full rounded-lg bg-gradient-to-b from-[#292929] to-[#0C0C0C] font-medium drop-shadow-custom-btn-pricing">
+								Essayer gratuitement
+							</Button>
+						)}
 					</div>
 				</article>
 
@@ -146,10 +162,23 @@ export default function Pricing() {
 					</div>
 					<div className="flex flex-col items-center justify-center mb-[20px] mx-[25px]">
 						<Separator className="bg-white/20 mb-[15px]" />
-						<ButtonCTA
-							text="Devenir professionnel"
-							className="w-full font-medium drop-shadow-custom-btn-pricing"
-						/>
+						{session ? (
+							<Link
+								className={cn(
+									"text-white w-full",
+									"h-9 px-4 py-2",
+									"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+									"font-medium bg-gradient-to-b from-[#FF8517] to-[#FF3206] active:opacity-50"
+								)}
+								href={`/component-library/dashboard/${session?.user.id}/library`}>
+								Dashboard
+							</Link>
+						) : (
+							<ButtonCTA
+								text="Devenir professionnel"
+								className="w-full font-medium drop-shadow-custom-btn-pricing"
+							/>
+						)}
 					</div>
 				</article>
 
@@ -203,9 +232,22 @@ export default function Pricing() {
 					</div>
 					<div className="flex flex-col items-center justify-center mb-[20px] mx-[25px]">
 						<Separator className="bg-white/20 mb-[15px]" />
-						<Button className="w-full rounded-lg bg-gradient-to-b from-[#292929] to-[#0C0C0C] font-medium drop-shadow-custom-btn-pricing">
-							Nous contacter
-						</Button>
+						{session ? (
+							<Link
+								className={cn(
+									"text-white w-full",
+									"h-9 px-4 py-2",
+									"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+									"w-full rounded-lg bg-gradient-to-b from-[#292929] to-[#0C0C0C] font-medium drop-shadow-custom-btn-pricing"
+								)}
+								href={`/component-library/dashboard/${session?.user.id}/library`}>
+								Dashboard
+							</Link>
+						) : (
+							<Button className="w-full rounded-lg bg-gradient-to-b from-[#292929] to-[#0C0C0C] font-medium drop-shadow-custom-btn-pricing">
+								Nous contacter
+							</Button>
+						)}
 					</div>
 				</article>
 			</section>
