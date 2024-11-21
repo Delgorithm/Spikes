@@ -26,22 +26,21 @@ export default function SidebarDashboard() {
 	const { data: session } = useSession();
 	const userId = session?.user?.id;
 
-	const handleOpen = (sectionTitle: string) => {
-		setOpenSection(openSection === sectionTitle ? null : sectionTitle);
-	};
+	const isSectionActive = (section: NavItem[]) =>
+		section.some((item) => pathname === item.link);
 
 	const navSections: {
 		title: string;
-		icon: (isOpen: boolean) => JSX.Element;
+		icon: (isOpen: boolean, isActive: boolean) => JSX.Element;
 		items: NavItem[];
 	}[] = [
 		{
 			title: "Platform",
-			icon: (isOpen: boolean) => (
+			icon: (isOpen: boolean, isActive: boolean) => (
 				<Zap
 					className={cn(
 						"stroke-[1.5px]",
-						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+						isOpen || isActive ? "stroke-white" : "stroke-[#7E7F81]"
 					)}
 				/>
 			),
@@ -60,11 +59,11 @@ export default function SidebarDashboard() {
 		},
 		{
 			title: "Sections",
-			icon: (isOpen: boolean) => (
+			icon: (isOpen: boolean, isActive: boolean) => (
 				<LayoutGrid
 					className={cn(
 						"stroke-[1.5px]",
-						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+						isOpen || isActive ? "stroke-white" : "stroke-[#7E7F81]"
 					)}
 				/>
 			),
@@ -101,11 +100,11 @@ export default function SidebarDashboard() {
 		},
 		{
 			title: "Style",
-			icon: (isOpen: boolean) => (
+			icon: (isOpen: boolean, isActive: boolean) => (
 				<Sparkles
 					className={cn(
 						"stroke-[1.5px]",
-						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+						isOpen || isActive ? "stroke-white" : "stroke-[#7E7F81]"
 					)}
 				/>
 			),
@@ -118,11 +117,11 @@ export default function SidebarDashboard() {
 		},
 		{
 			title: "Saved",
-			icon: (isOpen: boolean) => (
+			icon: (isOpen: boolean, isActive: boolean) => (
 				<Bookmark
 					className={cn(
 						"stroke-[1.5px]",
-						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+						isOpen || isActive ? "stroke-white" : "stroke-[#7E7F81]"
 					)}
 				/>
 			),
@@ -135,11 +134,11 @@ export default function SidebarDashboard() {
 		},
 		{
 			title: "Plan",
-			icon: (isOpen: boolean) => (
+			icon: (isOpen: boolean, isActive: boolean) => (
 				<Star
 					className={cn(
 						"stroke-[1.5px]",
-						isOpen ? "stroke-white" : "stroke-[#7E7F81]"
+						isOpen || isActive ? "stroke-white" : "stroke-[#7E7F81]"
 					)}
 				/>
 			),
@@ -158,55 +157,67 @@ export default function SidebarDashboard() {
 				type="single"
 				collapsible
 				className="w-full watch-sm:px-2 md:px-8">
-				{navSections.map((section) => (
-					<AccordionItem
-						key={section.title}
-						value={section.title.toLowerCase()}>
-						<AccordionTrigger
-							className="py-6"
-							onClick={() => handleOpen(section.title)}>
-							<div className="flex items-center gap-2">
-								{section.icon(openSection === section.title)}
-								<span
-									className={cn(
-										"uppercase font-medium",
-										openSection === section.title
-											? "text-white"
-											: "text-[#7E7F81]"
-									)}>
-									{section.title}
-								</span>
-							</div>
-						</AccordionTrigger>
-						<AccordionContent>
-							<ul className="pl-2 text-[#7E7F81] flex flex-col gap-6">
-								{section.items.map((item) => (
-									<li key={item.title} className="relative">
-										<Link
-											href={item.link}
-											className={cn(
-												"flex items-center gap-2",
-												pathname === item.link ? "text-white" : "text-[#7E7F81]"
-											)}>
-											{"icon" in item && item.icon && (
-												<Image
-													src={`/images/${item.icon}`}
-													alt={`${item.title} icon`}
-													width={20}
-													height={20}
-												/>
-											)}
-											<span>{item.title}</span>
-										</Link>
-										{pathname === item.link && section.title !== "Platform" && (
-											<div className="size-1.5 rounded-full bg-gradient-to-t from-[#FF2900] to-[#FF7A00] absolute left-[-20px] top-1/2 transform -translate-y-1/2"></div>
-										)}
-									</li>
-								))}
-							</ul>
-						</AccordionContent>
-					</AccordionItem>
-				))}
+				{navSections.map((section) => {
+					const isActive = isSectionActive(section.items);
+
+					return (
+						<AccordionItem
+							key={section.title}
+							value={section.title.toLowerCase()}>
+							<AccordionTrigger
+								className={cn("py-6", isActive && "text-white")}
+								isActive={isActive}
+								onClick={() =>
+									setOpenSection(
+										openSection === section.title ? null : section.title
+									)
+								}>
+								<div className="flex items-center gap-2">
+									{section.icon(openSection === section.title, isActive)}
+									<span
+										className={cn(
+											"uppercase font-medium",
+											openSection === section.title || isActive
+												? "text-white"
+												: "text-[#7E7F81]"
+										)}>
+										{section.title}
+									</span>
+								</div>
+							</AccordionTrigger>
+							<AccordionContent>
+								<ul className="pl-4 text-[#7E7F81] flex flex-col gap-6">
+									{section.items.map((item) => (
+										<li key={item.title} className="relative">
+											<Link
+												href={item.link}
+												className={cn(
+													"flex items-center gap-2",
+													pathname === item.link
+														? "text-white"
+														: "text-[#7E7F81]"
+												)}>
+												{"icon" in item && item.icon && (
+													<Image
+														src={`/images/${item.icon}`}
+														alt={`${item.title} icon`}
+														width={20}
+														height={20}
+													/>
+												)}
+												<span>{item.title}</span>
+											</Link>
+											{pathname === item.link &&
+												section.title !== "Platform" && (
+													<div className="size-1.5 rounded-full bg-gradient-to-t from-[#FF2900] to-[#FF7A00] absolute left-[-20px] top-1/2 transform -translate-y-1/2"></div>
+												)}
+										</li>
+									))}
+								</ul>
+							</AccordionContent>
+						</AccordionItem>
+					);
+				})}
 			</Accordion>
 		</nav>
 	);

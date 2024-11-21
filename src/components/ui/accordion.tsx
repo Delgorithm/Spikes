@@ -13,10 +13,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<AccordionPrimitive.Item
 		ref={ref}
-		className={cn(
-			"border-b-2 border-dashed border- border-[#1B1B1B]",
-			className
-		)}
+		className={cn("border-b-2 border-dashed border-[#1B1B1B]", className)}
 		{...props}
 	/>
 ));
@@ -24,20 +21,29 @@ AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
 	React.ElementRef<typeof AccordionPrimitive.Trigger>,
-	React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+	React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {
+		isActive?: boolean;
+	}
+>(({ className, children, isActive, ...props }, ref) => (
 	<AccordionPrimitive.Header className="flex">
 		<AccordionPrimitive.Trigger
 			ref={ref}
 			className={cn(
 				"flex flex-1 items-center justify-between py-2 text-sm font-medium transition-all",
 				"text-[#7E7F81] stroke-[#7E7F81]",
+				isActive && "text-[#FFFFFF] stroke-[#FFFFFF]",
 				"data-[state=open]:text-[#FFFFFF] data-[state=open]:stroke-[#FFFFFF]",
 				className
 			)}
 			{...props}>
 			{children}
-			<ChevronDownIcon className="h-6 w-6 shrink-0 text-muted-foreground transition-transform duration-150" />
+			<ChevronDownIcon
+				className={cn(
+					"h-6 w-6 shrink-0",
+					"data-[state=open]:rotate-90",
+					isActive && "text-[#FFFFFF]"
+				)}
+			/>
 		</AccordionPrimitive.Trigger>
 	</AccordionPrimitive.Header>
 ));
