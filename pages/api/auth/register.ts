@@ -32,6 +32,6 @@ export default async function handler(
 			.json({ message: "Utilisateur créer avec succès", user: newUser });
 	} catch (error) {
 		console.error("Erreur lors de la création de l'utilisatuer: ", error);
-		return res.status(500).json({ message: "Erruer interne du serveur" });
+		return res.status(500).json({ message: "Erreur interne du serveur" });
 	}
 }
