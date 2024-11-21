@@ -13,6 +13,7 @@ import Image from "next/image";
 import { Bookmark, LayoutGrid, Sparkles, Star, Zap } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import ButtonUpgrade from "../../ui/button-upgrade";
 
 type NavItem = {
 	title: string;
@@ -113,6 +114,18 @@ export default function SidebarDashboard() {
 					title: "Custom",
 					link: `/component-library/dashboard/${userId}/library/style/custom`,
 				},
+				{
+					title: "Colors",
+					link: "",
+				},
+				{
+					title: "Font",
+					link: "",
+				},
+				{
+					title: "Theme",
+					link: "",
+				},
 			],
 		},
 		{
@@ -152,11 +165,8 @@ export default function SidebarDashboard() {
 	];
 
 	return (
-		<nav className="w-full pt-8">
-			<Accordion
-				type="single"
-				collapsible
-				className="w-full watch-sm:px-2 md:px-8">
+		<nav className="w-full mt-8 flex flex-col gap-4 watch-sm:px-2 md:px-8">
+			<Accordion type="single" collapsible className="w-full ">
 				{navSections.map((section) => {
 					const isActive = isSectionActive(section.items);
 
@@ -219,6 +229,7 @@ export default function SidebarDashboard() {
 					);
 				})}
 			</Accordion>
+			<ButtonUpgrade />
 		</nav>
 	);
 }

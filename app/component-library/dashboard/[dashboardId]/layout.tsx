@@ -19,13 +19,17 @@ export default function DashboardIdLayout({
 
 			<div
 				className={cn(
-					"row-start-2 col-start-1 bg-[#121212] border-r-[1px] border-[#1D1D1D]",
+					"row-start-2 col-start-1 bg-[#121212] border-r-[1px] border-[#1D1D1D] overflow-hidden",
 					"watch-sm:hidden lg:flex"
 				)}>
 				<SidebarDashboard />
 			</div>
 
-			<div className="row-start-2 col-start-2 bg-[#1D1D1D] relative noise min-h-full">
+			<div
+				className={cn(
+					"row-start-2 col-start-2 bg-[#1D1D1D] relative noise overflow-y-auto",
+					"watch-sm:h-[calc(100vh-80px)] md:h-[calc(100vh-85px)]"
+				)}>
 				{children}
 			</div>
 		</section>

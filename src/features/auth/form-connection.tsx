@@ -57,7 +57,7 @@ export default function FormConnection() {
 		onSuccess: (data) => {
 			setError(null);
 			setSuccess("Connexion réussie!");
-			router.push("/component-library/dashboard/${data.user.id}/library");
+			router.push(`/component-library/dashboard/${data.user.id}/library`);
 		},
 		onError: (error: Error) => {
 			setSuccess(null);

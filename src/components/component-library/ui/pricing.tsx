@@ -7,7 +7,6 @@ import { Switch } from "@/components/ui/switch";
 import { Check } from "lucide-react";
 import ButtonCTA from "./button-cta";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";

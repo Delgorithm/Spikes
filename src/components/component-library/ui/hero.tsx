@@ -16,7 +16,7 @@ const variants = {
 const dashboardImg = "/images/component-library/dashboard.webp";
 
 export default function Hero() {
-	const { data: session, status } = useSession();
+	const { data: session } = useSession();
 	return (
 		<section className="flex flex-col justify-center items-center">
 			<article className="flex flex-col items-center gap-[25px]">

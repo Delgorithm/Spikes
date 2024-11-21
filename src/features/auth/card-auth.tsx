@@ -50,14 +50,14 @@ export default function CardAuth({ session }: CardAuthProps) {
 					{session?.user.name}
 				</DropdownMenuLabel>
 				<DropdownMenuSeparator />
-				<DropdownMenuGroup>
+				<DropdownMenuGroup className="flex flex-col gap-2">
 					<DropdownMenuItem>
-						<Link href={`/component-library/dashboard/${session?.user.id}`}>
+						<Link
+							className="text-center w-full"
+							href={`/component-library/dashboard/${session?.user.id}/library`}>
 							Dashboard
 						</Link>
 					</DropdownMenuItem>
-				</DropdownMenuGroup>
-				<DropdownMenuGroup>
 					<DropdownMenuItem>
 						<BtnLogout />
 					</DropdownMenuItem>

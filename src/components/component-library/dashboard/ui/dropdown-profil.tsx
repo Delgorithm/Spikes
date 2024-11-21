@@ -6,7 +6,6 @@ import {
 	DropdownMenuGroup,
 	DropdownMenuItem,
 	DropdownMenuLabel,
-	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import BtnLogout from "@/features/auth/btn-logout";
@@ -15,9 +14,22 @@ import { User } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function DropdownProfil() {
 	const { data: session } = useSession();
+	const pathname = usePathname();
+
+	const isOnDashboard = pathname?.startsWith(
+		`/component-library/dashboard/${session?.user?.id}`
+	);
+
+	const dynamicLink = isOnDashboard
+		? "/component-library"
+		: `/component-library/dashboard/${session?.user?.id}`;
+
+	const dynamicText = isOnDashboard ? "Accueil" : "Dashboard";
+
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild className="relative">
@@ -29,17 +41,27 @@ export default function DropdownProfil() {
 					{session?.user.image ? (
 						<Image
 							src={session?.user.image}
-							width={45}
-							height={45}
+							width={100}
+							height={100}
 							alt="user's image"
-							className="rounded-sm cursor-pointer"
+							className={cn(
+								"rounded-sm cursor-pointer",
+								"watch-sm:size-8 md:size-[35px]"
+							)}
 						/>
 					) : (
-						<User />
+						<div className="p-2 border-[#7E7F81] cursor-pointer">
+							<User />
+						</div>
 					)}
 				</div>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent className="text-center absolute -top-16 right-10 bg-[#27272a] border-[0.5px] border-[#1D1D1D] shadow-md ">
+			<DropdownMenuContent
+				className={cn(
+					"text-center absolute  bg-[#27272a] border-[0.5px] border-[#1D1D1D] shadow-md",
+					"watch-sm:top-2 watch-sm:-right-[104px]",
+					"md:-top-16 md:right-10"
+				)}>
 				<div className="m-2 border-[1px] border-dashed border-[#7E7F81] rounded-md text-white">
 					<DropdownMenuLabel className="border-b-[1px] border-dashed border-[#7E7F81] ">
 						{session?.user.name ? (
@@ -50,10 +72,9 @@ export default function DropdownProfil() {
 					</DropdownMenuLabel>
 					<DropdownMenuGroup className="flex flex-col items-center gap-3 mx-3 my-2">
 						<DropdownMenuItem className="w-full flex justify-center">
-							<Link href="/component-library">Accueil</Link>
-						</DropdownMenuItem>
-						<DropdownMenuItem className="w-full flex justify-center">
-							Profile
+							<Link href={dynamicLink} className="w-full">
+								{dynamicText}
+							</Link>
 						</DropdownMenuItem>
 						<DropdownMenuItem>
 							<BtnLogout />

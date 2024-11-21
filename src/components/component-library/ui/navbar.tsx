@@ -7,9 +7,8 @@ import { useState } from "react";
 import Link from "next/link";
 import ButtonCTA from "./button-cta";
 import { useSession } from "next-auth/react";
-import CardAuth from "@/features/auth/card-auth";
 import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
+import DropdownProfil from "../dashboard/ui/dropdown-profil";
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +18,6 @@ export default function Navbar() {
 		setIsOpen(!isOpen);
 	};
 
-	// Variants pour l'animation Framer Motion
 	const sidebarVariants = {
 		hidden: { x: "100%" },
 		visible: {
@@ -85,7 +83,7 @@ export default function Navbar() {
 				{status === "loading" ? (
 					<p className="text-white">Chargement...</p>
 				) : session ? (
-					<CardAuth session={session} />
+					<DropdownProfil />
 				) : (
 					<ButtonCTA text="Se connecter" />
 				)}
