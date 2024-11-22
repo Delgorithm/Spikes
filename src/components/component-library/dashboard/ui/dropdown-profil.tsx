@@ -17,7 +17,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type DropdownProfilProps = {
-	handleOpen: () => void;
+	handleOpen?: () => void;
 };
 
 export default function DropdownProfil({ handleOpen }: DropdownProfilProps) {
