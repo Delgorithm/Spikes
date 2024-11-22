@@ -11,6 +11,7 @@ import DropdownProfil from "./dropdown-profil";
 import { useState } from "react";
 import SidebarDashboard from "./sidebar-paste-library-dashboard";
 import { motion } from "framer-motion";
+import BtnLogout from "@/features/auth/btn-logout";
 
 export default function NavbarPasteDashboard() {
 	const pathname = usePathname();
@@ -93,7 +94,7 @@ export default function NavbarPasteDashboard() {
 				))}
 			</ul>
 			<Minus className="rotate-90 h-[0.5px] bg-[#1D1D1D]" />
-			<ul className={cn("flex items-center gap-8", "watch-sm:hidden xl:flex")}>
+			<ul className={cn("flex items-center gap-8", "watch-sm:hidden lg:flex")}>
 				{navigationItems.map((item) => (
 					<li key={item.title}>
 						<Link
@@ -119,20 +120,20 @@ export default function NavbarPasteDashboard() {
 			</div>
 			<Minus className="rotate-90 h-[0.5px] bg-[#1D1D1D]" />
 			<div className="watch-sm:hidden lg:flex">
-				<DropdownProfil />
+				<DropdownProfil handleOpen={handleOpen} />
 			</div>
-			<div className="watch-sm:flex xl:hidden">
+			<div className="watch-sm:flex lg:hidden">
 				{isOpen ? (
 					<>
 						<X onClick={handleOpen} className="stroke-neutral-100 z-40" />
 						<motion.div
-							className="absolute w-4/5 top-0 right-0 bg-black min-h-full z-30"
+							className="absolute w-4/5 top-0 right-0 bg-black h-full z-30"
 							initial="hidden"
 							animate="visible"
 							exit="exit"
 							variants={sidebarVariants}>
-							<article className="flex flex-col text-center gap-10 mt-10 px-4">
-								<ul className="flex flex-col items-center gap-10 mt-12">
+							<article className="flex flex-col text-center gap-10 px-4">
+								<ul className="flex flex-col items-center gap-10 mt-7">
 									{navigationItems.map((item) => (
 										<li key={item.title}>
 											<Link
@@ -147,8 +148,8 @@ export default function NavbarPasteDashboard() {
 										</li>
 									))}
 								</ul>
-								<SidebarDashboard />
-								<DropdownProfil />
+								<SidebarDashboard handleOpen={handleOpen} />
+								<BtnLogout />
 							</article>
 						</motion.div>
 						<motion.div
@@ -157,7 +158,8 @@ export default function NavbarPasteDashboard() {
 							animate="visible"
 							exit="exit"
 							onClick={handleOpen}
-							variants={blurbarVariants}></motion.div>
+							variants={blurbarVariants}
+						/>
 					</>
 				) : (
 					<AlignJustify onClick={handleOpen} className="stroke-neutral-100" />

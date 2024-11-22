@@ -21,7 +21,13 @@ type NavItem = {
 	icon?: string;
 };
 
-export default function SidebarDashboard() {
+type SidebarDashboardProps = {
+	handleOpen?: () => void;
+};
+
+export default function SidebarDashboard({
+	handleOpen,
+}: SidebarDashboardProps) {
 	const [openSection, setOpenSection] = useState<string | null>(null);
 	const pathname = usePathname();
 	const { data: session } = useSession();
@@ -201,6 +207,7 @@ export default function SidebarDashboard() {
 										<li key={item.title} className="relative">
 											<Link
 												href={item.link}
+												onClick={handleOpen}
 												className={cn(
 													"flex items-center gap-2",
 													pathname === item.link

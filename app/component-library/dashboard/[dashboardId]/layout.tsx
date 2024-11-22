@@ -10,10 +10,10 @@ export default function DashboardIdLayout({
 	return (
 		<section
 			className={cn(
-				"min-h-screen relative noise",
+				"h-full relative noise",
 				"lg:grid lg:grid-cols-custom-dashboard-paste-columns lg:grid-rows-custom-dashboard-paste-rows"
 			)}>
-			<div className="col-span-2 row-start-1 bg-[#121212] border-b-[1px] border-[#1D1D1D]">
+			<div className="col-span-2 row-start-1 bg-[#121212] border-b-[1px] border-[#1D1D1D] overflow-hidden">
 				<NavbarPasteDashboard />
 			</div>
 
@@ -28,7 +28,7 @@ export default function DashboardIdLayout({
 			<div
 				className={cn(
 					"row-start-2 col-start-2 bg-[#1D1D1D] relative noise overflow-y-auto",
-					"watch-sm:h-[calc(100vh-80px)] md:h-[calc(100vh-85px)]"
+					"watch-sm:h-screen md:h-[calc(100vh-85px)]"
 				)}>
 				{children}
 			</div>

@@ -57,7 +57,9 @@ export default function ScrollProgressBar({ segments = 5 }: ProgressbarProps) {
 						data-index={index}
 						className={cn(
 							"size-2 rounded-full transition-all duration-300",
-							visibleSegments.includes(index)
+							index === segments - 1
+								? "bg-gradient-to-b from-[#FF7A00] to-[#994900] drop-shadow-custom-orange"
+								: visibleSegments.includes(index)
 								? "bg-gradient-to-b from-[#FF7A00] to-[#994900] drop-shadow-custom-orange"
 								: "bg-gray-300"
 						)}

@@ -16,7 +16,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function DropdownProfil() {
+type DropdownProfilProps = {
+	handleOpen: () => void;
+};
+
+export default function DropdownProfil({ handleOpen }: DropdownProfilProps) {
 	const { data: session } = useSession();
 	const pathname = usePathname();
 
@@ -58,8 +62,8 @@ export default function DropdownProfil() {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent
 				className={cn(
-					"text-center absolute  bg-[#27272a] border-[0.5px] border-[#1D1D1D] shadow-md",
-					"watch-sm:top-2 watch-sm:-right-[104px]",
+					"text-center absolute bg-[#27272a] border-[0.5px] border-[#1D1D1D] shadow-md",
+					"watch-sm:-top-24 watch-sm:-right-[104px]",
 					"md:-top-16 md:right-10"
 				)}>
 				<div className="m-2 border-[1px] border-dashed border-[#7E7F81] rounded-md text-white">
@@ -72,7 +76,7 @@ export default function DropdownProfil() {
 					</DropdownMenuLabel>
 					<DropdownMenuGroup className="flex flex-col items-center gap-3 mx-3 my-2">
 						<DropdownMenuItem className="w-full flex justify-center">
-							<Link href={dynamicLink} className="w-full">
+							<Link href={dynamicLink} className="w-full" onClick={handleOpen}>
 								{dynamicText}
 							</Link>
 						</DropdownMenuItem>
