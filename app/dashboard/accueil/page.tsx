@@ -6,10 +6,10 @@ import SocialProof from "@/components/dashboard/ui/social-proof";
 export default function AccueilPage() {
 	return (
 		<section className="px-24 mt-6">
-			{/* <Navbar />
-			<Hero /> */}
+			<Navbar />
+			<Hero />
 			<div className="px-24">
-				{/* <SocialProof /> */}
+				<SocialProof />
 				<Functionalities />
 			</div>
 		</section>
