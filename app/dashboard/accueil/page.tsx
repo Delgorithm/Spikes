@@ -1,17 +1,17 @@
 import Functionalities from "@/components/dashboard/ui/functionalities";
 import Hero from "@/components/dashboard/ui/hero";
 import Navbar from "@/components/dashboard/ui/navbar";
+import Reviews from "@/components/dashboard/ui/reviews";
 import SocialProof from "@/components/dashboard/ui/social-proof";
 
 export default function AccueilPage() {
-	return (
-		<section className="px-24 mt-6">
-			<Navbar />
-			<Hero />
-			<div className="px-24">
-				<SocialProof />
-				<Functionalities />
-			</div>
-		</section>
-	);
+  return (
+    <section className="mt-6">
+      <Navbar />
+      <Hero />
+      <SocialProof />
+      <Functionalities />
+      <Reviews />
+    </section>
+  );
 }
