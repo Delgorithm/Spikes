@@ -50,7 +50,10 @@ export default function Faq() {
   ];
 
   return (
-    <section className="px-24 flex flex-col justify-center items-center mt-[80px]">
+    <section
+      id="faq"
+      className="px-24 flex flex-col justify-center items-center mt-[80px]"
+    >
       <p className="text-2xl font-semibold mb-10 w-full">
         Des questions ? Des réponses !
       </p>

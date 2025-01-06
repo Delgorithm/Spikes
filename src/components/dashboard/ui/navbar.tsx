@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const navLinks = [
   { text: "Features", id: "features" },
-  { text: "Avis", id: "avis" },
+  { text: "Avis", id: "reviews" },
   { text: "Pricing", id: "pricing" },
   { text: "FAQ", id: "faq" },
 ];
@@ -13,10 +13,8 @@ const navLinks = [
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between mx-auto px-24">
-      <Link
-        href="http://localhost:3000/dashboard/accueil"
-        className="flex items-center gap-2"
-      >
+      {/* Logo */}
+      <Link href="/myideals/accueil" className="flex items-center gap-2">
         <Image
           src="/dashboard/icons/deals_logo.svg"
           width={40}
@@ -25,22 +23,23 @@ export default function Navbar() {
         />
         <p className="text-2xl">MyIDeals</p>
       </Link>
+
+      {/* Navigation Links */}
       <ul className="flex items-center gap-14 font-light">
         {navLinks.map(({ text, id }) => (
-          <li key={id}>
-            <Link
-              href={`#${id}`}
-              className="group hover:font-normal transition-all ease-in-out relative"
-            >
+          <li key={id} className="relative group">
+            <Link href={`#${id}`} className="text-black/70 transition relative">
               {text}
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black absolute bottom-0 left-0"></span>
+              {/* Underline Span */}
+              <span className="absolute bottom-0 left-0 h-[1.5px] w-full scale-x-0 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-100"></span>
             </Link>
           </li>
         ))}
       </ul>
 
+      {/* Login Button */}
       <Link
-        href="http://localhost:3000/dashboard/connexion"
+        href="/myideals/auth/connexion"
         className={cn(
           "flex items-center gap-2 font-light bg-[#F5F7F9] px-6 py-1.5 rounded-lg",
           "hover:opacity-65 transition-all ease-in-out",

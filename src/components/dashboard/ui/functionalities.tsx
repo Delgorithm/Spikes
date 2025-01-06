@@ -4,7 +4,7 @@ import CTAFree from "./cta-free";
 
 export default function Functionalities() {
   return (
-    <section>
+    <section id="features">
       <section className="flex flex-col gap-10 mt-[70px] w-full px-24">
         <h2 className="text-3xl font-bold text-center">
           Gardez un oeil sur vos avancées

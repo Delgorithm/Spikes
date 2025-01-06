@@ -3,7 +3,7 @@ import CTAFree from "./cta-free";
 
 export default function Hero() {
   return (
-    <section className="mt-[70px] flex flex-col gap-8 justify-center items-center px-24">
+    <section className="mt-[100px] flex flex-col gap-10 justify-center items-center px-24">
       <h1 className="text-4xl font-bold w-[550px] text-center">
         La gestion des finances repensée pour les freelances et les PME
       </h1>

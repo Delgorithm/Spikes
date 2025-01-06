@@ -6,28 +6,28 @@ const footerLinks = [
   {
     category: "Produit",
     links: [
-      { name: "Navigation", href: "/dashboard/accueil" },
-      { name: "Listes", href: "/dashboard/accueil" },
-      { name: "Leads", href: "/dashboard/accueil" },
-      { name: "Deals", href: "/dashboard/accueil" },
+      { name: "Navigation", href: "/myideals/accueil" },
+      { name: "Listes", href: "/myideals/accueil" },
+      { name: "Leads", href: "/myideals/accueil" },
+      { name: "Deals", href: "/myideals/accueil" },
     ],
   },
   {
     category: "Ressources",
     links: [
-      { name: "Blogs", href: "/dashboard/accueil" },
-      { name: "Mises à jours", href: "/dashboard/accueil" },
-      { name: "Outils gratuits", href: "/dashboard/accueil" },
-      { name: "Centre d'aide", href: "/dashboard/accueil" },
+      { name: "Blogs", href: "/myideals/accueil" },
+      { name: "Mises à jours", href: "/myideals/accueil" },
+      { name: "Outils gratuits", href: "/myideals/accueil" },
+      { name: "Centre d'aide", href: "/myideals/accueil" },
     ],
   },
   {
     category: "Compagnie",
     links: [
       { name: "Prix", href: "/" },
-      { name: "Nous contacter", href: "/dashboard/accueil" },
-      { name: "Affiliation", href: "/dashboard/accueil" },
-      { name: "Conditions d'utilisation", href: "/dashboard/accueil" },
+      { name: "Nous contacter", href: "/myideals/accueil" },
+      { name: "Affiliation", href: "/myideals/accueil" },
+      { name: "Conditions d'utilisation", href: "/myideals/accueil" },
     ],
   },
 ];
@@ -38,7 +38,7 @@ export default function Footer() {
       {/* Logo and Social Media */}
       <div className="flex flex-col gap-24">
         <div>
-          <Link href="/dashboard/accueil" className="flex items-center gap-2">
+          <Link href="/myideals/accueil" className="flex items-center gap-2">
             <Image
               src="/dashboard/icons/deals_logo.svg"
               width={30}

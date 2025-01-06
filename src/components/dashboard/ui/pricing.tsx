@@ -4,7 +4,10 @@ import Image from "next/image";
 
 export default function Pricing() {
   return (
-    <section className="flex flex-col justify-center px-24 mt-[80px]">
+    <section
+      id="pricing"
+      className="flex flex-col justify-center px-24 mt-[80px]"
+    >
       <h2 className="text-3xl font-semibold pb-16 text-center">
         Le prix d'un produit unique en son genre
       </h2>

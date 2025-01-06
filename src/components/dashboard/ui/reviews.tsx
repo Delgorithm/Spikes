@@ -42,7 +42,10 @@ const reviewsDisplay = [
 
 export default function Reviews() {
   return (
-    <section className="flex flex-col justify-center items-center mt-[80px] relative">
+    <section
+      id="reviews"
+      className="flex flex-col justify-center items-center mt-[80px] relative"
+    >
       <Grid2x2Check className="stroke-[0.5px] size-20" />
       <div className="grid grid-cols-3 gap-8 mt-[80px]">
         {reviewsDisplay.map((item) => (
