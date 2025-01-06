@@ -1,5 +1,6 @@
 import Display from "@/components/dashboard/ui/display";
 import Faq from "@/components/dashboard/ui/faq";
+import Footer from "@/components/dashboard/ui/footer";
 import Functionalities from "@/components/dashboard/ui/functionalities";
 import Hero from "@/components/dashboard/ui/hero";
 import Navbar from "@/components/dashboard/ui/navbar";
@@ -18,6 +19,7 @@ export default function AccueilPage() {
       <Pricing />
       <Faq />
       <Display />
+      <Footer />
     </section>
   );
 }
