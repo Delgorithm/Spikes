@@ -59,7 +59,7 @@ export default function Faq() {
           type="single"
           collapsible
           key={item.question}
-          className="w-full mx-12"
+          className="w-[70%] mx-12"
         >
           <AccordionItem value={item.question} className="flex flex-col">
             <AccordionTrigger>{item.question}</AccordionTrigger>
