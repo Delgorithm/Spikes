@@ -82,6 +82,7 @@ const config = {
         "custom-price-cols": "350px 350px 350px",
         "custom-functionalities-cols": "334px 334px 334px",
         "custom-dashboard-paste-columns": "280px 1fr",
+        "custom-display-columns": "80px 1fr",
       },
       gridTemplateRows: {
         customRows: "125px 751px 125px",
@@ -89,7 +90,7 @@ const config = {
         "custom-xl-desktop": "repeat(4, 1fr)",
         "custom-price-rows": "575px ",
         "custom-functionalities-rows": "334px",
-        "custom-dashboard-paste-rows": "85px 1fr",
+        "custom-dashboard-paste-rows": "80px 1fr",
       },
       dropShadow: {
         "custom-orange": "1px 1px 10px rgba(255, 122, 0, 0.4)",
@@ -185,7 +186,7 @@ const config = {
         "shimmer-slide":
           "shimmer-slide var(--speed) ease-in-out infinite alternate",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
-        pingCustom: "pingCustom 10s ease-in-out infinite",
+        pingCustom: "pingCustom 4s ease-in-out infinite",
       },
     },
   },
