@@ -68,7 +68,10 @@ export default function Footer() {
             <li className="font-semibold text-lg">{category}</li>
             {links.map(({ name, href }) => (
               <li key={name} className="relative group">
-                <Link href={href} className="text-black/40 transition relative">
+                <Link
+                  href={href}
+                  className="text-sm font-light text-black/40 transition relative"
+                >
                   {name}
                   {/* Span for underline */}
                   <span className="absolute bottom-0 left-0 h-[1.5px] w-full scale-x-0 bg-gradient-to-tl from-[#7E7F81] to-[#FFFFFF] transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-100"></span>
