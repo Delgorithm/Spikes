@@ -35,9 +35,9 @@ export default function Connexion() {
       <Link
         href="/myideals/accueil"
         prefetch={true}
-        className="absolute top-2 left-2 flex items-center gap-1"
+        className="absolute top-2 left-2 flex items-center gap-1 py-1.5 px-2 rounded-lg hover:bg-black hover:text-white transition-all ease-in-out"
       >
-        <ArrowLeft className="stroke-[1.5px] w-5" />
+        <ArrowLeft className="stroke-[1.5px] w-5 hover:stroke-white" />
         Page d'accueil
       </Link>
     </section>
