@@ -19,12 +19,20 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-const formSchema = z.object({
-  email: z.string().email("L'adresse mail doit être valide"),
-  password: z
-    .string()
-    .min(8, "Le mot de passe doit contenir au moins 8 caractères"),
-});
+const formSchema = z
+  .object({
+    email: z.string().email("L'adresse mail doit être valide."),
+    password: z
+      .string()
+      .min(9, "Le mot de passe doit contenir au moins 8 caractères"),
+    confirmPassword: z
+      .string()
+      .min(8, "Le mot de passe doit contenir au moins 8 caractères"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Les mots de passe doivent correspondre.",
+    path: ["confirmPassword"],
+  });
 
 export default function FormConnection() {
   const router = useRouter();
@@ -36,12 +44,13 @@ export default function FormConnection() {
     defaultValues: {
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
   const mutation = useMutation({
     mutationFn: async (data: z.infer<typeof formSchema>) => {
-      const response = await fetch("/api/auth/login", {
+      const response = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -54,11 +63,13 @@ export default function FormConnection() {
 
       return response.json();
     },
+
     onSuccess: (data) => {
       setError(null);
-      setSuccess("Connexion réussie!");
-      router.push(`/myideals/dashboard/${data.user.id}/home`);
+      setSuccess("Connexion réussie");
+      router.push("/myideals/auth/connexion");
     },
+
     onError: (error: Error) => {
       setSuccess(null);
       setError(error.message);
@@ -80,13 +91,13 @@ export default function FormConnection() {
         name="email"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>E-mail</FormLabel>
+            <FormLabel className="">Email</FormLabel>
             <FormControl>
               <Input
+                placeholder="abc@gmail.com"
                 type="email"
-                placeholder="john-doe@gmail.com"
-                className=""
                 {...field}
+                className=""
                 required
               />
             </FormControl>
@@ -99,14 +110,34 @@ export default function FormConnection() {
         control={form.control}
         name="password"
         render={({ field }) => (
-          <FormItem className="">
-            <FormLabel>Mot de passe</FormLabel>
+          <FormItem>
+            <FormLabel className="">Mot de passe</FormLabel>
             <FormControl>
               <Input
-                type="password"
                 placeholder="********"
-                className=""
+                type="password"
                 {...field}
+                className=""
+                required
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="confirmPassword"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel className="">Confirmer le mot de passe</FormLabel>
+            <FormControl>
+              <Input
+                placeholder="********"
+                type="password"
+                {...field}
+                className=""
                 required
               />
             </FormControl>
@@ -119,7 +150,7 @@ export default function FormConnection() {
       <FormSuccess message={success ?? undefined} />
 
       <Button type="submit" className="">
-        Se connecter
+        S'enregistrer
       </Button>
     </Form>
   );
