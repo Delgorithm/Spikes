@@ -12,7 +12,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between mx-auto px-24">
+    <nav className="flex items-center justify-between mx-20 py-1.5 px-4 rounded-lg border-[0.5px]">
       {/* Logo */}
       <Link href="/myideals/accueil" className="flex items-center gap-2">
         <Image
@@ -42,7 +42,7 @@ export default function Navbar() {
         href="/myideals/auth/connexion"
         className={cn(
           "flex items-center gap-2 font-light bg-[#F5F7F9] px-6 py-1.5 rounded-lg",
-          "hover:opacity-65 transition-all ease-in-out",
+          "hover:text-white hover:bg-black/90 transition-all ease-in-out",
           "active:translate-y-0.5",
         )}
       >

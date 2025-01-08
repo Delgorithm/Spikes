@@ -11,8 +11,8 @@ export default function CTAFree({ className }: CTAFreeProps) {
     <Link
       href="/myideals/auth/inscription"
       className={cn(
-        "flex items-center gap-2 py-1.5 px-4 rounded-lg bg-[#F5F7F9]",
-        "hover:opacity-65 active:translate-y-0.5 transition-all ease-in-out",
+        "flex items-center gap-2 py-2 px-4 rounded-lg bg-[#F5F7F9] border-[1px] shadow-lg",
+        "hover:text-white hover:bg-black/80 active:translate-y-0.5 transition-all ease-in-out",
         className,
       )}
     >
