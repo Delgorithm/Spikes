@@ -57,7 +57,11 @@ export default function FormConnection() {
     onSuccess: (data) => {
       setError(null);
       setSuccess("Connexion réussie!");
-      router.push(`/myideals/dashboard/${data.user.id}/home`);
+      const slug = data.user.email
+        .split("@")[0]
+        .toLowerCase()
+        .replace(/\./g, "-");
+      router.push(`/myideals/dashboard/${slug}/home`);
     },
     onError: (error: Error) => {
       setSuccess(null);
