@@ -1,4 +1,3 @@
-import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -83,6 +82,7 @@ const config = {
         "custom-functionalities-cols": "334px 334px 334px",
         "custom-dashboard-paste-columns": "280px 1fr",
         "custom-display-columns": "80px 1fr",
+        "custom-connexion-myideals": "40% 60%",
       },
       gridTemplateRows: {
         customRows: "125px 751px 125px",
