@@ -24,7 +24,36 @@ export default function FunctionalitiesDesgin() {
       </div>
 
       <div className="bg-[#F2F2F2] h-[400px] w-[346px] border-[#7E7F81] border-[0.5px] rounded-xl">
-        <div className="h-[300px] border-b-[0.5px] border-[#7E7F81] w-full"></div>
+        <div className="h-[300px] border-b-[0.5px] border-[#7E7F81] w-full relative">
+          <div className="bg-white absolute bottom-0 left-[5%] h-[93%] w-[90%] p-6 rounded-t-xl">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-1">
+                <p>Compagnie</p>
+                <div className="flex items-center pl-4 w-full h-8 rounded-md border-[0.5px] border-[#7E7F81] bg-[#F2F2F2]">
+                  <p>Amazon</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-1">
+                <p>Object</p>
+                <div className="flex items-center pl-4 w-full h-8 rounded-md border-[0.5px] border-[#7E7F81] bg-[#F2F2F2]">
+                  <p>Amazon</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-1">
+                <p>Date</p>
+                <div className="flex items-center pl-4 w-full h-8 rounded-md border-[0.5px] border-[#7E7F81] bg-[#F2F2F2]">
+                  <p>Amazon</p>
+                </div>
+              </div>
+              <div>
+                <p>Status</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[100px] w-full flex justify-center items-center">
+          <p className="text-xl">Remplissez votre deal</p>
+        </div>
       </div>
 
       <div className="bg-[#F2F2F2] h-[400px] w-[346px] border-[#7E7F81] border-[0.5px] rounded-xl">
